@@ -1,0 +1,109 @@
+//Style for Header
+
+.flexboxContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+ul{
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    float: right;
+  li{
+    box-shadow: -4px 4px 2px 0px rgba(0,0,0,0.5);
+    margin: 20px 0px 0 20px;
+    padding: 10px 30px;
+    background-color: #fff;
+    display: inline-block;
+    &:active{
+        box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+    }
+    a{
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-shadow: -2px 1px 5px rgba(0, 0, 0, 0.5);
+        font-size: 2rem;
+        color: black;
+        display: inline-block;
+        &:hover{
+            color: inherit;
+        }
+    }
+  }
+}
+
+header{
+  position: relative;
+  font-family: $mainFontFamily;
+  background: url("../img/startseitenbild.png") no-repeat center;
+  background-size: cover;
+  overflow:hidden;
+  height: 100vh;
+  .error-page{
+      @extend .flexboxContainer;
+      height: 100vh;
+      .back-to-home-arrow{
+          a{
+              display: inline-block;
+              width: 160px;
+              height: 120px;
+              background: url("../img/buttons/arrow-back-blue.svg") no-repeat center;
+              background-size: cover;
+          }
+
+      }
+      .error-msg{
+          margin-bottom: 20px;
+          border: 2.5px dotted black;
+          padding: 20px 40px;
+          h2{
+              font-size: 4rem;
+          }
+          small{
+              font-size: 1.5rem;
+          }
+      }
+  }
+  .navbar-brand{
+    display: none;
+    font-size: 30px;
+    padding: 20px 0 0 30px;
+    a{
+      display: block;
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  nav{
+    display: none;
+    z-index: 9999;
+  }
+  .headerBackground{
+    @extend .flexboxContainer;
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top:0;
+    height: 100vh;
+    width: 100%;
+    img{
+      width: 350px;
+      height: 350px;
+    }
+  }
+}
+
+@media screen and (max-device-width: 600px) and (orientation: landscape)   {
+    header .headerBackground img{
+        width: 200px;
+        height: 200px;
+    }
+}

@@ -1,0 +1,35 @@
+// Classes for javascript for animations
+
+.navigateFixed{
+    width: 100%;
+    position: fixed;
+    display: none;
+    background-color: white;
+    border-bottom: 1px solid black;
+    .container-fluid{
+        padding: 0;
+    }
+    .navbar-brand{
+        padding: 0 5px;
+        display: block;
+        a img{
+            width: 150px;
+            height: 50px;
+        }
+    }
+    ul {
+        width: auto;
+        text-align: inherit;
+        li{
+            margin: 10px 5px;
+            padding: 5px 10px;
+            &:last-child{
+                margin-left: 0;
+            }
+            a{
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+}

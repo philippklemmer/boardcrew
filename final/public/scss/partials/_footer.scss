@@ -1,0 +1,32 @@
+// Style for the Footer
+
+footer{
+    font-family: $mainFontFamily;
+    overflow: hidden;
+    padding: 10px 20px;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    div, p, a{
+        display: inline-block;
+        float: left;
+        color: rgba(59, 65, 60, 0.5);
+    }
+    #footer-left{
+        p{
+            margin-right: 20px;
+            &:last-child{
+                margin-right: auto;
+            }
+            a{
+                text-decoration: none;
+                &:hover{
+                    color: rgba(59, 65, 60, 1);
+                }
+            }
+        }
+
+    }
+    #footer-right{
+        float: right;
+    }
+}

@@ -1,0 +1,24 @@
+// Mixins for bether Browserperformances and functioning Style
+
+@mixin input-placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &:-ms-input-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+@mixin box-shadow ($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+// mixin to animate placeholder TODO
+@mixin animate-placeholder {
+    &:hover.placeholder, &:focus.placeholder { @content; }
+    &:hover:-moz-placeholder, &:focus:-moz-placeholder { @content; }
+    &:hover::-moz-placeholder, &:focus::-moz-placeholder { @content; }
+    &:hover:-ms-input-placeholder, &:focus:-ms-input-placeholder { @content; }
+    &:hover::-webkit-input-placeholder, &:focus::-webkit-input-placeholder { @content; }
+}

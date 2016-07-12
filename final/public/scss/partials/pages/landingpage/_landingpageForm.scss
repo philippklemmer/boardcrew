@@ -1,0 +1,175 @@
+// Landingpage Formstyle
+
+.form-container{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    position: fixed;
+    .landing-form-container{
+        z-index: 9999;
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        margin-top: 50px;
+        max-width: 500px;
+        small{
+            display: block;
+            text-align: center;
+            a{
+                font-size: 1.25rem;
+                font-family: $flowingText;
+                &:hover, &:active{
+                    color: $lightBlue;
+                }
+            }
+
+        }
+        .landing-form-container-head{
+            width: 100%;
+            position: relative;
+            font-family: $mainFontFamily;
+            padding: 20px 30px 30px 30px;
+            background-color: #3B413C;
+            color: #fff;
+            h3{
+                font-size: 2rem;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+        }
+        main{
+            background-color: $lightGreen;
+            padding: 40px;
+            .input-group{
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 25px;
+                @include box-shadow($boxShadow);
+                input{
+                    border: 0;
+                    color: black;
+                    @include input-placeholder {
+                            color: rgba(0, 0, 0, 0.5);
+                    }
+                    &:focus{
+                        border-bottom: 2px solid $lightBlue;
+                    }
+                }
+            }
+            // TODO IF ERROR BOXSHADOW RED
+            input[type="submit"]{
+                font-family: $mainFontFamily;
+                background-color: $mainFontColor;
+                color: white;
+                font-size: 1.7rem;
+                border: 0;
+                margin-bottom: 10px;
+                @include box-shadow($boxShadow);
+                &:hover, &:focus{
+                    outline: 0;
+                    outline-offset: 0;
+                }
+                &:active, &:visited{
+                    @include box-shadow(none);
+                    outline: 0;
+                    outline-offset: 0;
+                }
+            }
+            .form-text a{
+                text-decoration: underline;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        .form-text{
+            display: block;
+        }
+    }
+}
+
+.landing-form-logo{
+    position: absolute;
+    width: 75px;
+    height: 65px;
+    background: url("../img/littleLogo.svg") no-repeat center;
+    background-size: cover;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#register{
+    display: none;
+}
+
+#login{
+    display: none;
+    main form{
+        .input-group:nth-child(2){
+            margin-bottom: 0;
+        }
+        .checkbox{
+            label{
+                line-height: 20px;
+            }
+            input[type="checkbox"]{
+                width: 20px;
+                height: 20px;
+                margin-top: 0;
+            }
+        }
+    }
+
+}
+
+#pw-reset{
+    display: none;
+    .landing-form-container-head{
+        background-color: $lightGreen;
+        overflow: hidden;
+        .landing-form-logo{
+            display: inline-block;
+            float: left;
+            position: inherit;
+            margin-right: 20px;
+        }
+        h3{
+            font-family: $flowingText;
+            color: $mainFontColor;
+            line-height: 65px;
+            float: left;
+            display: inline-block;
+            margin-bottom: 0;
+        }
+    }
+    main{
+        padding: 0 40px 20px 40px;
+    }
+}
+
+@media screen and (max-width: 768px){
+
+    .landing-form-container{
+        padding: 50px 20px 20px 20px;
+    }
+
+}
+@media screen and (max-width: 667px){
+
+    .landing-form-container{
+        padding: 10px;
+    }
+
+}
+
+@media screen and (orientation: landscape){
+    .form-container{
+        overflow: scroll;
+    }
+}
