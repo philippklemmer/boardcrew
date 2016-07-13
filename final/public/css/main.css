@@ -5962,38 +5962,20 @@ input {
     margin-left: 0; }
 
   .navbar-nav > li {
-    float: none; } }
+    float: none; }
+
+  .navbar-right {
+    float: right !important;
+    margin-right: 0; } }
+@media screen and (max-width: 768px) {
+  .navbar-right {
+    float: right; } }
 .flexboxContainer, .fullscreenHeader .error-page, .fullscreenHeader .headerBackground, #landing-presentation-vid {
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
   align-items: center; }
-
-ul {
-  margin-bottom: 50px;
-  width: 100%;
-  text-align: center;
-  display: inline-block;
-  float: right; }
-  ul li {
-    box-shadow: -4px 4px 2px 0px rgba(0, 0, 0, 0.5);
-    margin: 20px 0px 0 20px;
-    padding: 10px 30px;
-    background-color: #fff;
-    display: inline-block; }
-    ul li:active {
-      box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5); }
-    ul li a {
-      letter-spacing: 0.1rem;
-      text-transform: uppercase;
-      font-weight: 600;
-      text-shadow: -2px 1px 5px rgba(0, 0, 0, 0.5);
-      font-size: 2rem;
-      color: black;
-      display: inline-block; }
-      ul li a:hover {
-        color: inherit; }
 
 .fullscreenHeader {
   position: relative;
@@ -6002,6 +5984,30 @@ ul {
   background-size: cover;
   overflow: hidden;
   height: 100vh; }
+  .fullscreenHeader ul {
+    margin-bottom: 50px;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    float: right; }
+    .fullscreenHeader ul li {
+      box-shadow: -4px 4px 2px 0px rgba(0, 0, 0, 0.5);
+      margin: 20px 0px 0 20px;
+      padding: 10px 30px;
+      background-color: #fff;
+      display: inline-block; }
+      .fullscreenHeader ul li:active {
+        box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5); }
+      .fullscreenHeader ul li a {
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-shadow: -2px 1px 5px rgba(0, 0, 0, 0.5);
+        font-size: 2rem;
+        color: black;
+        display: inline-block; }
+        .fullscreenHeader ul li a:hover {
+          color: inherit; }
   .fullscreenHeader .error-page {
     height: 100vh; }
     .fullscreenHeader .error-page .back-to-home-arrow a {
@@ -6040,6 +6046,33 @@ ul {
     .fullscreenHeader .headerBackground img {
       width: 350px;
       height: 350px; }
+
+#loggedinNav {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-top: 5px;
+  display: block;
+  width: 100%;
+  top: 0;
+  left: 0; }
+  #loggedinNav ul {
+    overflow: hidden;
+    margin: 0 auto; }
+    #loggedinNav ul li {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      float: left;
+      margin-right: 20px; }
+      #loggedinNav ul li#menu {
+        background: url("../img/graphics/menu.svg") no-repeat center; }
+      #loggedinNav ul li#logo {
+        width: 200px;
+        background: url("../img/graphics/logologgedin.svg") no-repeat center; }
+      #loggedinNav ul li#filter {
+        background: url("../img/graphics/filter.svg") no-repeat center; }
+      #loggedinNav ul li#search {
+        background: url("../img/graphics/search.svg") no-repeat center; }
 
 @media screen and (max-device-width: 600px) and (orientation: landscape) {
   header .headerBackground img {

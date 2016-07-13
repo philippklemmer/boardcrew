@@ -180,6 +180,15 @@ input{
 .navbar-nav > li {
     float: none;
 }
+.navbar-right {
+    float: right !important;
+    margin-right: 0;
+}
 
+}
+@media screen and (max-width: 768px){
+    .navbar-right{
+            float: right;
+    }
 
 }

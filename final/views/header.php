@@ -10,8 +10,9 @@
     </head>
     <body>
         <header>
-        <!-- Show Landingpage Header if url is not set, url = "index", first open the platform, NOT LOGGED IN-->
+
         <?php if($_GET['url'] === "index" || !isset($_GET['url']) ): ?>
+            <!-- Show Landingpage Header if url is not set, url = "index", first open the platform, NOT LOGGED IN-->
             <div class="fullscreenHeader">
                   <nav class="navbar">
                     <div class="container-fluid">
@@ -36,27 +37,28 @@
               </div>
           <?php endif; ?>
 
-          <!--If User is LoggedIn TODO IF USER IS LOGGED IN, TEMPORARELY ONLY IF PAGE ON TIMELINE AND SO ON  -->
           <?php if($_GET['url'] === "timeline"): ?>
-              <div class="loggedInNavigation">
-                    <nav class="navbar">
-                      <div class="container-fluid">
-                        <h1 class="navbar-brand">
-                          <a href="index">
-                            <img src="public/img/navLogo.svg" alt="Kleinere Version des Logos von Boardcrew." />
-                          </a>
-                        </h1>
-                        <ul class="nav navbar-nav navbar-right">
-                          <li><a class="join-btn" href="#">Join</a></li>
-                          <li><a class="enter-btn" href="#">Enter</a></li>
+
+              <!--If User is LoggedIn TODO IF USER IS LOGGED IN, TEMPORARELY ONLY IF PAGE ON TIMELINE AND SO ON  -->
+                  <nav id="loggedinNav" class="navbar">
+                    <div class="container-fluid">
+                        <ul>
+                            <li id="logo" class="navbar-"></li>
+                            <ul class="navbar-right">
+                                <li id="filter"></li>
+                                <li id="search"></li>
+                                <li id="menu" ></li>
+                            </ul>
                         </ul>
-                      </div>
-                    </nav>
-                </div>
+                    </div>
+                  </nav>
+
+
+
           <?php endif; ?>
 
-          <!--If the View doesn't exists load Error-Page -->
-          <?php if ( !class_exists($_GET['url']) || $_GET['url'] === "error"  ): ?>
+              <?php if ( !class_exists($_GET['url']) || $_GET['url'] === "error"  ): ?>
+              <!--If the View doesn't exists load Error-Page -->
               <div class="fullscreenHeader">
                   <div class="error-page">
                       <div class="error-msg">
