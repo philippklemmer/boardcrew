@@ -121,7 +121,7 @@
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" value="">
-                    Rember me
+                    Remember me
                   </label>
                 </div>
                 <!--Submit-->

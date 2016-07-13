@@ -86,7 +86,7 @@ section{
 }
 
 // Media Queries for Landingpages
-@media screen and (max-width: 570px){
+@media screen and (max-width: 768px){
     #landing-presentation-vid{
         padding: 0 0;
     }
@@ -102,6 +102,13 @@ section{
                 width: 80%;
             }
         }
+    }
+}
+
+@media screen and (max-width: 468px){
+    header .headerBackground img {
+        width: 250px;
+        height: 250px;
     }
 }
 
