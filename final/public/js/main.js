@@ -5,8 +5,8 @@ $(function(){
     function scrollNavigation(){
         // Navigation Change to fixed on Landingpage
         let view = $(window);
-        let navigation = $("header .navbar");
-        let header = $("header").height();
+        let navigation = $(".fullscreenHeader .navbar");
+        let header = $(".fullscreenHeader").height();
 
         let animateNavigationUp = function(){
             navigation.stop().removeClass("navigateFixed");

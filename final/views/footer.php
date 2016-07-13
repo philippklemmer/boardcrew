@@ -1,3 +1,4 @@
+<?php if($_GET['url'] == "index"): ?>
     <!--Footer on the landingpage-->
     <footer>
         <div id="footer-left">
@@ -16,6 +17,6 @@
     <!--Scripts einbinden-->
     <script type="text/javascript" src="public/js/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="public/js/main.js"></script>
-
+<?php endif; ?>
     </body>
 </html>
