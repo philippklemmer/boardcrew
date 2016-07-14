@@ -18,7 +18,6 @@
   overflow:hidden;
   height: 100vh;
   ul{
-    margin-bottom: 50px;
     width: 100%;
     text-align: center;
     display: inline-block;
@@ -78,10 +77,11 @@
     padding: 20px 0 0 30px;
     a{
       display: block;
+      line-height: 52px;
     }
     img{
       width: 100%;
-      height: 100%;
+      height: 25px;
     }
   }
   nav{
@@ -96,6 +96,9 @@
     top:0;
     height: 100vh;
     width: 100%;
+    ul{
+        margin-bottom: 50px;
+    }
     img{
       width: 350px;
       height: 350px;

@@ -5985,7 +5985,6 @@ input {
   overflow: hidden;
   height: 100vh; }
   .fullscreenHeader ul {
-    margin-bottom: 50px;
     width: 100%;
     text-align: center;
     display: inline-block;
@@ -6029,10 +6028,11 @@ input {
     font-size: 30px;
     padding: 20px 0 0 30px; }
     .fullscreenHeader .navbar-brand a {
-      display: block; }
+      display: block;
+      line-height: 52px; }
     .fullscreenHeader .navbar-brand img {
       width: 100%;
-      height: 100%; }
+      height: 25px; }
   .fullscreenHeader nav {
     display: none;
     z-index: 9999; }
@@ -6043,6 +6043,8 @@ input {
     top: 0;
     height: 100vh;
     width: 100%; }
+    .fullscreenHeader .headerBackground ul {
+      margin-bottom: 50px; }
     .fullscreenHeader .headerBackground img {
       width: 350px;
       height: 350px; }
@@ -6309,10 +6311,16 @@ section {
     line-height: 20px; } }
 @media screen and (max-width: 667px) {
   .landing-form-container {
-    padding: 10px; } }
+    padding: 10px; }
+
+  main {
+    border: 1px solid #3b413c; } }
 @media screen and (orientation: landscape) {
   .form-container {
-    overflow: scroll; } }
+    overflow: scroll; }
+
+  main {
+    border: 1px solid #3b413c; } }
 .navigateFixed {
   width: 100%;
   position: fixed;
