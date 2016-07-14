@@ -7,23 +7,19 @@ class Boostrap {
         ini_set("display_errors",1);
         error_reporting(E_ALL);
         // wenn url gesetzt ist, dann gut, wenn nicht setzte sie gleich index
-        $url = isset($_GET['url']) ? $_GET['url'] : $_GET['url']='index';
+        $url = isset($_GET['url']) ? $_GET['url'] : null ;
+        // wenn url leer ist setze url = index
+        $url = empty($url) ? $_GET['url']='index' : $url ;
         $url = rtrim($url, '/');
         $url = explode('/', $url);
-
-
-        // if(empty($url[0]) || !class_exists($url[0]) ){
-        //     require 'controllers/index.php';
-        //     $controller = new Index();
-        //     $controller->index();
-        //     return false;
-        // }
 
         $file = 'controllers/' . $url[0] . '.php';
         if(file_exists($file)){
             require $file;
         }else{
             $this->error();
+            return false;
+            //return false funktioniert nicht in der funktion error
         }
         $controller = new $url[0];
         $controller->loadModel($url[0]);
@@ -52,7 +48,7 @@ class Boostrap {
 
     }
 
-    function error(){
+    public function error(){
         require 'controllers/error.php';
         $controller = new Error();
         $controller->index();

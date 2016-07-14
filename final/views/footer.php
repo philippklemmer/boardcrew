@@ -15,8 +15,8 @@
     </footer>
 
     <!--Scripts einbinden-->
-    <script type="text/javascript" src="public/js/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="public/js/main.js"></script>
+    <script type="text/javascript" src="<?=URL?>public/js/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="<?=URL?>public/js/main.js"></script>
 <?php endif; ?>
     </body>
 </html>

@@ -3,7 +3,7 @@
     <head>
         <title>BoardCrew</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="public/css/main.css"/>
+        <link rel="stylesheet" href="<?=URL ?>public/css/main.css"/>
         <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
         <script src="https://use.typekit.net/wla5xmr.js"></script>
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -35,9 +35,8 @@
                     <img src="public/img/großesLogo.svg" alt="Logo von BoardCrew." />
                   </div>
               </div>
-          <?php endif; ?>
 
-          <?php if($_GET['url'] === "timeline"): ?>
+          <?php elseif($_GET['url'] === "timeline"): ?>
 
               <!--If User is LoggedIn TODO IF USER IS LOGGED IN, TEMPORARELY ONLY IF PAGE ON TIMELINE AND SO ON  -->
                   <nav id="loggedinNav" class="navbar">
@@ -53,12 +52,8 @@
                     </div>
                   </nav>
 
-
-
-          <?php endif; ?>
-
-              <?php if ( !class_exists($_GET['url']) || $_GET['url'] === "error"  ): ?>
-              <!--If the View doesn't exists load Error-Page -->
+          <?php elseif ( !class_exists($_GET['url']) || $_GET['url'] === "error"  ): ?>
+          <!--If the View doesn't exists load Error-Page -->
               <div class="fullscreenHeader">
                   <div class="error-page">
                       <div class="error-msg">
@@ -66,7 +61,7 @@
                           <small>Don't do something dumb like this.</small>
                       </div>
                       <div class="back-to-home-arrow">
-                          <a href="index"></a>
+                          <a href="<?=URL?>index"></a>
                       </div>
                   </div>
               </div>
