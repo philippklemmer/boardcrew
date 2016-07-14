@@ -6051,30 +6051,32 @@ input {
 
 #loggedinNav {
   max-width: 960px;
-  margin: 0 auto;
-  padding-top: 5px;
-  display: block;
-  width: 100%;
-  top: 0;
-  left: 0; }
-  #loggedinNav ul {
-    overflow: hidden;
-    margin: 0 auto; }
-    #loggedinNav ul li {
-      display: inline-block;
-      width: 40px;
-      height: 40px;
-      float: left;
-      margin-right: 20px; }
-      #loggedinNav ul li#menu {
-        background: url("../img/graphics/menu.svg") no-repeat center; }
-      #loggedinNav ul li#logo {
-        width: 200px;
-        background: url("../img/graphics/logologgedin.svg") no-repeat center; }
-      #loggedinNav ul li#filter {
-        background: url("../img/graphics/filter.svg") no-repeat center; }
-      #loggedinNav ul li#search {
-        background: url("../img/graphics/search.svg") no-repeat center; }
+  margin: 0 auto; }
+  #loggedinNav div {
+    z-index: 9999;
+    max-width: 960px;
+    max-height: 50px;
+    position: fixed;
+    padding-top: 5px;
+    width: 100%; }
+    #loggedinNav div ul {
+      overflow: hidden;
+      margin: 0 auto; }
+      #loggedinNav div ul li {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        float: left;
+        margin-right: 20px; }
+        #loggedinNav div ul li#menu {
+          background: url("../img/graphics/menu.svg") no-repeat center; }
+        #loggedinNav div ul li#logo {
+          width: 200px;
+          background: url("../img/graphics/logologgedin.svg") no-repeat center; }
+        #loggedinNav div ul li#filter {
+          background: url("../img/graphics/filter.svg") no-repeat center; }
+        #loggedinNav div ul li#search {
+          background: url("../img/graphics/search.svg") no-repeat center; }
 
 @media screen and (max-device-width: 600px) and (orientation: landscape) {
   header .headerBackground img {
@@ -6321,6 +6323,66 @@ section {
 
   main {
     border: 1px solid #3b413c; } }
+#timelineWrapper {
+  padding-top: 60px;
+  max-width: 600px;
+  margin: 0 auto; }
+  #timelineWrapper section {
+    overflow: hidden;
+    padding: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
+    #timelineWrapper section .contentHeader {
+      margin-bottom: 10px;
+      overflow: hidden; }
+      #timelineWrapper section .contentHeader .profilImg {
+        float: left;
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        background: url("http://placehold.it/80x80") no-repeat center;
+        border-radius: 2.5px; }
+      #timelineWrapper section .contentHeader h4 {
+        float: left;
+        display: inline-block; }
+      #timelineWrapper section .contentHeader .seperator {
+        float: left;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background: url("http://placehold.it/10x10") no-repeat center; }
+      #timelineWrapper section .contentHeader .timeAgo {
+        display: inline-block;
+        float: left; }
+      #timelineWrapper section .contentHeader p {
+        display: inline-block; }
+    #timelineWrapper section .mainContent {
+      overflow: hidden; }
+      #timelineWrapper section .mainContent .vidOrImg {
+        display: block;
+        width: 560px;
+        height: 280px;
+        background: url("http://placehold.it/560x280") no-repeat center;
+        margin-bottom: 10px;
+        border-radius: 2.5px; }
+      #timelineWrapper section .mainContent .likeCountContainer {
+        float: left;
+        display: inline-block; }
+        #timelineWrapper section .mainContent .likeCountContainer .heart {
+          float: left;
+          width: 20px;
+          height: 20px;
+          display: inline-block;
+          background: url("http://placehold.it/20x20") no-repeat center; }
+        #timelineWrapper section .mainContent .likeCountContainer .likeCount {
+          line-height: 20px;
+          float: left;
+          margin-left: 5px; }
+      #timelineWrapper section .mainContent .postTags {
+        line-height: 20px;
+        float: right; }
+
 .navigateFixed {
   width: 100%;
   position: fixed;

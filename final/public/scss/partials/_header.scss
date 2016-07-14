@@ -111,35 +111,39 @@
 #loggedinNav{
     max-width: 960px;
     margin: 0 auto;
-    padding-top: 5px;
-    display: block;
-    width: 100%;
-    top: 0;
-    left: 0;
-    ul{
-        overflow: hidden;
-        margin: 0 auto;
-        li{
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            float: left;
-            margin-right: 20px;
-            &#menu{
-                background: url("../img/graphics/menu.svg") no-repeat center;
-            }
-            &#logo{
-                width: 200px;
-                background: url("../img/graphics/logologgedin.svg") no-repeat center;
-            }
-            &#filter{
-                background: url("../img/graphics/filter.svg") no-repeat center;
-            }
-            &#search{
-                background: url("../img/graphics/search.svg") no-repeat center;
+    div{
+        z-index: 9999;
+        max-width: 960px;
+        max-height: 50px;
+        position: fixed;
+        padding-top: 5px;
+        width: 100%;
+        ul{
+            overflow: hidden;
+            margin: 0 auto;
+            li{
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                float: left;
+                margin-right: 20px;
+                &#menu{
+                    background: url("../img/graphics/menu.svg") no-repeat center;
+                }
+                &#logo{
+                    width: 200px;
+                    background: url("../img/graphics/logologgedin.svg") no-repeat center;
+                }
+                &#filter{
+                    background: url("../img/graphics/filter.svg") no-repeat center;
+                }
+                &#search{
+                    background: url("../img/graphics/search.svg") no-repeat center;
+                }
             }
         }
     }
+
 }
 
 

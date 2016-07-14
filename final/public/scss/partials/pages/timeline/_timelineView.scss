@@ -1,0 +1,73 @@
+#timelineWrapper{
+    padding-top: 60px;
+    max-width: 600px;
+    margin: 0 auto;
+    section{
+        overflow: hidden;
+        padding: 20px;
+        border-radius: 10px;
+        @include box-shadow(-1px 1px 4px 2px rgba(0,0,0,0.5));
+        .contentHeader{
+            margin-bottom: 10px;
+            overflow: hidden;
+            .profilImg{
+                float: left;
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                background: url("http://placehold.it/80x80") no-repeat center;
+                border-radius: 2.5px;
+            }
+            h4{
+                float: left;
+                display: inline-block;
+            }
+            .seperator{
+                float: left;
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                background: url("http://placehold.it/10x10") no-repeat center;
+            }
+            .timeAgo{
+                display: inline-block;
+                float: left;
+            }
+            p{
+                display: inline-block;
+            }
+        }
+        .mainContent{
+            overflow: hidden;
+            .vidOrImg{
+                display: block;
+                width: 560px;
+                height: 280px;
+                background: url("http://placehold.it/560x280") no-repeat center;
+                margin-bottom: 10px;
+                border-radius: 2.5px;
+            }
+            .likeCountContainer{
+                float: left;
+                display: inline-block;
+                .heart{
+                    float: left;
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    background: url("http://placehold.it/20x20") no-repeat center;
+                }
+                .likeCount{
+                    line-height: 20px;
+                    float: left;
+                    margin-left: 5px;
+                }
+            }
+            .postTags{
+                line-height: 20px;
+                float: right;
+            }
+        }
+
+    }
+}
