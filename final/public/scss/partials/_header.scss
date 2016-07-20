@@ -109,18 +109,22 @@
 // STYLE FOR THE LOGGED IN HEADER
 
 #loggedinNav{
-    max-width: 960px;
+    position: fixed;
+    background-color: white;
     margin: 0 auto;
+    width: 100%;
+    @include box-shadow($boxShadow);
     div{
         z-index: 9999;
         max-width: 960px;
         max-height: 50px;
-        position: fixed;
-        padding-top: 5px;
+        padding: 5px 0;
         width: 100%;
+        margin: 0 auto;
         ul{
             overflow: hidden;
             margin: 0 auto;
+            //padding: 0 20px;
             li{
                 display: inline-block;
                 width: 40px;
@@ -139,6 +143,9 @@
                 }
                 &#search{
                     background: url("../img/graphics/search.svg") no-repeat center;
+                }
+                &:last-child{
+                    margin-right: 0;
                 }
             }
         }

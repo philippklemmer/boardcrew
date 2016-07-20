@@ -6050,15 +6050,19 @@ input {
       height: 350px; }
 
 #loggedinNav {
-  max-width: 960px;
-  margin: 0 auto; }
+  position: fixed;
+  background-color: white;
+  margin: 0 auto;
+  width: 100%;
+  -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
   #loggedinNav div {
     z-index: 9999;
     max-width: 960px;
     max-height: 50px;
-    position: fixed;
-    padding-top: 5px;
-    width: 100%; }
+    padding: 5px 0;
+    width: 100%;
+    margin: 0 auto; }
     #loggedinNav div ul {
       overflow: hidden;
       margin: 0 auto; }
@@ -6077,6 +6081,8 @@ input {
           background: url("../img/graphics/filter.svg") no-repeat center; }
         #loggedinNav div ul li#search {
           background: url("../img/graphics/search.svg") no-repeat center; }
+        #loggedinNav div ul li:last-child {
+          margin-right: 0; }
 
 @media screen and (max-device-width: 600px) and (orientation: landscape) {
   header .headerBackground img {
@@ -6326,62 +6332,110 @@ section {
 #timelineWrapper {
   padding-top: 60px;
   max-width: 600px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-size: 1.3rem; }
   #timelineWrapper section {
     overflow: hidden;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
     -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
     box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
-    #timelineWrapper section .contentHeader {
+    #timelineWrapper section .postHeader {
       margin-bottom: 10px;
-      overflow: hidden; }
-      #timelineWrapper section .contentHeader .profilImg {
+      overflow: hidden;
+      font-weight: 300; }
+      #timelineWrapper section .postHeader .profilImg {
         float: left;
         display: inline-block;
-        width: 80px;
-        height: 80px;
-        background: url("http://placehold.it/80x80") no-repeat center;
-        border-radius: 2.5px; }
-      #timelineWrapper section .contentHeader h4 {
-        float: left;
-        display: inline-block; }
-      #timelineWrapper section .contentHeader .seperator {
-        float: left;
-        display: inline-block;
-        width: 10px;
-        height: 10px;
-        background: url("http://placehold.it/10x10") no-repeat center; }
-      #timelineWrapper section .contentHeader .timeAgo {
-        display: inline-block;
+        padding: 5%;
+        background: url("/public/img/testThumnail.png") no-repeat center;
+        background-size: contain;
+        border-radius: 2.5px;
+        margin-right: 2%; }
+      #timelineWrapper section .postHeader .postTextContainer {
+        width: 88%;
         float: left; }
-      #timelineWrapper section .contentHeader p {
-        display: inline-block; }
-    #timelineWrapper section .mainContent {
+        #timelineWrapper section .postHeader .postTextContainer h4 {
+          float: left;
+          display: inline-block; }
+        #timelineWrapper section .postHeader .postTextContainer .circleSeperator {
+          float: left;
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          background-color: #9db5b2;
+          margin: 5px 5px 0 5px; }
+        #timelineWrapper section .postHeader .postTextContainer .timeAgo {
+          display: inline-block;
+          float: left;
+          color: rgba(0, 0, 0, 0.5); }
+        #timelineWrapper section .postHeader .postTextContainer p {
+          display: inline-block; }
+    #timelineWrapper section .postMain {
       overflow: hidden; }
-      #timelineWrapper section .mainContent .vidOrImg {
+      #timelineWrapper section .postMain .vidOrImg {
         display: block;
         width: 560px;
         height: 280px;
-        background: url("http://placehold.it/560x280") no-repeat center;
+        background: url("/public/img/testImg.png") no-repeat center;
+        background-size: cover;
         margin-bottom: 10px;
-        border-radius: 2.5px; }
-      #timelineWrapper section .mainContent .likeCountContainer {
+        border-radius: 5px;
+        margin-bottom: 10px; }
+      #timelineWrapper section .postMain .likeCountContainer {
+        cursor: pointer;
         float: left;
         display: inline-block; }
-        #timelineWrapper section .mainContent .likeCountContainer .heart {
+        #timelineWrapper section .postMain .likeCountContainer .heart {
           float: left;
           width: 20px;
           height: 20px;
           display: inline-block;
-          background: url("http://placehold.it/20x20") no-repeat center; }
-        #timelineWrapper section .mainContent .likeCountContainer .likeCount {
+          background: url("/public/img/buttons/likeButton.svg") no-repeat center; }
+        #timelineWrapper section .postMain .likeCountContainer .likeCount {
           line-height: 20px;
           float: left;
-          margin-left: 5px; }
-      #timelineWrapper section .mainContent .postTags {
+          margin-left: 5px;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase; }
+      #timelineWrapper section .postMain .postTags {
         line-height: 20px;
         float: right; }
+        #timelineWrapper section .postMain .postTags a {
+          margin-left: 2px; }
+          #timelineWrapper section .postMain .postTags a span {
+            font-weight: 800; }
+  #timelineWrapper .menuContainer {
+    text-align: center;
+    margin: 0 auto;
+    border: 1px solid black; }
+    #timelineWrapper .menuContainer .menuHeader {
+      padding: 20px; }
+      #timelineWrapper .menuContainer .menuHeader img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%; }
+    #timelineWrapper .menuContainer .menuMain {
+      overflow: hidden;
+      padding: 10px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+      #timelineWrapper .menuContainer .menuMain p {
+        line-height: 20px; }
+        #timelineWrapper .menuContainer .menuMain p a {
+          overflow: hidden; }
+          #timelineWrapper .menuContainer .menuMain p a span {
+            margin-top: 5px;
+            margin-right: 10px;
+            display: inline-block;
+            width: 20px;
+            height: 20px; }
+            #timelineWrapper .menuContainer .menuMain p a span.userprofileIcon {
+              background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+            #timelineWrapper .menuContainer .menuMain p a span.editProfileIcon {
+              background: url("/public/img/graphics/editProfileIcon.svg") no-repeat center; }
 
 .navigateFixed {
   width: 100%;
