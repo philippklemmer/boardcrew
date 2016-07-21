@@ -78,5 +78,18 @@ $(function(){
 });
 
 //---------LANDINGPAGE  END-------------------------------------------------------------------------------------------
+//---------TIMELINE  START-------------------------------------------------------------------------------------------
+
+/*
+TODO
+Menu -> menuslider also with on smartphones with touchSlides
+using same functions for both slide up and downs
+Filter -> filterSlide down and up
+Search -> searchSlidedown and up
+Logo -> SlideUp to Top
+AddButton -> open Userinterface to add a new post
+LoadingBar -> Animate the loadingbar from left to right, adjusted to the loadingstatus
+*/
+//---------TIMELINE  END-------------------------------------------------------------------------------------------
 
 });

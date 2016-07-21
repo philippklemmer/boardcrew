@@ -117,9 +117,12 @@
             </form>
         </div>
     </div>
-
+<!--TODO adding POSTCONTAINER, -BTN AND LOADINGBAR-->
     <!--Add another Post-->
-    <div class="addPost"></div>
+    <div class="addPostContainer">
+
+    </div>
+    <div class="addPostBtn"></div>
     <!--LoadingBar trought the screen-->
     <div class="loadingBar"></div>
 </div>
