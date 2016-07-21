@@ -24,3 +24,15 @@
     &:hover:-ms-input-placeholder, &:focus:-ms-input-placeholder { @content; }
     &:hover::-webkit-input-placeholder, &:focus::-webkit-input-placeholder { @content; }
 }
+
+@mixin bgIcons($w, $h, $display:"inline-block", $margin:0, $padding:0){
+    width: $w;
+    height: $h;
+    display: $display;
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin backgroundImage($path){
+    background: url("/public/img/#{$path}") no-repeat center;
+}

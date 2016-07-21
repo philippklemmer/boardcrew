@@ -160,6 +160,9 @@ iframe{
 }
 input{
     font-family: $flowingText;
+    &:focus{
+        outline: 0;
+    }
 }
 .form-control:focus {
     border-color: transparent;

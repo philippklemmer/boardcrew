@@ -66,16 +66,22 @@
                 <p class="username">Philipp Klemmer</p>
             </div>
             <div class="menuMain">
-                    <p><a href="#"><span class="userprofileIcon"></span>UserProfile</a></p>
-                    <p><a href="#"><span class="editProfileIcon"></span>UserBackend</a></p>
+                <div>
+                    <p><a href="#"><span class="userprofileIcon"></span>Profile</a></p>
+                    <p><a href="#"><span class="editProfileIcon"></span>Edit</a></p>
+                </div>
+
             </div>
-            <a href="#">Logout</a>
+            <div class="menuFooter">
+                    <a href="#">Logout</a>
+            </div>
+
         </div>
     <!--SearchBar-->
     <!--Using the filterIcons to filter the output given with AJAX-->
     <div class="searchBarContainer">
         <form class="" action="index.html" method="post">
-            <input type="text" name="searchInput" value="Tap here to search...">
+            <input type="text" name="searchInput" value="" placeholder="Tap here to search...">
         </form>
         <div class="userFilterContainer">
             <div class="generalSearchIcon"></div>

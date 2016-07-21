@@ -3,6 +3,7 @@
     max-width: 600px;
     margin: 0 auto;
     font-size: 1.3rem;
+    //posts
     section{
         overflow: hidden;
         padding: 15px;
@@ -92,16 +93,21 @@
         }
 
     }
+    // menu
     .menuContainer{
+        width: 300px;
         text-align: center;
         margin: 0 auto;
         border: 1px solid black;
+        @include box-shadow(-1px 1px 4px 2px rgba(0,0,0,0.5));
+        //border: 1px solid black;
         .menuHeader{
             padding: 20px;
             img{
                 width: 100px;
                 height: 100px;
                 border-radius: 100%;
+                @include box-shadow(-1px 1px 4px 2px rgba(0,0,0,0.5));
             }
         }
         .menuMain{
@@ -109,26 +115,71 @@
             padding: 10px 0;
             border-top: 1px solid $accentFontColor;
             border-bottom: 1px solid $accentFontColor;
-            p{
-                line-height: 20px;
-                a{
-                    overflow: hidden;
-                    span{
-                        margin-top: 5px;
-                        margin-right: 10px;
-                        display: inline-block;
-                        width: 20px;
-                        height: 20px;
-                        &.userprofileIcon{
-                            background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center;
-                        }
-                        &.editProfileIcon{
-                            background: url("/public/img/graphics/editProfileIcon.svg") no-repeat center;
+            div{
+                display: inline-block;
+                text-align: left;
+                p{
+                    line-height: 20px;
+                    a{
+                        overflow: hidden;
+                        span{
+                            @include bgIcons(20px, 20px, inline-block, 5px 10px 0 0);
+                            &.userprofileIcon{
+                                //background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center;
+                                @include backgroundImage("graphics/userprofileIcon.svg");
+                            }
+                            &.editProfileIcon{
+                                @include backgroundImage("graphics/editProfileIcon.svg");
+                            }
                         }
                     }
-                }
 
+                }
             }
+        }
+        .menuFooter{
+            padding: 25px 0;
+            a{
+                color: white;
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: $lightRed;
+            }
+        }
+    }
+    //searchbar
+    .searchBarContainer{
+        width: 100%;
+        input{
+            width: 100%;
+            border: 0;
+            padding: 10px 0;
+            text-align: center;
+            -webkit-appearance: none;
+            background-color: $lightGreen;
+            &:focus{
+                outline: 0;
+                border: 0;
+            }
+        }
+        .userFilterContainer{
+            div{
+                
+                @include bgIcons(20px, 20px, inline-block, 0, 20px);
+                &.generalSearchIcon{
+                    @include backgroundImage("buttons/generelFilterIcon.svg");
+                }
+                &.userSearchIcon{
+                    @include backgroundImage("graphics/userprofileIcon.svg");
+                }
+                &.hashSearchIcon{
+                    @include backgroundImage("buttons/hashFilterIcon.svg");
+                }
+                &.adminSearchIcon{
+                    @include backgroundImage("buttons/adminFilterIcon.svg");
+                }
+            }
+
         }
     }
 

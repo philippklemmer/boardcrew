@@ -5947,6 +5947,8 @@ div.embed-responsive-16by9 {
 
 input {
   font-family: "Paralucent", sans-serif; }
+  input:focus {
+    outline: 0; }
 
 .form-control:focus {
   border-color: transparent;
@@ -6369,7 +6371,7 @@ section {
         #timelineWrapper section .postHeader .postTextContainer .timeAgo {
           display: inline-block;
           float: left;
-          color: rgba(0, 0, 0, 0.5); }
+          color: rgba(0, 0, 0, 0.2); }
         #timelineWrapper section .postHeader .postTextContainer p {
           display: inline-block; }
     #timelineWrapper section .postMain {
@@ -6408,34 +6410,75 @@ section {
           #timelineWrapper section .postMain .postTags a span {
             font-weight: 800; }
   #timelineWrapper .menuContainer {
+    width: 300px;
     text-align: center;
     margin: 0 auto;
-    border: 1px solid black; }
+    border: 1px solid black;
+    -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
     #timelineWrapper .menuContainer .menuHeader {
       padding: 20px; }
       #timelineWrapper .menuContainer .menuHeader img {
         width: 100px;
         height: 100px;
-        border-radius: 100%; }
+        border-radius: 100%;
+        -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+        box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
     #timelineWrapper .menuContainer .menuMain {
       overflow: hidden;
       padding: 10px 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.5);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
-      #timelineWrapper .menuContainer .menuMain p {
-        line-height: 20px; }
-        #timelineWrapper .menuContainer .menuMain p a {
-          overflow: hidden; }
-          #timelineWrapper .menuContainer .menuMain p a span {
-            margin-top: 5px;
-            margin-right: 10px;
-            display: inline-block;
-            width: 20px;
-            height: 20px; }
-            #timelineWrapper .menuContainer .menuMain p a span.userprofileIcon {
-              background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
-            #timelineWrapper .menuContainer .menuMain p a span.editProfileIcon {
-              background: url("/public/img/graphics/editProfileIcon.svg") no-repeat center; }
+      border-top: 1px solid rgba(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+      #timelineWrapper .menuContainer .menuMain div {
+        display: inline-block;
+        text-align: left; }
+        #timelineWrapper .menuContainer .menuMain div p {
+          line-height: 20px; }
+          #timelineWrapper .menuContainer .menuMain div p a {
+            overflow: hidden; }
+            #timelineWrapper .menuContainer .menuMain div p a span {
+              width: 20px;
+              height: 20px;
+              display: inline-block;
+              margin: 5px 10px 0 0;
+              padding: 0; }
+              #timelineWrapper .menuContainer .menuMain div p a span.userprofileIcon {
+                background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+              #timelineWrapper .menuContainer .menuMain div p a span.editProfileIcon {
+                background: url("/public/img/graphics/editProfileIcon.svg") no-repeat center; }
+    #timelineWrapper .menuContainer .menuFooter {
+      padding: 25px 0; }
+      #timelineWrapper .menuContainer .menuFooter a {
+        color: white;
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ef868b; }
+  #timelineWrapper .searchBarContainer {
+    width: 100%; }
+    #timelineWrapper .searchBarContainer input {
+      width: 100%;
+      border: 0;
+      padding: 10px 0;
+      text-align: center;
+      -webkit-appearance: none;
+      background-color: #DAF0EE; }
+      #timelineWrapper .searchBarContainer input:focus {
+        outline: 0;
+        border: 0; }
+    #timelineWrapper .searchBarContainer .userFilterContainer div {
+      width: 20px;
+      height: 20px;
+      display: inline-block;
+      margin: 0;
+      padding: 20px; }
+      #timelineWrapper .searchBarContainer .userFilterContainer div.generalSearchIcon {
+        background: url("/public/img/buttons/generelFilterIcon.svg") no-repeat center; }
+      #timelineWrapper .searchBarContainer .userFilterContainer div.userSearchIcon {
+        background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+      #timelineWrapper .searchBarContainer .userFilterContainer div.hashSearchIcon {
+        background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
+      #timelineWrapper .searchBarContainer .userFilterContainer div.adminSearchIcon {
+        background: url("/public/img/buttons/adminFilterIcon.svg") no-repeat center; }
 
 .navigateFixed {
   width: 100%;
