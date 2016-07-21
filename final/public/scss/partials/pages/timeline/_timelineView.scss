@@ -95,6 +95,7 @@
     }
     // menu
     .menuContainer{
+        display: none;
         width: 300px;
         text-align: center;
         margin: 0 auto;
@@ -123,7 +124,8 @@
                     a{
                         overflow: hidden;
                         span{
-                            @include bgIcons(20px, 20px, inline-block, 5px 10px 0 0);
+                            @include bgIcons(20px, 20px, inline-block);
+                            margin: 5px 10px 0 0;
                             &.userprofileIcon{
                                 //background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center;
                                 @include backgroundImage("graphics/userprofileIcon.svg");
@@ -149,6 +151,7 @@
     }
     //searchbar
     .searchBarContainer{
+        display: none;
         width: 100%;
         input{
             width: 100%;
@@ -163,9 +166,11 @@
             }
         }
         .userFilterContainer{
+            padding: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
             div{
-                
-                @include bgIcons(20px, 20px, inline-block, 0, 20px);
+                margin: 0 10%;
+                @include bgIcons(20px, 20px, inline-block);
                 &.generalSearchIcon{
                     @include backgroundImage("buttons/generelFilterIcon.svg");
                 }
@@ -178,8 +183,56 @@
                 &.adminSearchIcon{
                     @include backgroundImage("buttons/adminFilterIcon.svg");
                 }
+                &:last-child{
+                    margin-right: 0;
+                }
             }
 
+        }
+        .searchResults{
+             background-color: white;
+             p{
+                 padding: 10px 20px;
+                 border-bottom: 1px solid rgba(0,0,0,0.1);
+                 span{
+                     margin-right: 5px;
+                     @include bgIcons(10px, 10px, inline-block);
+                     &.searchHash{
+                         @include backgroundImage("buttons/hashFilterIcon.svg");
+                     }
+                     &.searchUser{
+                         @include backgroundImage("graphics/userprofileIcon.svg");
+                     }
+                 }
+             }
+        }
+    }
+    .generalFilterContainer{
+        display: none;
+        padding: 20px 0;
+        text-align: center;
+        .generalFilter{
+            display: inline-block;
+            overflow: hidden;
+        }
+        p{
+            display: inline-block;
+            float: left;
+            margin-right: 20px;
+        }
+        form{
+            display: inline-block;
+            float: left;
+            label{
+                font-weight: 400;
+                margin-right: 10px;
+                &:last-child{
+                    margin: 0;
+                }
+                input{
+                    margin: 0;
+                }
+            }
         }
     }
 

@@ -7,7 +7,7 @@
     &:-ms-input-placeholder { @content; }
     &::-webkit-input-placeholder { @content; }
 }
-
+//boxshadow
 @mixin box-shadow ($value) {
     -moz-box-shadow: $value;
     -ms-box-shadow: $value;
@@ -17,22 +17,21 @@
 }
 
 // mixin to animate placeholder TODO
-@mixin animate-placeholder {
-    &:hover.placeholder, &:focus.placeholder { @content; }
-    &:hover:-moz-placeholder, &:focus:-moz-placeholder { @content; }
-    &:hover::-moz-placeholder, &:focus::-moz-placeholder { @content; }
-    &:hover:-ms-input-placeholder, &:focus:-ms-input-placeholder { @content; }
-    &:hover::-webkit-input-placeholder, &:focus::-webkit-input-placeholder { @content; }
-}
+// @mixin animate-placeholder {
+//     &:hover.placeholder, &:focus.placeholder { @content; }
+//     &:hover:-moz-placeholder, &:focus:-moz-placeholder { @content; }
+//     &:hover::-moz-placeholder, &:focus::-moz-placeholder { @content; }
+//     &:hover:-ms-input-placeholder, &:focus:-ms-input-placeholder { @content; }
+//     &:hover::-webkit-input-placeholder, &:focus::-webkit-input-placeholder { @content; }
+// }
 
-@mixin bgIcons($w, $h, $display:"inline-block", $margin:0, $padding:0){
+// sizing for backgroundimages
+@mixin bgIcons($w, $h, $display){
     width: $w;
     height: $h;
     display: $display;
-    margin: $margin;
-    padding: $padding;
 }
-
+// use for backgroundImageIcons
 @mixin backgroundImage($path){
     background: url("/public/img/#{$path}") no-repeat center;
 }

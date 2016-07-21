@@ -6410,6 +6410,7 @@ section {
           #timelineWrapper section .postMain .postTags a span {
             font-weight: 800; }
   #timelineWrapper .menuContainer {
+    display: none;
     width: 300px;
     text-align: center;
     margin: 0 auto;
@@ -6440,8 +6441,7 @@ section {
               width: 20px;
               height: 20px;
               display: inline-block;
-              margin: 5px 10px 0 0;
-              padding: 0; }
+              margin: 5px 10px 0 0; }
               #timelineWrapper .menuContainer .menuMain div p a span.userprofileIcon {
                 background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
               #timelineWrapper .menuContainer .menuMain div p a span.editProfileIcon {
@@ -6454,6 +6454,7 @@ section {
         padding: 10px 20px;
         background-color: #ef868b; }
   #timelineWrapper .searchBarContainer {
+    display: none;
     width: 100%; }
     #timelineWrapper .searchBarContainer input {
       width: 100%;
@@ -6465,20 +6466,59 @@ section {
       #timelineWrapper .searchBarContainer input:focus {
         outline: 0;
         border: 0; }
-    #timelineWrapper .searchBarContainer .userFilterContainer div {
-      width: 20px;
-      height: 20px;
+    #timelineWrapper .searchBarContainer .userFilterContainer {
+      padding: 10px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      #timelineWrapper .searchBarContainer .userFilterContainer div {
+        margin: 0 10%;
+        width: 20px;
+        height: 20px;
+        display: inline-block; }
+        #timelineWrapper .searchBarContainer .userFilterContainer div.generalSearchIcon {
+          background: url("/public/img/buttons/generelFilterIcon.svg") no-repeat center; }
+        #timelineWrapper .searchBarContainer .userFilterContainer div.userSearchIcon {
+          background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+        #timelineWrapper .searchBarContainer .userFilterContainer div.hashSearchIcon {
+          background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
+        #timelineWrapper .searchBarContainer .userFilterContainer div.adminSearchIcon {
+          background: url("/public/img/buttons/adminFilterIcon.svg") no-repeat center; }
+        #timelineWrapper .searchBarContainer .userFilterContainer div:last-child {
+          margin-right: 0; }
+    #timelineWrapper .searchBarContainer .searchResults {
+      background-color: white; }
+      #timelineWrapper .searchBarContainer .searchResults p {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+        #timelineWrapper .searchBarContainer .searchResults p span {
+          margin-right: 5px;
+          width: 10px;
+          height: 10px;
+          display: inline-block; }
+          #timelineWrapper .searchBarContainer .searchResults p span.searchHash {
+            background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
+          #timelineWrapper .searchBarContainer .searchResults p span.searchUser {
+            background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+  #timelineWrapper .generalFilterContainer {
+    display: none;
+    padding: 20px 0;
+    text-align: center; }
+    #timelineWrapper .generalFilterContainer .generalFilter {
       display: inline-block;
-      margin: 0;
-      padding: 20px; }
-      #timelineWrapper .searchBarContainer .userFilterContainer div.generalSearchIcon {
-        background: url("/public/img/buttons/generelFilterIcon.svg") no-repeat center; }
-      #timelineWrapper .searchBarContainer .userFilterContainer div.userSearchIcon {
-        background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
-      #timelineWrapper .searchBarContainer .userFilterContainer div.hashSearchIcon {
-        background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
-      #timelineWrapper .searchBarContainer .userFilterContainer div.adminSearchIcon {
-        background: url("/public/img/buttons/adminFilterIcon.svg") no-repeat center; }
+      overflow: hidden; }
+    #timelineWrapper .generalFilterContainer p {
+      display: inline-block;
+      float: left;
+      margin-right: 20px; }
+    #timelineWrapper .generalFilterContainer form {
+      display: inline-block;
+      float: left; }
+      #timelineWrapper .generalFilterContainer form label {
+        font-weight: 400;
+        margin-right: 10px; }
+        #timelineWrapper .generalFilterContainer form label:last-child {
+          margin: 0; }
+        #timelineWrapper .generalFilterContainer form label input {
+          margin: 0; }
 
 .navigateFixed {
   width: 100%;

@@ -91,27 +91,31 @@
             <div class="adminSearchIcon"></div>
         </div>
         <div class="searchResults">
+            <p><span class="searchHash"></span>freestyle</p>
+            <p><span class="searchUser"></span>flipper_skate</p>
             <!--Foreach for SearchResults-->
         </div>
     </div>
 
     <!--FILTERMETHOD-->
     <div class="generalFilterContainer">
-        <p>Sort by:</p>
-        <form class="" action="index.html" method="post">
-            <label for="">
-                <input type="checkbox" name="name" value="">
-                Recent
-            </label>
-            <label for="">
-                <input type="checkbox" name="name" value="">
-                Top
-            </label>
-            <label for="">
-                <input type="checkbox" name="name" value="">
-                Buddies
-            </label>
-        </form>
+        <div class="generalFilter">
+            <p>Sort by:</p>
+            <form class="" action="index.html" method="post">
+                <label for="">
+                    <input type="checkbox" name="name" value="">
+                    Recent
+                </label>
+                <label for="">
+                    <input type="checkbox" name="name" value="">
+                    Top
+                </label>
+                <label for="">
+                    <input type="checkbox" name="name" value="">
+                    Buddies
+                </label>
+            </form>
+        </div>
     </div>
 
     <!--Add another Post-->
