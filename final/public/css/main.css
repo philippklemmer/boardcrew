@@ -6311,7 +6311,8 @@ section {
       display: inline-block;
       margin-bottom: 0; }
   #pw-reset main {
-    padding: 0 40px 20px 40px; }
+    padding: 0 40px 20px 40px;
+    border: 1px solid black; }
 
 @media screen and (max-width: 768px) {
   .landing-form-container {
@@ -6324,13 +6325,26 @@ section {
     padding: 10px; }
 
   main {
-    border: 1px solid #3b413c; } }
+    border: 1px solid #3b413c; }
+
+  #pw-reset .landing-form-container-head {
+    border: 1px solid black;
+    border-bottom: none; }
+  #pw-reset main {
+    border-top: none; } }
 @media screen and (orientation: landscape) {
   .form-container {
     overflow: scroll; }
 
   main {
-    border: 1px solid #3b413c; } }
+    border: 1px solid #3b413c; }
+
+  #pw-reset .landing-form-container-head {
+    border: 1px solid black;
+    border-bottom: none; }
+  #pw-reset main {
+    border: 1px solid black;
+    border-top: none; } }
 #timelineWrapper {
   padding-top: 60px;
   max-width: 600px;

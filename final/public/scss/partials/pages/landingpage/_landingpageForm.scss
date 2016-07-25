@@ -152,6 +152,7 @@
     }
     main{
         padding: 0 40px 20px 40px;
+        border: 1px solid black;
     }
 }
 
@@ -173,6 +174,17 @@
     main{
         border: 1px solid #3b413c;
     }
+
+    #pw-reset{
+        .landing-form-container-head{
+            border: 1px solid black;
+            border-bottom: none;
+        }
+         main{
+             border-top: none;
+         }
+    }
+
 }
 
 @media screen and (orientation: landscape){
@@ -182,4 +194,16 @@
     main{
         border: 1px solid #3b413c;
     }
+
+    #pw-reset{
+        .landing-form-container-head{
+            border: 1px solid black;
+            border-bottom: none;
+        }
+         main{
+             border: 1px solid black;
+             border-top: none;
+         }
+    }
+
 }
