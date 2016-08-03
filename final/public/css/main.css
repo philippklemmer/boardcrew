@@ -6533,6 +6533,28 @@ section {
           margin: 0; }
         #timelineWrapper .generalFilterContainer form label input {
           margin: 0; }
+  #timelineWrapper .addPostContainer {
+    display: block;
+    position: relative; }
+    #timelineWrapper .addPostContainer form {
+      overflow: hidden; }
+      #timelineWrapper .addPostContainer form input {
+        display: block; }
+        #timelineWrapper .addPostContainer form input#postTitle {
+          float: left;
+          width: 90%; }
+      #timelineWrapper .addPostContainer form span {
+        float: left;
+        display: inline-block;
+        width: 10%; }
+      #timelineWrapper .addPostContainer form .postChooseContainer div {
+        float: left;
+        width: 50%;
+        padding: 100px 0;
+        background-color: #2196f3;
+        border: 1px solid black; }
+      #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {
+        float: left; }
 
 .navigateFixed {
   width: 100%;

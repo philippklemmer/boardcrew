@@ -88,6 +88,7 @@ Filter -> filterSlide down and up
 Search -> searchSlidedown and up
 Logo -> SlideUp to Top
 AddButton -> open Userinterface to add a new post
+    -> animate the decisision between img and video url
 LoadingBar -> Animate the loadingbar from left to right, adjusted to the loadingstatus
 */
 //---------TIMELINE  END-------------------------------------------------------------------------------------------

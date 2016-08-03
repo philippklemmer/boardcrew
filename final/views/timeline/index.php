@@ -120,9 +120,34 @@
 <!--TODO adding POSTCONTAINER, -BTN AND LOADINGBAR-->
     <!--Add another Post-->
     <div class="addPostContainer">
+        <form class="" action="index.html" method="post">
+            <input id="postTitle" type="text" name="postTitle" value="" placeholder="Enter your title in here...">
+            <span id="postExitBtn">ExitButton</span>
+            <!-- Choose between Img and Video Url , TODO build js animations -->
+            <div class="postChooseContainer">
+                <div id="chooseImg"></div>
+                <div id="chooseVideoUrl"></div>
+                <!-- Choose between Img and Video Url, display none  -->
+                <input type="file" name="name" value="">
+                <input type="file" name="name" value="">
+                <!--selecting the drivingstyle-->
+            </div>
+            <div class="postChooseMainTags">
+                <p>Choose your style - </p>
+                <input type="checkbox" name="dancingStyle" value="">
+                <label for="dancingStyle">#dancing</label>
+                <input type="checkbox" name="downhillStyle" value="">
+                <label for="downhillStyle">#downhill</label>
+                <input type="checkbox" name="freestyleStyle" value="">
+                <label for="freestyleStyle">#freestyle</label>
+            </div>
 
+            <input type="text" name="addAdditionalTags" value="" placeholder="Add additional tags to your post...">
+            <input type="submit" name="name" value="Post">
+        </form>
     </div>
+    <!--Btn to add another Post for your profile-->
     <div class="addPostBtn"></div>
-    <!--LoadingBar trought the screen-->
+    <!--LoadingBar trought the screen TODO -> adding js for the animation-->
     <div class="loadingBar"></div>
 </div>

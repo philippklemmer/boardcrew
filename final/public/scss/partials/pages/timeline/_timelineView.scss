@@ -237,7 +237,43 @@
     }
     //TODO CREATE AND STYLIES ADDBTN, -CONTAINER AND LOADINGBAR
     .addPostContainer{
+        display: block;
+        position: relative;
+        form{
+            overflow: hidden;
+            input{
+                display: block;
+                &#postTitle{
+                    float: left;
+                    width: 90%;
+                }
+            }
+            span{
+                float: left;
+                display: inline-block;
+                width: 10%;
+            }
+            .postChooseContainer{
+                div{
+                    float: left;
+                    width: 50%;
+                    padding: 100px 0;
+                    background-color: $lightBlue;
+                    border: 1px solid black;
+                    &#chooseImg{
 
+                    }
+                    &#chooseVideoUrl{
+
+                    }
+                }
+            }
+            .postChooseMainTags{
+                p, input, label{
+                    float: left;
+                }
+            }
+        }
     }
     .addPostBtn{
 
