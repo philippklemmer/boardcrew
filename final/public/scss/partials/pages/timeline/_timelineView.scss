@@ -269,9 +269,20 @@
                 }
             }
             .postChooseMainTags{
+                overflow-x: hidden;
                 p, input, label{
                     float: left;
                 }
+            }
+            input[name=addAdditionalTags]{
+                display: block;
+                width: 100%;
+                border: 0;
+                
+            }
+            input[type=submit]{
+                padding: 5px 40px;
+                background-color: $lightBlue;
             }
         }
     }

@@ -6553,8 +6553,17 @@ section {
         padding: 100px 0;
         background-color: #2196f3;
         border: 1px solid black; }
-      #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {
-        float: left; }
+      #timelineWrapper .addPostContainer form .postChooseMainTags {
+        overflow-x: hidden; }
+        #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {
+          float: left; }
+      #timelineWrapper .addPostContainer form input[name=addAdditionalTags] {
+        display: block;
+        width: 100%;
+        border: 0; }
+      #timelineWrapper .addPostContainer form input[type=submit] {
+        padding: 5px 40px;
+        background-color: #2196f3; }
 
 .navigateFixed {
   width: 100%;
