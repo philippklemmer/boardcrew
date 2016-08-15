@@ -6468,7 +6468,7 @@ section {
         padding: 10px 20px;
         background-color: #ef868b; }
   #timelineWrapper .searchBarContainer {
-    display: none;
+    display: hidden;
     width: 100%; }
     #timelineWrapper .searchBarContainer input {
       width: 100%;
@@ -6535,24 +6535,45 @@ section {
           margin: 0; }
   #timelineWrapper .addPostContainer {
     display: block;
-    position: relative; }
+    position: relative;
+    padding: 10px;
+    -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
     #timelineWrapper .addPostContainer form {
       overflow: hidden; }
       #timelineWrapper .addPostContainer form input {
         display: block; }
         #timelineWrapper .addPostContainer form input#postTitle {
           float: left;
-          width: 90%; }
+          width: 90%;
+          margin-bottom: 15px;
+          -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
       #timelineWrapper .addPostContainer form span {
         float: left;
         display: inline-block;
         width: 10%; }
-      #timelineWrapper .addPostContainer form .postChooseContainer div {
-        float: left;
-        width: 50%;
-        padding: 100px 0;
-        background-color: #2196f3;
-        border: 1px solid black; }
+      #timelineWrapper .addPostContainer form .postChooseContainer {
+        display: block;
+        width: 100%; }
+        #timelineWrapper .addPostContainer form .postChooseContainer div {
+          float: left;
+          width: 50%;
+          padding: 100px 0;
+          background-color: #2196f3;
+          border: 1px solid black; }
+          #timelineWrapper .addPostContainer form .postChooseContainer div#chooseImg {
+            width: 50%;
+            height: 100px;
+            display: block;
+            background: url("/public/img/buttons/choosePhoto.svg") no-repeat center;
+            -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
+          #timelineWrapper .addPostContainer form .postChooseContainer div#chooseVideoUrl {
+            background-size: auto;
+            background: url("/public/img/buttons/chooseVideo.svg") no-repeat center;
+            -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
       #timelineWrapper .addPostContainer form .postChooseMainTags {
         overflow-x: hidden; }
         #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {

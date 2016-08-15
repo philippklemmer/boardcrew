@@ -151,7 +151,7 @@
     }
     //searchbar
     .searchBarContainer{
-        display: none;
+        display: hidden;
         width: 100%;
         input{
             width: 100%;
@@ -239,6 +239,8 @@
     .addPostContainer{
         display: block;
         position: relative;
+        padding: 10px;
+        @include box-shadow($boxShadow);
         form{
             overflow: hidden;
             input{
@@ -246,6 +248,8 @@
                 &#postTitle{
                     float: left;
                     width: 90%;
+                    margin-bottom: 15px;
+                    @include box-shadow($boxShadow);
                 }
             }
             span{
@@ -254,6 +258,8 @@
                 width: 10%;
             }
             .postChooseContainer{
+                display: block;
+                width: 100%;
                 div{
                     float: left;
                     width: 50%;
@@ -261,10 +267,15 @@
                     background-color: $lightBlue;
                     border: 1px solid black;
                     &#chooseImg{
-
+                        @include bgIcons(50%, 100px , block);
+                        @include backgroundImage("buttons/choosePhoto.svg");
+                        @include box-shadow($boxShadow);
                     }
                     &#chooseVideoUrl{
-
+                        
+                        background-size: auto;
+                        @include backgroundImage("buttons/chooseVideo.svg");
+                        @include box-shadow($boxShadow);
                     }
                 }
             }
@@ -278,7 +289,7 @@
                 display: block;
                 width: 100%;
                 border: 0;
-                
+
             }
             input[type=submit]{
                 padding: 5px 40px;
