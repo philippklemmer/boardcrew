@@ -50,21 +50,8 @@
                             </ul>
                         </ul>
                     </div>
-                  </nav>
+                  </nav>         
 
-          <?php elseif ( !class_exists($_GET['url']) || $_GET['url'] === "error"  ): ?>
-          <!--If the View doesn't exists load Error-Page -->
-              <div class="fullscreenHeader">
-                  <div class="error-page">
-                      <div class="error-msg">
-                          <h2>Error Page 404</h2>
-                          <small>Don't do something dumb like this.</small>
-                      </div>
-                      <div class="back-to-home-arrow">
-                          <a href="<?=URL?>index"></a>
-                      </div>
-                  </div>
-              </div>
           <?php endif; ?>
 
         </header>
