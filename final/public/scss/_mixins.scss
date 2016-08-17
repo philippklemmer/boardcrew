@@ -24,6 +24,12 @@
 //     &:hover:-ms-input-placeholder, &:focus:-ms-input-placeholder { @content; }
 //     &:hover::-webkit-input-placeholder, &:focus::-webkit-input-placeholder { @content; }
 // }
+@mixin appearance($val) {
+    -webkit-appearance: $val;
+    -moz-appearance: $val;
+    appearance: $val;
+}
+
 
 // sizing for backgroundimages
 @mixin bgIcons($w, $h, $display){

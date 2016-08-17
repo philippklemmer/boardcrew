@@ -13,10 +13,9 @@
             <p>© 2016 Board Crew</p>
         </div>
     </footer>
-
-    <!--Scripts einbinden-->
-    <script type="text/javascript" src="<?=URL?>public/js/jquery-3.0.0.js"></script>
-    <script type="text/javascript" src="<?=URL?>public/js/main.js"></script>
 <?php endif; ?>
+<!--Scripts einbinden-->
+<script type="text/javascript" src="<?=URL?>public/js/jquery-3.0.0.js"></script>
+<script type="text/javascript" src="<?=URL?>public/js/main.js"></script>
     </body>
 </html>

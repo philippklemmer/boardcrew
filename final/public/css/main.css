@@ -6468,7 +6468,7 @@ section {
         padding: 10px 20px;
         background-color: #ef868b; }
   #timelineWrapper .searchBarContainer {
-    display: hidden;
+    display: none;
     width: 100%; }
     #timelineWrapper .searchBarContainer input {
       width: 100%;
@@ -6537,57 +6537,139 @@ section {
     display: block;
     position: relative;
     padding: 10px;
-    -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
-    #timelineWrapper .addPostContainer form {
-      overflow: hidden; }
-      #timelineWrapper .addPostContainer form input {
-        display: block; }
-        #timelineWrapper .addPostContainer form input#postTitle {
-          float: left;
-          width: 90%;
-          margin-bottom: 15px;
-          -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
-      #timelineWrapper .addPostContainer form span {
+    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+    #timelineWrapper .addPostContainer form input {
+      display: block; }
+      #timelineWrapper .addPostContainer form input#postTitle {
         float: left;
-        display: inline-block;
-        width: 10%; }
-      #timelineWrapper .addPostContainer form .postChooseContainer {
-        display: block;
-        width: 100%; }
-        #timelineWrapper .addPostContainer form .postChooseContainer div {
-          float: left;
-          width: 50%;
-          padding: 50px 0;
+        width: calc(95% - 5%);
+        padding: 5px;
+        margin-bottom: 15px;
+        margin-right: 5%;
+        border: 0;
+        -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+        #timelineWrapper .addPostContainer form input#postTitle.placeholder {
+          color: black;
+          font-weight: 300; }
+        #timelineWrapper .addPostContainer form input#postTitle:-moz-placeholder {
+          color: black;
+          font-weight: 300; }
+        #timelineWrapper .addPostContainer form input#postTitle::-moz-placeholder {
+          color: black;
+          font-weight: 300; }
+        #timelineWrapper .addPostContainer form input#postTitle:-ms-input-placeholder {
+          color: black;
+          font-weight: 300; }
+        #timelineWrapper .addPostContainer form input#postTitle::-webkit-input-placeholder {
+          color: black;
+          font-weight: 300; }
+    #timelineWrapper .addPostContainer form #postExitBtn {
+      margin-top: 3px;
+      width: 5%;
+      height: 25px;
+      display: block;
+      background: url("/public/img/buttons/closeButton.svg") no-repeat center; }
+    #timelineWrapper .addPostContainer form span {
+      float: left;
+      display: inline-block;
+      width: 10%; }
+    #timelineWrapper .addPostContainer form .postChooseContainer {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px; }
+      #timelineWrapper .addPostContainer form .postChooseContainer div {
+        position: relative;
+        float: left;
+        width: calc(50% - 2px);
+        padding: 50px 0;
+        margin-right: 2px;
+        -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+        #timelineWrapper .addPostContainer form .postChooseContainer div label {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0; }
+          #timelineWrapper .addPostContainer form .postChooseContainer div label input[type=file] {
+            display: none; }
+        #timelineWrapper .addPostContainer form .postChooseContainer div span {
+          display: block;
           text-align: center;
-          margin: 0 auto;
-          -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
-          #timelineWrapper .addPostContainer form .postChooseContainer div span {
-            float: none;
-            margin: 0 auto; }
-            #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseImg {
-              width: 100px;
-              height: 100px;
-              display: block;
-              background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
-            #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseVideoUrl {
-              width: 100px;
-              height: 100px;
-              display: block;
-              background: url("/public/img/buttons/chooseVideo.svg") no-repeat center; }
-      #timelineWrapper .addPostContainer form .postChooseMainTags {
-        overflow-x: hidden; }
-        #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {
-          float: left; }
-      #timelineWrapper .addPostContainer form input[name=addAdditionalTags] {
-        display: block;
-        width: 100%;
-        border: 0; }
-      #timelineWrapper .addPostContainer form input[type=submit] {
-        padding: 5px 40px;
-        background-color: #2196f3; }
+          float: none;
+          margin: 0 auto; }
+          #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseImg {
+            width: 100px;
+            height: 100px;
+            display: block;
+            background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
+          #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseVideoUrl {
+            width: 80px;
+            height: 100px;
+            display: block;
+            background: url("/public/img/buttons/chooseVideo.svg") no-repeat center; }
+        #timelineWrapper .addPostContainer form .postChooseContainer div input[name="videoUrl"] {
+          display: none; }
+      #timelineWrapper .addPostContainer form .postChooseContainer #swapItem {
+        float: left;
+        width: 5%;
+        height: 25px;
+        display: none;
+        background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center; }
+    #timelineWrapper .addPostContainer form .postChooseMainTags {
+      overflow-x: hidden;
+      margin-bottom: 15px; }
+      #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {
+        float: left; }
+      #timelineWrapper .addPostContainer form .postChooseMainTags div {
+        float: right; }
+        #timelineWrapper .addPostContainer form .postChooseMainTags div input, #timelineWrapper .addPostContainer form .postChooseMainTags div label {
+          margin-right: 4px; }
+        #timelineWrapper .addPostContainer form .postChooseMainTags div input[type="checkbox"] {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          margin-top: 3px; }
+          #timelineWrapper .addPostContainer form .postChooseMainTags div input[type="checkbox"]:focus, #timelineWrapper .addPostContainer form .postChooseMainTags div input[type="checkbox"]:active {
+            outline: none;
+            background-color: #2196f3;
+            border: #2196f3; }
+    #timelineWrapper .addPostContainer form input[name=addAdditionalTags] {
+      display: block;
+      width: 100%;
+      border: 0;
+      padding: 5px;
+      margin-bottom: 15px;
+      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+      #timelineWrapper .addPostContainer form input[name=addAdditionalTags].placeholder {
+        color: black;
+        font-weight: 300; }
+      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]:-moz-placeholder {
+        color: black;
+        font-weight: 300; }
+      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]::-moz-placeholder {
+        color: black;
+        font-weight: 300; }
+      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]:-ms-input-placeholder {
+        color: black;
+        font-weight: 300; }
+      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]::-webkit-input-placeholder {
+        color: black;
+        font-weight: 300; }
+    #timelineWrapper .addPostContainer form input[type=submit] {
+      padding: 5px 40px;
+      background-color: #2196f3;
+      color: white;
+      border: 0;
+      margin: 0 auto; }
 
 .navigateFixed {
   width: 100%;

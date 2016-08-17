@@ -122,24 +122,37 @@
     <div class="addPostContainer">
         <form class="" action="index.html" method="post">
             <input id="postTitle" type="text" name="postTitle" value="" placeholder="Enter your title in here...">
-            <span id="postExitBtn">ExitButton</span>
+            <span id="postExitBtn"></span>
             <!-- Choose between Img and Video Url , TODO build js animations -->
             <div class="postChooseContainer">
-                <div><span id="chooseImg"></span></div>
-                <div><span id="chooseVideoUrl"></span></div>
-                <!-- Choose between Img and Video Url, display none  -->
-                <input type="file" name="name" value="">
-                <input type="file" name="name" value="">
+                <div id="imgContainer">
+                    <label class="custom-file-upload">
+                        <input type="file"/>
+                    </label>
+                    <span id="chooseImg"></span>
+                    <span id="fileInput"></span>
+                </div>
+                <!--Preview Image with js-->
+                <!-- $('your_selector').‌​attr('src', window.URL.createObj‌​ectURL(this.files[0])‌​) -->
+
+                <div id="videoContainer">
+                    <span id="chooseVideoUrl"></span>
+                    <input type="text" name="videoUrl" value="">
+                </div>
+                <!-- if one type is selected then show another icon to swap between these two-->
+                <p id="swapItem"></p>
                 <!--selecting the drivingstyle-->
             </div>
             <div class="postChooseMainTags">
-                <p>Choose your style - </p>
-                <input type="checkbox" name="dancingStyle" value="">
-                <label for="dancingStyle">#dancing</label>
-                <input type="checkbox" name="downhillStyle" value="">
-                <label for="downhillStyle">#downhill</label>
-                <input type="checkbox" name="freestyleStyle" value="">
-                <label for="freestyleStyle">#freestyle</label>
+                <p>Choose your style</p>
+                <div>
+                    <input type="checkbox" name="dancingStyle" value="">
+                    <label for="dancingStyle">#dancing</label>
+                    <input type="checkbox" name="downhillStyle" value="">
+                    <label for="downhillStyle">#downhill</label>
+                    <input type="checkbox" name="freestyleStyle" value="">
+                    <label for="freestyleStyle">#freestyle</label>
+                </div>
             </div>
 
             <input type="text" name="addAdditionalTags" value="" placeholder="Add additional tags to your post...">

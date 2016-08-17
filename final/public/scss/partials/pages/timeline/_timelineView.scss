@@ -151,7 +151,7 @@
     }
     //searchbar
     .searchBarContainer{
-        display: hidden;
+        display: none;
         width: 100%;
         input{
             width: 100%;
@@ -240,17 +240,29 @@
         display: block;
         position: relative;
         padding: 10px;
-        @include box-shadow($boxShadow);
+        @include box-shadow($smoothBoxShadow);
         form{
-            overflow: hidden;
+            //overflow: hidden;
             input{
                 display: block;
                 &#postTitle{
                     float: left;
-                    width: 90%;
+                    width: calc(95% - 5%);
+                    padding: 5px;
                     margin-bottom: 15px;
-                    @include box-shadow($boxShadow);
+                    margin-right: 5%;
+                    border: 0;
+                    @include input-placeholder {
+                        color: black;
+                        font-weight: 300;
+                    }
+                    @include box-shadow($smoothBoxShadow);
                 }
+            }
+            #postExitBtn{
+                margin-top: 3px;
+                @include bgIcons(5%, 25px , block);
+                @include backgroundImage("buttons/closeButton.svg");
             }
             span{
                 float: left;
@@ -258,16 +270,31 @@
                 width: 10%;
             }
             .postChooseContainer{
-                display: block;
+                align-items: center;
+                justify-content: center;
+                display: flex;
                 width: 100%;
+                margin-bottom: 15px;
                 div{
+                    position: relative;
                     float: left;
-                    width: 50%;
+                    width: calc(50% - 2px);
                     padding: 50px 0;
-                    text-align: center;
-                    margin: 0 auto;
-                    @include box-shadow($boxShadow);
+                    margin-right: 2px;
+                    @include box-shadow($smoothBoxShadow);
+                    label{
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        input[type=file]{
+                            display: none;
+                        }
+                    }
                     span{
+                        display: block;
+                        text-align: center;
                         float: none;
                         margin: 0 auto;
                         &#chooseImg{
@@ -275,27 +302,63 @@
                             @include backgroundImage("buttons/choosePhoto.svg");
                         }
                         &#chooseVideoUrl{
-                            @include bgIcons(100px, 100px , block);
+                            @include bgIcons(80px, 100px , block);
                             @include backgroundImage("buttons/chooseVideo.svg");
                         }
                     }
+                    input[name="videoUrl"]{
+                        display: none;
+                    }
+                }
+                #swapItem{
+                    float: left;
+                    @include bgIcons(5%, 25px , none);
+                    @include backgroundImage("buttons/arrow-back-blue.svg");
                 }
             }
             .postChooseMainTags{
                 overflow-x: hidden;
+                margin-bottom: 15px;
                 p, input, label{
                     float: left;
+                }
+                div{
+                    float: right;
+                    input,label{
+                        margin-right: 4px;
+                    }
+                    input[type="checkbox"]{
+                        @include appearance(none);
+                        width: 15px;
+                        height: 15px;
+                        border: 1px solid rgba(0,0,0,0.5);
+                        margin-top: 3px;
+                        &:focus, &:active{
+                            outline: none;
+                            background-color: $lightBlue;
+                            border: $lightBlue;
+                        }
+                    }
                 }
             }
             input[name=addAdditionalTags]{
                 display: block;
                 width: 100%;
                 border: 0;
-
+                padding: 5px;
+                margin-bottom: 15px;
+                @include box-shadow($smoothBoxShadow);
+                @include input-placeholder {
+                    color: black;
+                    font-weight: 300;
+                }
             }
             input[type=submit]{
                 padding: 5px 40px;
                 background-color: $lightBlue;
+                color: white;
+                border: 0;
+                margin: 0 auto;
             }
         }
     }
