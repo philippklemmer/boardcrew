@@ -125,8 +125,8 @@
             <span id="postExitBtn">ExitButton</span>
             <!-- Choose between Img and Video Url , TODO build js animations -->
             <div class="postChooseContainer">
-                <div id="chooseImg"></div>
-                <div id="chooseVideoUrl"></div>
+                <div><span id="chooseImg"></span></div>
+                <div><span id="chooseVideoUrl"></span></div>
                 <!-- Choose between Img and Video Url, display none  -->
                 <input type="file" name="name" value="">
                 <input type="file" name="name" value="">

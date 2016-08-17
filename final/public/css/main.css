@@ -6559,21 +6559,24 @@ section {
         #timelineWrapper .addPostContainer form .postChooseContainer div {
           float: left;
           width: 50%;
-          padding: 100px 0;
-          background-color: #2196f3;
-          border: 1px solid black; }
-          #timelineWrapper .addPostContainer form .postChooseContainer div#chooseImg {
-            width: 50%;
-            height: 100px;
-            display: block;
-            background: url("/public/img/buttons/choosePhoto.svg") no-repeat center;
-            -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
-            box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
-          #timelineWrapper .addPostContainer form .postChooseContainer div#chooseVideoUrl {
-            background-size: auto;
-            background: url("/public/img/buttons/chooseVideo.svg") no-repeat center;
-            -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
-            box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
+          padding: 50px 0;
+          text-align: center;
+          margin: 0 auto;
+          -webkit-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5); }
+          #timelineWrapper .addPostContainer form .postChooseContainer div span {
+            float: none;
+            margin: 0 auto; }
+            #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseImg {
+              width: 100px;
+              height: 100px;
+              display: block;
+              background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
+            #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseVideoUrl {
+              width: 100px;
+              height: 100px;
+              display: block;
+              background: url("/public/img/buttons/chooseVideo.svg") no-repeat center; }
       #timelineWrapper .addPostContainer form .postChooseMainTags {
         overflow-x: hidden; }
         #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {
