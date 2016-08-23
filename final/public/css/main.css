@@ -6052,6 +6052,7 @@ input {
       height: 350px; }
 
 #loggedinNav {
+  z-index: 9999;
   position: fixed;
   background-color: white;
   margin: 0 auto;
@@ -6423,253 +6424,6 @@ section {
           margin-left: 2px; }
           #timelineWrapper section .postMain .postTags a span {
             font-weight: 800; }
-  #timelineWrapper .menuContainer {
-    display: none;
-    width: 300px;
-    text-align: center;
-    margin: 0 auto;
-    border: 1px solid black;
-    -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-    box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
-    #timelineWrapper .menuContainer .menuHeader {
-      padding: 20px; }
-      #timelineWrapper .menuContainer .menuHeader img {
-        width: 100px;
-        height: 100px;
-        border-radius: 100%;
-        -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-        box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
-    #timelineWrapper .menuContainer .menuMain {
-      overflow: hidden;
-      padding: 10px 0;
-      border-top: 1px solid rgba(0, 0, 0, 0.2);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-      #timelineWrapper .menuContainer .menuMain div {
-        display: inline-block;
-        text-align: left; }
-        #timelineWrapper .menuContainer .menuMain div p {
-          line-height: 20px; }
-          #timelineWrapper .menuContainer .menuMain div p a {
-            overflow: hidden; }
-            #timelineWrapper .menuContainer .menuMain div p a span {
-              width: 20px;
-              height: 20px;
-              display: inline-block;
-              margin: 5px 10px 0 0; }
-              #timelineWrapper .menuContainer .menuMain div p a span.userprofileIcon {
-                background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
-              #timelineWrapper .menuContainer .menuMain div p a span.editProfileIcon {
-                background: url("/public/img/graphics/editProfileIcon.svg") no-repeat center; }
-    #timelineWrapper .menuContainer .menuFooter {
-      padding: 25px 0; }
-      #timelineWrapper .menuContainer .menuFooter a {
-        color: white;
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #ef868b; }
-  #timelineWrapper .searchBarContainer {
-    display: none;
-    width: 100%; }
-    #timelineWrapper .searchBarContainer input {
-      width: 100%;
-      border: 0;
-      padding: 10px 0;
-      text-align: center;
-      -webkit-appearance: none;
-      background-color: #DAF0EE; }
-      #timelineWrapper .searchBarContainer input:focus {
-        outline: 0;
-        border: 0; }
-    #timelineWrapper .searchBarContainer .userFilterContainer {
-      padding: 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-      #timelineWrapper .searchBarContainer .userFilterContainer div {
-        margin: 0 10%;
-        width: 20px;
-        height: 20px;
-        display: inline-block; }
-        #timelineWrapper .searchBarContainer .userFilterContainer div.generalSearchIcon {
-          background: url("/public/img/buttons/generelFilterIcon.svg") no-repeat center; }
-        #timelineWrapper .searchBarContainer .userFilterContainer div.userSearchIcon {
-          background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
-        #timelineWrapper .searchBarContainer .userFilterContainer div.hashSearchIcon {
-          background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
-        #timelineWrapper .searchBarContainer .userFilterContainer div.adminSearchIcon {
-          background: url("/public/img/buttons/adminFilterIcon.svg") no-repeat center; }
-        #timelineWrapper .searchBarContainer .userFilterContainer div:last-child {
-          margin-right: 0; }
-    #timelineWrapper .searchBarContainer .searchResults {
-      background-color: white; }
-      #timelineWrapper .searchBarContainer .searchResults p {
-        padding: 10px 20px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
-        #timelineWrapper .searchBarContainer .searchResults p span {
-          margin-right: 5px;
-          width: 10px;
-          height: 10px;
-          display: inline-block; }
-          #timelineWrapper .searchBarContainer .searchResults p span.searchHash {
-            background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
-          #timelineWrapper .searchBarContainer .searchResults p span.searchUser {
-            background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
-  #timelineWrapper .generalFilterContainer {
-    display: none;
-    padding: 20px 0;
-    text-align: center; }
-    #timelineWrapper .generalFilterContainer .generalFilter {
-      display: inline-block;
-      overflow: hidden; }
-    #timelineWrapper .generalFilterContainer p {
-      display: inline-block;
-      float: left;
-      margin-right: 20px; }
-    #timelineWrapper .generalFilterContainer form {
-      display: inline-block;
-      float: left; }
-      #timelineWrapper .generalFilterContainer form label {
-        font-weight: 400;
-        margin-right: 10px; }
-        #timelineWrapper .generalFilterContainer form label:last-child {
-          margin: 0; }
-        #timelineWrapper .generalFilterContainer form label input {
-          margin: 0; }
-  #timelineWrapper .addPostContainer {
-    display: block;
-    position: relative;
-    padding: 10px;
-    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-    #timelineWrapper .addPostContainer form input {
-      display: block; }
-      #timelineWrapper .addPostContainer form input#postTitle {
-        float: left;
-        width: calc(95% - 5%);
-        padding: 5px;
-        margin-bottom: 15px;
-        margin-right: 5%;
-        border: 0;
-        -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-        box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-        #timelineWrapper .addPostContainer form input#postTitle.placeholder {
-          color: black;
-          font-weight: 300; }
-        #timelineWrapper .addPostContainer form input#postTitle:-moz-placeholder {
-          color: black;
-          font-weight: 300; }
-        #timelineWrapper .addPostContainer form input#postTitle::-moz-placeholder {
-          color: black;
-          font-weight: 300; }
-        #timelineWrapper .addPostContainer form input#postTitle:-ms-input-placeholder {
-          color: black;
-          font-weight: 300; }
-        #timelineWrapper .addPostContainer form input#postTitle::-webkit-input-placeholder {
-          color: black;
-          font-weight: 300; }
-    #timelineWrapper .addPostContainer form #postExitBtn {
-      margin-top: 3px;
-      width: 5%;
-      height: 25px;
-      display: block;
-      background: url("/public/img/buttons/closeButton.svg") no-repeat center; }
-    #timelineWrapper .addPostContainer form span {
-      float: left;
-      display: inline-block;
-      width: 10%; }
-    #timelineWrapper .addPostContainer form .postChooseContainer {
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      width: 100%;
-      margin-bottom: 15px; }
-      #timelineWrapper .addPostContainer form .postChooseContainer div {
-        position: relative;
-        float: left;
-        width: calc(50% - 2px);
-        padding: 50px 0;
-        margin-right: 2px;
-        -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-        box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-        #timelineWrapper .addPostContainer form .postChooseContainer div label {
-          width: 100%;
-          height: 100%;
-          position: absolute;
-          top: 0;
-          left: 0; }
-          #timelineWrapper .addPostContainer form .postChooseContainer div label input[type=file] {
-            display: none; }
-        #timelineWrapper .addPostContainer form .postChooseContainer div span {
-          display: block;
-          text-align: center;
-          float: none;
-          margin: 0 auto; }
-          #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseImg {
-            width: 100px;
-            height: 100px;
-            display: block;
-            background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
-          #timelineWrapper .addPostContainer form .postChooseContainer div span#chooseVideoUrl {
-            width: 80px;
-            height: 100px;
-            display: block;
-            background: url("/public/img/buttons/chooseVideo.svg") no-repeat center; }
-        #timelineWrapper .addPostContainer form .postChooseContainer div input[name="videoUrl"] {
-          display: none; }
-      #timelineWrapper .addPostContainer form .postChooseContainer #swapItem {
-        float: left;
-        width: 5%;
-        height: 25px;
-        display: none;
-        background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center; }
-    #timelineWrapper .addPostContainer form .postChooseMainTags {
-      overflow-x: hidden;
-      margin-bottom: 15px; }
-      #timelineWrapper .addPostContainer form .postChooseMainTags p, #timelineWrapper .addPostContainer form .postChooseMainTags input, #timelineWrapper .addPostContainer form .postChooseMainTags label {
-        float: left; }
-      #timelineWrapper .addPostContainer form .postChooseMainTags div {
-        float: right; }
-        #timelineWrapper .addPostContainer form .postChooseMainTags div input, #timelineWrapper .addPostContainer form .postChooseMainTags div label {
-          margin-right: 4px; }
-        #timelineWrapper .addPostContainer form .postChooseMainTags div input[type="checkbox"] {
-          -webkit-appearance: none;
-          -moz-appearance: none;
-          appearance: none;
-          width: 15px;
-          height: 15px;
-          border: 1px solid rgba(0, 0, 0, 0.5);
-          margin-top: 3px; }
-          #timelineWrapper .addPostContainer form .postChooseMainTags div input[type="checkbox"]:focus, #timelineWrapper .addPostContainer form .postChooseMainTags div input[type="checkbox"]:active {
-            outline: none;
-            background-color: #2196f3;
-            border: #2196f3; }
-    #timelineWrapper .addPostContainer form input[name=addAdditionalTags] {
-      display: block;
-      width: 100%;
-      border: 0;
-      padding: 5px;
-      margin-bottom: 15px;
-      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-      #timelineWrapper .addPostContainer form input[name=addAdditionalTags].placeholder {
-        color: black;
-        font-weight: 300; }
-      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]:-moz-placeholder {
-        color: black;
-        font-weight: 300; }
-      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]::-moz-placeholder {
-        color: black;
-        font-weight: 300; }
-      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]:-ms-input-placeholder {
-        color: black;
-        font-weight: 300; }
-      #timelineWrapper .addPostContainer form input[name=addAdditionalTags]::-webkit-input-placeholder {
-        color: black;
-        font-weight: 300; }
-    #timelineWrapper .addPostContainer form input[type=submit] {
-      padding: 5px 40px;
-      background-color: #2196f3;
-      color: white;
-      border: 0;
-      margin: 0 auto; }
 
 .navigateFixed {
   width: 100%;
@@ -6695,5 +6449,295 @@ section {
         margin-left: 0; }
       .navigateFixed ul li a {
         letter-spacing: 2px; }
+
+.securityCheck {
+  position: absolute;
+  top: calc(50% - 26px);
+  left: calc(50% - 125px);
+  width: 250px;
+  text-align: center;
+  border-radius: 2.5px;
+  background-color: white;
+  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+  .securityCheck h4 {
+    padding: 20px 10px;
+    font-size: 1.4rem; }
+  .securityCheck div {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    padding: 10px 0; }
+    .securityCheck div a {
+      color: white; }
+    .securityCheck div a:hover {
+      text-decoration: none; }
+    .securityCheck div.resetEntrys {
+      background-color: #ef868b; }
+    .securityCheck div.stayWithEntrys {
+      background-color: #2196f3; }
+
+.menuContainer {
+  display: block;
+  position: absolute;
+  left: -300px;
+  margin-top: 50px;
+  width: 300px;
+  text-align: center;
+  border: 1px solid black;
+  -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+  box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
+  .menuContainer .menuHeader {
+    padding: 20px; }
+    .menuContainer .menuHeader img {
+      width: 100px;
+      height: 100px;
+      border-radius: 100%;
+      -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+      box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
+  .menuContainer .menuMain {
+    overflow: hidden;
+    padding: 10px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+    .menuContainer .menuMain div {
+      display: inline-block;
+      text-align: left; }
+      .menuContainer .menuMain div p {
+        line-height: 20px; }
+        .menuContainer .menuMain div p a {
+          overflow: hidden; }
+          .menuContainer .menuMain div p a span {
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            margin: 5px 10px 0 0; }
+            .menuContainer .menuMain div p a span.userprofileIcon {
+              background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+            .menuContainer .menuMain div p a span.editProfileIcon {
+              background: url("/public/img/graphics/editProfileIcon.svg") no-repeat center; }
+  .menuContainer .menuFooter {
+    padding: 25px 0; }
+    .menuContainer .menuFooter a {
+      color: white;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ef868b; }
+
+.searchBarContainer {
+  display: none;
+  width: 100%; }
+  .searchBarContainer input {
+    width: 100%;
+    border: 0;
+    padding: 10px 0;
+    text-align: center;
+    -webkit-appearance: none;
+    background-color: #DAF0EE; }
+    .searchBarContainer input:focus {
+      outline: 0;
+      border: 0; }
+  .searchBarContainer .userFilterContainer {
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+    .searchBarContainer .userFilterContainer div {
+      margin: 0 10%;
+      width: 20px;
+      height: 20px;
+      display: inline-block; }
+      .searchBarContainer .userFilterContainer div.generalSearchIcon {
+        background: url("/public/img/buttons/generelFilterIcon.svg") no-repeat center; }
+      .searchBarContainer .userFilterContainer div.userSearchIcon {
+        background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+      .searchBarContainer .userFilterContainer div.hashSearchIcon {
+        background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
+      .searchBarContainer .userFilterContainer div.adminSearchIcon {
+        background: url("/public/img/buttons/adminFilterIcon.svg") no-repeat center; }
+      .searchBarContainer .userFilterContainer div:last-child {
+        margin-right: 0; }
+  .searchBarContainer .searchResults {
+    background-color: white; }
+    .searchBarContainer .searchResults p {
+      padding: 10px 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      .searchBarContainer .searchResults p span {
+        margin-right: 5px;
+        width: 10px;
+        height: 10px;
+        display: inline-block; }
+        .searchBarContainer .searchResults p span.searchHash {
+          background: url("/public/img/buttons/hashFilterIcon.svg") no-repeat center; }
+        .searchBarContainer .searchResults p span.searchUser {
+          background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
+
+.generalFilterContainer {
+  display: none;
+  padding: 20px 0;
+  text-align: center; }
+  .generalFilterContainer .generalFilter {
+    display: inline-block;
+    overflow: hidden; }
+  .generalFilterContainer p {
+    display: inline-block;
+    float: left;
+    margin-right: 20px; }
+  .generalFilterContainer form {
+    display: inline-block;
+    float: left; }
+    .generalFilterContainer form label {
+      font-weight: 400;
+      margin-right: 10px; }
+      .generalFilterContainer form label:last-child {
+        margin: 0; }
+      .generalFilterContainer form label input {
+        margin: 0; }
+
+.addPostContainer {
+  display: none;
+  position: relative;
+  padding: 10px;
+  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+  .addPostContainer form input {
+    display: block; }
+    .addPostContainer form input.postTitle {
+      float: left;
+      width: calc(95% - 5%);
+      padding: 5px;
+      margin-bottom: 15px;
+      margin-right: 5%;
+      border: 0;
+      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+      .addPostContainer form input.postTitle.placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input.postTitle:-moz-placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input.postTitle::-moz-placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input.postTitle:-ms-input-placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input.postTitle::-webkit-input-placeholder {
+        color: black;
+        font-weight: 300; }
+  .addPostContainer form .postExitBtn {
+    margin-top: 3px;
+    width: 5%;
+    height: 25px;
+    display: block;
+    background: url("/public/img/buttons/closeButton.svg") no-repeat center; }
+  .addPostContainer form span {
+    float: left;
+    display: inline-block;
+    width: 10%; }
+  .addPostContainer form .postChooseContainer {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    margin-bottom: 15px; }
+    .addPostContainer form .postChooseContainer div {
+      position: relative;
+      float: left;
+      width: calc(50% - 2.5%);
+      padding: 50px 0;
+      margin-right: 2.5%;
+      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+      .addPostContainer form .postChooseContainer div.videoContainer {
+        margin-right: 0;
+        margin-left: 2.5%; }
+        .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive {
+          display: none;
+          text-align: center;
+          box-shadow: none;
+          padding: 0; }
+          .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive input {
+            margin: 0 auto; }
+      .addPostContainer form .postChooseContainer div label {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .addPostContainer form .postChooseContainer div label input[type=file] {
+          display: none; }
+      .addPostContainer form .postChooseContainer div span {
+        display: block;
+        text-align: center;
+        float: none;
+        margin: 0 auto; }
+        .addPostContainer form .postChooseContainer div span.chooseImg {
+          width: 100px;
+          height: 100px;
+          display: block;
+          background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
+        .addPostContainer form .postChooseContainer div span.chooseVideoUrl {
+          width: 80px;
+          height: 100px;
+          display: block;
+          background: url("/public/img/buttons/chooseVideo.svg") no-repeat center; }
+        .addPostContainer form .postChooseContainer div span.fileInput {
+          width: 100%; }
+    .addPostContainer form .postChooseContainer .swapItem {
+      float: left;
+      width: 5%;
+      height: 25px;
+      display: none;
+      background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center; }
+  .addPostContainer form .postChooseMainTags {
+    overflow-x: hidden;
+    margin-bottom: 15px; }
+    .addPostContainer form .postChooseMainTags p, .addPostContainer form .postChooseMainTags input, .addPostContainer form .postChooseMainTags label {
+      float: left; }
+    .addPostContainer form .postChooseMainTags div {
+      float: right; }
+      .addPostContainer form .postChooseMainTags div input, .addPostContainer form .postChooseMainTags div label {
+        margin-right: 4px; }
+      .addPostContainer form .postChooseMainTags div input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 15px;
+        height: 15px;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        margin-top: 3px; }
+        .addPostContainer form .postChooseMainTags div input[type="radio"]:checked {
+          outline: none;
+          background-color: #2196f3;
+          border: #2196f3; }
+  .addPostContainer form input[name=addAdditionalTags] {
+    display: block;
+    width: 100%;
+    border: 0;
+    padding: 5px;
+    margin-bottom: 15px;
+    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+    .addPostContainer form input[name=addAdditionalTags].placeholder {
+      color: black;
+      font-weight: 300; }
+    .addPostContainer form input[name=addAdditionalTags]:-moz-placeholder {
+      color: black;
+      font-weight: 300; }
+    .addPostContainer form input[name=addAdditionalTags]::-moz-placeholder {
+      color: black;
+      font-weight: 300; }
+    .addPostContainer form input[name=addAdditionalTags]:-ms-input-placeholder {
+      color: black;
+      font-weight: 300; }
+    .addPostContainer form input[name=addAdditionalTags]::-webkit-input-placeholder {
+      color: black;
+      font-weight: 300; }
+  .addPostContainer form input[type=submit] {
+    padding: 5px 40px;
+    background-color: #2196f3;
+    color: white;
+    border: 0;
+    margin: 0 auto; }
 
 /*# sourceMappingURL=main.css.map */

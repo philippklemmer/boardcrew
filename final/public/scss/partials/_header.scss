@@ -109,6 +109,7 @@
 // STYLE FOR THE LOGGED IN HEADER
 
 #loggedinNav{
+    z-index: 9999;
     position: fixed;
     background-color: white;
     margin: 0 auto;
@@ -150,6 +151,7 @@
             }
         }
     }
+    
 
 }
 
