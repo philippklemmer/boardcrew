@@ -47,7 +47,7 @@ $(function(){
 
     // FUNCTION FOR THE ELEMENT TO HIDE AND SHOW
     let showHideLanding = function ($target, $targetHide = null , $targetShow = null){
-        $target.on("click touch tap", function(e){
+        $target.on("click touch", function(e){
             e.preventDefault();
             if($targetHide !== "null"){
                 $targetHide.hide();
@@ -111,7 +111,7 @@ $(function(){
         inputFile($(this));
     });
     //swapItem = Blue Arrow
-    swapItem.on("click tap", function(){
+    swapItem.on("click touch", function(){
         rebootInterface();
     });
     // Funktion zum zeigen und verstecken der ausgwählten elemente
@@ -205,7 +205,7 @@ $(function(){
     }
     // checking if the alertbox return true or false
     let timelineSaftyQuery = function(successFunction, failFunction){
-        $(".securityCheck").children().on("click tap", function(){
+        $(".securityCheck").children().on("click touch", function(){
             event.preventDefault();
             if($(this)[0].innerText == "Yes"){
                 successFunction();
@@ -215,7 +215,7 @@ $(function(){
         });
     }
     // hide the ADDPOSTCONTAINER
-    $(".postExitBtn").on("click tap", function(){
+    $(".postExitBtn").on("click touch", function(){
         addPostContainer.hide();
     });
 
@@ -234,7 +234,7 @@ $(function(){
         menuContainer = $(".menuContainer");
     //scroll back to top
     let scrollToTopOrIndex = function ($click){
-        $click.on("click tap", function(){
+        $click.on("click touch", function(){
             event.preventDefault();
             if(view.scrollTop() > 0){
         		$('body,html').animate({
@@ -259,7 +259,7 @@ $(function(){
 
     let hideShowOptions = function($action, $linkContainer){
         flag = 0;
-        $action.on("click tap", function(){
+        $action.on("click touch", function(){
             if(flag !== 1){
                 $linkContainer.show();
                 flag = 1;
@@ -274,7 +274,8 @@ $(function(){
 
     let swipeMenu = function (){
         flag = 0;
-        menuBtn.on("click tap", function(){
+        menuBtn.on("click touch", function(e){
+            console.log(e);
             if(flag == 0){
                 flag++
                 menuContainer.css({display: "block"});
