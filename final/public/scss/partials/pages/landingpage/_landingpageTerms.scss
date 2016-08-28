@@ -1,0 +1,68 @@
+//Privacy of Terms + Terms of Service
+
+.termsContainer{
+    display: block;
+    visibility: hidden;
+    z-index: 10;
+    opacity: 0;
+    position: fixed;
+    overflow: scroll;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    div{
+        overflow: scroll;
+        height: 100vh;
+        width: 80%;
+        margin: 0 auto;
+        padding: 50px 0;
+        .hideTerms{
+            margin: 0 auto;
+            @include backgroundImage("buttons/arrow-back-blue.svg");
+            @include bgIcons(75px, 75px, block);
+        }
+        h2{
+            font-size: 2rem;
+            font-family: $mainFontFamily;
+        }
+        hr{
+            border-top: 1px solid black;
+            margin-top: 10px;
+        }
+        h3{
+            margin-top: 10px;
+            font-size: 1.5rem;
+            font-family: $mainFontFamily;
+        }
+        p, strong, ul{
+            margin: 10px 0 5px;
+            font-family: $flowingText;
+            font-size: 1.15rem;
+        }
+
+        strong{
+            font-weight: 400;
+            margin: 10px 0 5px;
+            display: block;
+        }
+
+        ul{
+            list-style: inside;
+            li{
+                font-weight: 300;
+                padding-left: 15px;
+                margin-bottom: 5px;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+    }
+    &.termShow{
+        opacity:1;
+        visibility: visible;
+        z-index: 9999;
+    }
+}

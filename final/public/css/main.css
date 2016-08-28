@@ -5890,12 +5890,30 @@ input, select {
   vertical-align: middle; }
 
 html {
-  font-size: 10px; }
+  font-size: 10px;
+  background-color: white; }
   html body {
-    margin: 0 !important; }
+    margin: 0 !important;
+    background-color: rgba(0, 0, 0, 0.24); }
 
 img {
   pointer-events: none; }
+
+.radioprefix, .generalFilterContainer form {
+  float: right; }
+  .radioprefix input, .generalFilterContainer form input, .radioprefix label, .generalFilterContainer form label {
+    margin-right: 4px; }
+  .radioprefix input[type="radio"], .generalFilterContainer form input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.5); }
+    .radioprefix input[type="radio"]:checked, .generalFilterContainer form input[type="radio"]:checked {
+      outline: none;
+      background-color: #2196f3;
+      border: #2196f3; }
 
 .navbar {
   margin: 0;
@@ -5982,7 +6000,7 @@ input {
 .fullscreenHeader {
   position: relative;
   font-family: "Prohibition", "Oswald", sans-serif;
-  background: url("../img/startseitenbild.png") no-repeat center;
+  background: url("/public/img/startseitenbild.png") no-repeat center;
   background-size: cover;
   overflow: hidden;
   height: 100vh; }
@@ -6015,7 +6033,7 @@ input {
       display: inline-block;
       width: 160px;
       height: 120px;
-      background: url("../img/buttons/arrow-back-blue.svg") no-repeat center;
+      background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center;
       background-size: cover; }
     .fullscreenHeader .error-page .error-msg {
       margin-bottom: 20px;
@@ -6037,13 +6055,13 @@ input {
       height: 25px; }
   .fullscreenHeader nav {
     display: none;
-    z-index: 9999; }
+    z-index: 20; }
   .fullscreenHeader .headerBackground {
     position: absolute;
     z-index: 0;
     left: 0;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%; }
     .fullscreenHeader .headerBackground ul {
       margin-bottom: 50px; }
@@ -6076,14 +6094,14 @@ input {
         float: left;
         margin-right: 20px; }
         #loggedinNav div ul li#menu {
-          background: url("../img/graphics/menu.svg") no-repeat center; }
+          background: url("/public/img/graphics/menu.svg") no-repeat center; }
         #loggedinNav div ul li#logo {
           width: 200px;
-          background: url("../img/graphics/logologgedin.svg") no-repeat center; }
+          background: url("/public/img/graphics/logologgedin.svg") no-repeat center; }
         #loggedinNav div ul li#filter {
-          background: url("../img/graphics/filter.svg") no-repeat center; }
+          background: url("/public/img/graphics/filter.svg") no-repeat center; }
         #loggedinNav div ul li#search {
-          background: url("../img/graphics/search.svg") no-repeat center; }
+          background: url("/public/img/graphics/search.svg") no-repeat center; }
         #loggedinNav div ul li:last-child {
           margin-right: 0; }
 
@@ -6091,6 +6109,12 @@ input {
   header .headerBackground img {
     width: 200px;
     height: 200px; } }
+@media screen and (max-width: 400px) {
+  #loggedinNav div ul {
+    padding: 0 10px; }
+    #loggedinNav div ul li#logo {
+      width: 100px;
+      background: url("/public/img/littleLogoPlus.svg") no-repeat center; } }
 footer {
   font-family: "Prohibition", "Oswald", sans-serif;
   overflow: hidden;
@@ -6102,13 +6126,12 @@ footer {
     float: left;
     color: rgba(59, 65, 60, 0.5); }
   footer #footer-left p {
+    cursor: pointer;
     margin-right: 20px; }
     footer #footer-left p:last-child {
       margin-right: auto; }
-    footer #footer-left p a {
-      text-decoration: none; }
-      footer #footer-left p a:hover {
-        color: #3b413c; }
+    footer #footer-left p:hover {
+      color: #3b413c; }
   footer #footer-right {
     float: right; }
 
@@ -6118,6 +6141,7 @@ footer {
   margin: 0 auto; }
 
 section {
+  background-color: white;
   overflow: hidden;
   font-family: "Paralucent", sans-serif; }
 
@@ -6186,7 +6210,7 @@ section {
 .form-container {
   width: 100%;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
   right: 0;
@@ -6205,6 +6229,7 @@ section {
       display: block;
       text-align: center; }
       .form-container .landing-form-container small a {
+        color: white;
         font-size: 1.25rem;
         font-family: "Paralucent", sans-serif; }
         .form-container .landing-form-container small a:hover, .form-container .landing-form-container small a:active {
@@ -6346,8 +6371,62 @@ section {
   #pw-reset main {
     border: 1px solid black;
     border-top: none; } }
+.termsContainer {
+  display: block;
+  visibility: hidden;
+  z-index: 10;
+  opacity: 0;
+  position: fixed;
+  overflow: scroll;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; }
+  .termsContainer div {
+    overflow: scroll;
+    height: 100vh;
+    width: 80%;
+    margin: 0 auto;
+    padding: 50px 0; }
+    .termsContainer div .hideTerms {
+      margin: 0 auto;
+      background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center;
+      width: 75px;
+      height: 75px;
+      display: block; }
+    .termsContainer div h2 {
+      font-size: 2rem;
+      font-family: "Prohibition", "Oswald", sans-serif; }
+    .termsContainer div hr {
+      border-top: 1px solid black;
+      margin-top: 10px; }
+    .termsContainer div h3 {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      font-family: "Prohibition", "Oswald", sans-serif; }
+    .termsContainer div p, .termsContainer div strong, .termsContainer div ul {
+      margin: 10px 0 5px;
+      font-family: "Paralucent", sans-serif;
+      font-size: 1.15rem; }
+    .termsContainer div strong {
+      font-weight: 400;
+      margin: 10px 0 5px;
+      display: block; }
+    .termsContainer div ul {
+      list-style: inside; }
+      .termsContainer div ul li {
+        font-weight: 300;
+        padding-left: 15px;
+        margin-bottom: 5px; }
+        .termsContainer div ul li:last-child {
+          margin-bottom: 0; }
+  .termsContainer.termShow {
+    opacity: 1;
+    visibility: visible;
+    z-index: 9999; }
+
 #timelineWrapper {
-  padding-top: 60px;
+  padding-top: 70px;
   max-width: 600px;
   margin: 0 auto;
   font-size: 1.3rem; }
@@ -6356,6 +6435,7 @@ section {
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 20px;
+    background-color: white;
     -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
     box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
     #timelineWrapper section .postHeader {
@@ -6425,6 +6505,19 @@ section {
           #timelineWrapper section .postMain .postTags a span {
             font-weight: 800; }
 
+@media screen and (max-width: 500px) {
+  #timelineWrapper section {
+    border-radius: 0; }
+    #timelineWrapper section .postMain .vidOrImg {
+      width: 300px;
+      height: 150px;
+      margin: 0 auto; } }
+.showHide {
+  -webkit-transition: top 300ms ease-in-out 0s;
+  -moz-transition: top 300ms ease-in-out 0s;
+  -o-transition: top 300ms ease-in-out 0s;
+  transition: top 300ms ease-in-out 0s; }
+
 .navigateFixed {
   width: 100%;
   position: fixed;
@@ -6480,21 +6573,30 @@ section {
 .menuContainer {
   display: block;
   position: fixed;
-  left: -300px;
+  left: -302px;
   margin-top: 50px;
-  width: 300px;
+  width: 250px;
   text-align: center;
+  padding: 25px 0;
   border: 1px solid black;
+  background-color: white;
   -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
+  box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
+  -webkit-transition: left 300ms ease-in-out 0s;
+  -moz-transition: left 300ms ease-in-out 0s;
+  -o-transition: left 300ms ease-in-out 0s;
+  transition: left 300ms ease-in-out 0s; }
+  .menuContainer.toggleSide {
+    left: 0px; }
   .menuContainer .menuHeader {
-    padding: 20px; }
+    padding: 20px 0; }
     .menuContainer .menuHeader img {
       width: 100px;
       height: 100px;
+      margin-bottom: 15px;
       border-radius: 100%;
-      -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-      box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
+      -webkit-box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.5);
+      box-shadow: -1px 1px 10px 1px rgba(0, 0, 0, 0.5); }
   .menuContainer .menuMain {
     overflow: hidden;
     padding: 10px 0;
@@ -6525,9 +6627,15 @@ section {
       background-color: #ef868b; }
 
 .searchBarContainer {
-  display: none;
+  position: fixed;
+  top: -35px;
+  background-color: white;
+  display: block;
   width: 100%; }
+  .searchBarContainer.toggleUp {
+    top: 50px; }
   .searchBarContainer input {
+    font-size: 1.5rem;
     width: 100%;
     border: 0;
     padding: 10px 0;
@@ -6571,9 +6679,18 @@ section {
           background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
 
 .generalFilterContainer {
-  display: none;
-  padding: 20px 0;
-  text-align: center; }
+  top: 0px;
+  width: 100%;
+  position: fixed;
+  padding: 13px 0;
+  font-size: 1.4rem;
+  text-align: center;
+  background-color: white;
+  font-family: "Paralucent", sans-serif;
+  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+  .generalFilterContainer.toggleUp {
+    top: 50px; }
   .generalFilterContainer .generalFilter {
     display: inline-block;
     overflow: hidden; }
@@ -6593,151 +6710,202 @@ section {
         margin: 0; }
 
 .addPostContainer {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  position: relative;
-  padding: 10px;
-  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-  .addPostContainer form input {
-    display: block; }
-    .addPostContainer form input.postTitle {
-      float: left;
-      width: calc(95% - 5%);
-      padding: 5px;
-      margin-bottom: 15px;
-      margin-right: 5%;
-      border: 0;
-      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-      .addPostContainer form input.postTitle.placeholder {
-        color: black;
-        font-weight: 300; }
-      .addPostContainer form input.postTitle:-moz-placeholder {
-        color: black;
-        font-weight: 300; }
-      .addPostContainer form input.postTitle::-moz-placeholder {
-        color: black;
-        font-weight: 300; }
-      .addPostContainer form input.postTitle:-ms-input-placeholder {
-        color: black;
-        font-weight: 300; }
-      .addPostContainer form input.postTitle::-webkit-input-placeholder {
-        color: black;
-        font-weight: 300; }
-  .addPostContainer form .postExitBtn {
-    margin-top: 3px;
-    width: 5%;
-    height: 25px;
-    display: block;
-    background: url("/public/img/buttons/closeButton.svg") no-repeat center; }
-  .addPostContainer form span {
-    float: left;
-    display: inline-block;
-    width: 10%; }
-  .addPostContainer form .postChooseContainer {
-    align-items: center;
-    justify-content: center;
-    display: flex;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0; }
+  .addPostContainer form {
+    padding: 20px;
     width: 100%;
-    margin-bottom: 15px; }
-    .addPostContainer form .postChooseContainer div {
-      position: relative;
-      float: left;
-      width: calc(50% - 2.5%);
-      padding: 50px 0;
-      margin-right: 2.5%;
-      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-      .addPostContainer form .postChooseContainer div.videoContainer {
-        margin-right: 0;
-        margin-left: 2.5%; }
-        .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive {
-          display: none;
-          text-align: center;
-          box-shadow: none;
-          padding: 0; }
-          .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive input {
-            margin: 0 auto; }
-      .addPostContainer form .postChooseContainer div label {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0; }
-        .addPostContainer form .postChooseContainer div label input[type=file] {
-          display: none; }
-      .addPostContainer form .postChooseContainer div span {
-        display: block;
-        text-align: center;
-        float: none;
-        margin: 0 auto; }
-        .addPostContainer form .postChooseContainer div span.chooseImg {
-          width: 100px;
-          height: 100px;
-          display: block;
-          background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
-        .addPostContainer form .postChooseContainer div span.chooseVideoUrl {
-          width: 80px;
-          height: 100px;
-          display: block;
-          background: url("/public/img/buttons/chooseVideo.svg") no-repeat center; }
-        .addPostContainer form .postChooseContainer div span.fileInput {
-          width: 100%; }
-    .addPostContainer form .postChooseContainer .swapItem {
-      float: left;
+    max-width: 600px;
+    background-color: white;
+    top: calc(50% - 185px);
+    left: calc(50% - 300px);
+    position: fixed;
+    -webkit-box-shadow: -1px 1px 1px, rgba(255, 255, 255, 0.8);
+    box-shadow: -1px 1px 1px, rgba(255, 255, 255, 0.8); }
+    .addPostContainer form input {
+      display: block; }
+      .addPostContainer form input.postTitle {
+        float: left;
+        width: calc(95% - 5%);
+        padding: 5px;
+        margin-bottom: 15px;
+        margin-right: 5%;
+        border: 0;
+        -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+        .addPostContainer form input.postTitle.placeholder {
+          color: black;
+          font-weight: 300; }
+        .addPostContainer form input.postTitle:-moz-placeholder {
+          color: black;
+          font-weight: 300; }
+        .addPostContainer form input.postTitle::-moz-placeholder {
+          color: black;
+          font-weight: 300; }
+        .addPostContainer form input.postTitle:-ms-input-placeholder {
+          color: black;
+          font-weight: 300; }
+        .addPostContainer form input.postTitle::-webkit-input-placeholder {
+          color: black;
+          font-weight: 300; }
+    .addPostContainer form .postExitBtn {
+      margin-top: 3px;
       width: 5%;
       height: 25px;
-      display: none;
-      background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center; }
-  .addPostContainer form .postChooseMainTags {
-    overflow-x: hidden;
-    margin-bottom: 15px; }
-    .addPostContainer form .postChooseMainTags p, .addPostContainer form .postChooseMainTags input, .addPostContainer form .postChooseMainTags label {
-      float: left; }
+      display: block;
+      background: url("/public/img/buttons/closeButton.svg") no-repeat center; }
+    .addPostContainer form span {
+      float: left;
+      display: inline-block;
+      width: 10%; }
+    .addPostContainer form .postChooseContainer {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      width: 100%;
+      margin-bottom: 15px; }
+      .addPostContainer form .postChooseContainer div {
+        position: relative;
+        float: left;
+        width: calc(50% - 2.5%);
+        padding: 50px 0;
+        margin-right: 2.5%;
+        -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+        box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+        .addPostContainer form .postChooseContainer div.videoContainer {
+          margin-right: 0;
+          margin-left: 2.5%; }
+          .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive {
+            display: none;
+            text-align: center;
+            box-shadow: none;
+            padding: 0; }
+            .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive input {
+              margin: 0 auto;
+              border: 1px solid rgba(0, 0, 0, 0.1); }
+        .addPostContainer form .postChooseContainer div label {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0; }
+          .addPostContainer form .postChooseContainer div label input[type=file] {
+            display: none; }
+        .addPostContainer form .postChooseContainer div span {
+          display: block;
+          text-align: center;
+          float: none;
+          margin: 0 auto; }
+          .addPostContainer form .postChooseContainer div span.chooseImg {
+            width: 100px;
+            height: 100px;
+            display: block;
+            background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
+          .addPostContainer form .postChooseContainer div span.chooseVideoUrl {
+            width: 80px;
+            height: 100px;
+            display: block;
+            background: url("/public/img/buttons/chooseVideo.svg") no-repeat center; }
+          .addPostContainer form .postChooseContainer div span.fileInput {
+            width: 100%; }
+      .addPostContainer form .postChooseContainer .swapItem {
+        float: left;
+        width: 5%;
+        height: 25px;
+        display: none;
+        background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center; }
+    .addPostContainer form .postChooseMainTags {
+      overflow-x: hidden;
+      margin-bottom: 15px;
+      line-height: 18px; }
+      .addPostContainer form .postChooseMainTags p, .addPostContainer form .postChooseMainTags input, .addPostContainer form .postChooseMainTags label {
+        float: left; }
+      .addPostContainer form .postChooseMainTags div {
+        float: right; }
+        .addPostContainer form .postChooseMainTags div input, .addPostContainer form .postChooseMainTags div label {
+          margin-right: 4px; }
+        .addPostContainer form .postChooseMainTags div input[type="radio"] {
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          width: 15px;
+          height: 15px;
+          border: 1px solid rgba(0, 0, 0, 0.5);
+          margin-top: 3px; }
+          .addPostContainer form .postChooseMainTags div input[type="radio"]:checked {
+            outline: none;
+            background-color: #2196f3;
+            border: #2196f3; }
+    .addPostContainer form input[name=addAdditionalTags] {
+      display: block;
+      width: 100%;
+      border: 0;
+      padding: 5px;
+      margin-bottom: 15px;
+      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+      .addPostContainer form input[name=addAdditionalTags].placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input[name=addAdditionalTags]:-moz-placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input[name=addAdditionalTags]::-moz-placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input[name=addAdditionalTags]:-ms-input-placeholder {
+        color: black;
+        font-weight: 300; }
+      .addPostContainer form input[name=addAdditionalTags]::-webkit-input-placeholder {
+        color: black;
+        font-weight: 300; }
+    .addPostContainer form input[type=submit] {
+      padding: 5px 40px;
+      background-color: #2196f3;
+      color: white;
+      border: 0;
+      margin: 0 auto; }
+
+.addPostBtn {
+  position: fixed;
+  left: calc(50% - 25px);
+  bottom: 5px;
+  cursor: pointer;
+  border-radius: 100%;
+  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  width: 50px;
+  height: 50px;
+  display: block;
+  background: url("/public/img/buttons/addButton.svg") no-repeat center; }
+
+@media screen and (max-width: 600px) {
+  .addPostContainer form {
+    width: 400px;
+    left: calc(50% - 200px); }
+    .addPostContainer form .postChooseContainer div {
+      padding: 25px 0; } }
+@media screen and (max-width: 400px) {
+  .addPostContainer form {
+    width: 300px;
+    left: calc(50% - 150px); }
+    .addPostContainer form .postChooseContainer div {
+      padding: 15px 0; }
+    .addPostContainer form .postChooseMainTags p {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 5px; }
     .addPostContainer form .postChooseMainTags div {
-      float: right; }
-      .addPostContainer form .postChooseMainTags div input, .addPostContainer form .postChooseMainTags div label {
-        margin-right: 4px; }
-      .addPostContainer form .postChooseMainTags div input[type="radio"] {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        width: 15px;
-        height: 15px;
-        border: 1px solid rgba(0, 0, 0, 0.5);
-        margin-top: 3px; }
-        .addPostContainer form .postChooseMainTags div input[type="radio"]:checked {
-          outline: none;
-          background-color: #2196f3;
-          border: #2196f3; }
-  .addPostContainer form input[name=addAdditionalTags] {
-    display: block;
-    width: 100%;
-    border: 0;
-    padding: 5px;
-    margin-bottom: 15px;
-    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-    .addPostContainer form input[name=addAdditionalTags].placeholder {
-      color: black;
-      font-weight: 300; }
-    .addPostContainer form input[name=addAdditionalTags]:-moz-placeholder {
-      color: black;
-      font-weight: 300; }
-    .addPostContainer form input[name=addAdditionalTags]::-moz-placeholder {
-      color: black;
-      font-weight: 300; }
-    .addPostContainer form input[name=addAdditionalTags]:-ms-input-placeholder {
-      color: black;
-      font-weight: 300; }
-    .addPostContainer form input[name=addAdditionalTags]::-webkit-input-placeholder {
-      color: black;
-      font-weight: 300; }
-  .addPostContainer form input[type=submit] {
-    padding: 5px 40px;
-    background-color: #2196f3;
-    color: white;
-    border: 0;
-    margin: 0 auto; }
+      float: none;
+      margin: 0 auto;
+      display: block;
+      width: 80%; } }
 
 /*# sourceMappingURL=main.css.map */

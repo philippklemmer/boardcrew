@@ -41,3 +41,11 @@
 @mixin backgroundImage($path){
     background: url("/public/img/#{$path}") no-repeat center;
 }
+
+// prefixes for other browsers
+@mixin transitionPrefix($value, $time) {
+    -webkit-transition: $value $time ease-in-out 0s;
+	-moz-transition: $value $time ease-in-out 0s;
+	-o-transition: $value $time ease-in-out 0s;
+    transition: $value $time ease-in-out 0s;
+}

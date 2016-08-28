@@ -1,4 +1,8 @@
 // Classes for javascript for animations
+.showHide{
+    @include transitionPrefix(top, 300ms);
+}
+
 
 .navigateFixed{
     width: 100%;
@@ -69,25 +73,31 @@
     }
 }
 
-
 // menu
 .menuContainer{
     display: block;
     position: fixed;
-    left: -300px;
+    left: -302px;
     margin-top: 50px;
-    width: 300px;
+    width: 250px;
     text-align: center;
+    padding: 25px 0;
     border: 1px solid black;
+    background-color: white;
     @include box-shadow(-1px 1px 4px 2px rgba(0,0,0,0.5));
+    @include transitionPrefix(left, 300ms);
     //border: 1px solid black;
+    &.toggleSide{
+        left: 0px;
+    }
     .menuHeader{
-        padding: 20px;
+        padding: 20px 0;
         img{
             width: 100px;
             height: 100px;
+            margin-bottom: 15px;
             border-radius: 100%;
-            @include box-shadow(-1px 1px 4px 2px rgba(0,0,0,0.5));
+            @include box-shadow(-1px 1px 10px 1px rgba(0, 0, 0, 0.5));
         }
     }
     .menuMain{
@@ -130,9 +140,16 @@
 }
 //searchbar
 .searchBarContainer{
-    display: none;
+    position: fixed;
+    top: -35px;
+    background-color: white;
+    display: block;
     width: 100%;
+    &.toggleUp{
+        top: 50px;
+    }
     input{
+        font-size: 1.5rem;
         width: 100%;
         border: 0;
         padding: 10px 0;
@@ -187,9 +204,18 @@
     }
 }
 .generalFilterContainer{
-    display: none;
-    padding: 20px 0;
+    top: 0px;
+    width: 100%;
+    position: fixed;
+    padding: 13px 0;
+    font-size: 1.4rem;
     text-align: center;
+    background-color: white;
+    font-family: $flowingText;
+    @include box-shadow($smoothBoxShadow);
+    &.toggleUp{
+        top: 50px;
+    }
     .generalFilter{
         display: inline-block;
         overflow: hidden;
@@ -202,6 +228,7 @@
     form{
         display: inline-block;
         float: left;
+        @extend .radioprefix;
         label{
             font-weight: 400;
             margin-right: 10px;
@@ -216,12 +243,24 @@
 }
 //TODO CREATE AND STYLIES ADDBTN, -CONTAINER AND LOADINGBAR
 .addPostContainer{
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    position: relative;
-    padding: 10px;
-    @include box-shadow($smoothBoxShadow);
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
     form{
-        //overflow: hidden;
+        padding: 20px;
+        width: 100%;
+        max-width: 600px;
+        background-color: white;
+        top: calc(50% - 185px);
+        left: calc(50% - 300px);
+        position: fixed;
+        @include box-shadow(-1px 1px 1px, rgba(255,255,255,0.8));
         input{
             display: block;
             &.postTitle{
@@ -271,6 +310,7 @@
                         padding: 0;
                         input{
                             margin: 0 auto;
+                            border: 1px solid rgba(0,0,0,0.1)
                         }
                     }
                 }
@@ -311,6 +351,7 @@
         .postChooseMainTags{
             overflow-x: hidden;
             margin-bottom: 15px;
+            line-height: 18px;
             p, input, label{
                 float: left;
             }
@@ -355,8 +396,48 @@
     }
 }
 .addPostBtn{
-
+    position: fixed;
+    left: calc(50% - 25px);
+    bottom: 5px;
+    cursor: pointer;
+    border-radius: 100%;
+    @include box-shadow($smoothBoxShadow);
+    @include bgIcons(50px, 50px, block);
+    @include backgroundImage("buttons/addButton.svg");
 }
 .loadingBard{
 
+}
+
+@media screen and (max-width: 600px) {
+    .addPostContainer form{
+        width: 400px;
+        left: calc(50% - 200px);
+        .postChooseContainer div{
+            padding: 25px 0;
+        }
+    }
+}
+@media screen and (max-width: 400px) {
+    .addPostContainer form{
+        width: 300px;
+        left: calc(50% - 150px);
+        .postChooseContainer div{
+            padding: 15px 0;
+        }
+        .postChooseMainTags{
+
+            p{
+                width: 100%;
+                text-align: center;
+                margin-bottom: 5px;
+            }
+            div{
+                float:none;
+                margin: 0 auto;
+                display: block;
+                width: 80%;
+            }
+        }
+    }
 }

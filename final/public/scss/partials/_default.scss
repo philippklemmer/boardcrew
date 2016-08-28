@@ -95,13 +95,34 @@ input, select {
 
 html{
   font-size: 10px;
+  background-color: white;
   body{
       margin: 0 !important;
+      background-color: $bodyBackgroundColor;
   }
 }
 img{
   pointer-events: none;
 }
+// Rewrite for input type = radiobuttons
+.radioprefix{
+    float: right;
+    input,label{
+        margin-right: 4px;
+    }
+    input[type="radio"]{
+        @include appearance(none);
+        width: 15px;
+        height: 15px;
+        border: 1px solid rgba(0,0,0,0.5);
+        &:checked{
+            outline: none;
+            background-color: $lightBlue;
+            border: $lightBlue;
+        }
+    }
+}
+
 //Bootsrap rewrite
 
 .navbar{

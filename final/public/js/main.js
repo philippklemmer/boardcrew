@@ -71,16 +71,21 @@ $(function(){
     //show LoginViewagain
     showHideLanding(backToLogin, pwResetContainer, loginContainer);
 
-    //hide if clicked out of div
-    $(document).mouseup(function (e){
-        let container = $(".landing-form-container");
+    //showing Terms of us and Privacy Terms
+    var privacyBtn = $("#privacy"),
+        termBtn = $("#termsOfUse"),
+        privacyBackBtn = $("#privac.termsContainer") ,
+        termsBackBtn = $("#term.termsContainer");
 
-        if (!container.is(e.target) && container.has(e.target).length === 0){
-            registerContainer.hide();
-            loginContainer.hide();
-            pwResetContainer.hide();
-        }
-    });
+
+    let showHideTerms = function($btn, $secondBtn,$element){
+
+        $btn.add($secondBtn).on("click touch", function(){
+            $element.toggleClass('termShow');
+        });
+    }
+    showHideTerms(privacyBtn, privacyBackBtn, privacyBackBtn);
+    showHideTerms(termBtn, termsBackBtn, termsBackBtn);
 
 //---------LANDINGPAGE  END-------------------------------------------------------------------------------------------
 //---------TIMELINE  START-------------------------------------------------------------------------------------------
@@ -215,9 +220,19 @@ $(function(){
         });
     }
     // hide the ADDPOSTCONTAINER
+    addPostBtn = $(".addPostBtn")
+    //show addPostContainer
+    addPostBtn.on("click touch", function(){
+        addPostContainer.show();
+    });
+
+    //Hide Element if the clode button gets clicked or somewhere around the box -> see also 287+
     $(".postExitBtn").on("click touch", function(){
         addPostContainer.hide();
     });
+
+
+
 
 // ADDPOSTCONTAINER IMAGE/VIDEO URL SHOW/HIDE START -------------------------------------------------------------------------------------------
 
@@ -257,54 +272,71 @@ $(function(){
     //timeline scroll top
     scrollToTopOrIndex(logo);
 
-    let hideShowOptions = function($action, $linkContainer){
-        flag = 0;
-        $action.on("click touch", function(){
-            if(flag !== 1){
-                $linkContainer.show();
-                flag = 1;
-            }else{
-                $linkContainer.hide();
-                flag = 0;
-            }
-
+    // Animations On/Off Toggling CSS§ Transition
+    let onOffAnimation = function($controller, $movedObject, $class){
+        $controller.on("click touch", function(){
+            $movedObject.toggleClass($class);
         });
     }
-    hideShowOptions(filterBtn, filterContainer);
+    // Logged Filter & Searchbar
+    onOffAnimation(filterBtn, filterContainer, "toggleUp");
+    onOffAnimation(searchBtn, searchContainer, "toggleUp");
+    // Logged Menu
+    onOffAnimation(menuBtn, menuContainer, "toggleSide");
 
-    let swipeMenu = function (){
-        flag = 0;
-        menuBtn.on("click touch", function(e){
-            console.log(e);
-            if(flag == 0){
-                flag++
-                menuContainer.css({display: "block"});
-                menuContainer.stop().animate({
-                    "left": "0px"
-                },500);
-            }else{
-                flag--
-                menuContainer.stop().animate({
-                    "left": "-" + menuContainer.outerWidth()
-                },500);
-                menuContainer.css({display: "block"});
-            }
-        });
-    }
-    swipeMenu();
+
+
+
 
 
 /*
 TODO
-Menu -> menuslider also with on smartphones with touchSlides
-using same functions for both slide up and downs
-Filter -> filterSlide down and up
-Search -> searchSlidedown and up
-Logo -> SlideUp to Top
-AddButton -> open Userinterface to add a new post
-    -> animate the decisision between img and video url
 LoadingBar -> Animate the loadingbar from left to right, adjusted to the loadingstatus
 */
 //---------TIMELINE  END-------------------------------------------------------------------------------------------
+//---------Additional Elements belong to each side Start-------------------------------------------------------------------------------------------
+
+// Hiding Elements if the user clicks outside the box
+//hide if clicked out of div
+$(document).mouseup(function (e){
+    let container = $(".landing-form-container");
+    let addPostContainerForm = $(".addPostContainer form");
+
+    //IndexFormular
+    if (!container.is(e.target) && container.has(e.target).length === 0){
+        registerContainer.hide();
+        loginContainer.hide();
+        pwResetContainer.hide();
+    }
+    // AddPostContainer -> TODO -> doesnt work with these conditions
+    if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0){
+        addPostContainer.hide();
+    }
+    //Function to hide elements triggering with buttons
+    /*
+        $input -> Object itself
+        $classCheck -> togglingClass for CSS3 Animation
+        $input -> the button can also be used to close the object
+    */
+    var hideingOutOfBox = function ($input, classCheck, $btnCheck ){
+        if($input.hasClass(classCheck)){
+            if($btnCheck.is(e.target)){
+                $input.toggleClass(classCheck);
+            }
+            if (!$input.is(e.target) && $input.has(e.target).length === 0 ){
+                $input.toggleClass(classCheck);
+            }
+        }
+    }
+    //Menu
+    hideingOutOfBox(menuContainer, "toggleSide", menuBtn);
+    //Searchbar
+    hideingOutOfBox(searchContainer, "toggleUp", searchBtn);
+    // Filterbar
+    hideingOutOfBox(filterContainer, "toggleUp", filterBtn);
+
+});
+
+
 
 });

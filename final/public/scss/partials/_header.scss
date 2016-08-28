@@ -13,7 +13,7 @@
 .fullscreenHeader{
   position: relative;
   font-family: $mainFontFamily;
-  background: url("../img/startseitenbild.png") no-repeat center;
+  @include backgroundImage("startseitenbild.png");
   background-size: cover;
   overflow:hidden;
   height: 100vh;
@@ -54,7 +54,7 @@
               display: inline-block;
               width: 160px;
               height: 120px;
-              background: url("../img/buttons/arrow-back-blue.svg") no-repeat center;
+              @include backgroundImage("buttons/arrow-back-blue.svg");
               background-size: cover;
           }
 
@@ -86,7 +86,7 @@
   }
   nav{
     display: none;
-    z-index: 9999;
+    z-index: 20;
   }
   .headerBackground{
     @extend .flexboxContainer;
@@ -94,7 +94,7 @@
     z-index: 0;
     left: 0;
     top:0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     ul{
         margin-bottom: 50px;
@@ -133,17 +133,17 @@
                 float: left;
                 margin-right: 20px;
                 &#menu{
-                    background: url("../img/graphics/menu.svg") no-repeat center;
+                    @include backgroundImage("graphics/menu.svg");
                 }
                 &#logo{
                     width: 200px;
-                    background: url("../img/graphics/logologgedin.svg") no-repeat center;
+                    @include backgroundImage("graphics/logologgedin.svg");
                 }
                 &#filter{
-                    background: url("../img/graphics/filter.svg") no-repeat center;
+                    @include backgroundImage("graphics/filter.svg");
                 }
                 &#search{
-                    background: url("../img/graphics/search.svg") no-repeat center;
+                    @include backgroundImage("graphics/search.svg");
                 }
                 &:last-child{
                     margin-right: 0;
@@ -151,7 +151,7 @@
             }
         }
     }
-    
+
 
 }
 
@@ -161,5 +161,15 @@
     header .headerBackground img{
         width: 200px;
         height: 200px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    #loggedinNav div ul {
+        padding: 0 10px;
+        li#logo{
+            width: 100px;
+            background: url("/public/img/littleLogoPlus.svg") no-repeat center;
+        }
     }
 }

@@ -2,18 +2,15 @@
     <!--Footer on the landingpage-->
     <footer>
         <div id="footer-left">
-            <p>
-                <a href="#">Privacy</a>
-            </p>
-            <p>
-                <a href="#">Terms</a>
-            </p>
+            <p id="privacy">Privacy</p>
+            <p id="termsOfUse">Terms</p>
         </div>
         <div id="footer-right">
             <p>© 2016 Board Crew</p>
         </div>
     </footer>
-<?php elseif($_GET['url'] == "timeline"): ?>
+<?php elseif($_GET['url'] == "timeline" || $_GET['url'] == "profil" || $_GET['url'] == "timeline"): ?>
+
 
     <!--Add another Post-->
     <div class="addPostContainer">
