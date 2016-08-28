@@ -26,7 +26,7 @@
                 <a href="#"><span>#</span>dancing</a>,
             </div>
         </div>
-    </section >
+    </section>
     <section>
         <div class="postHeader">
             <div class="profilImg"></div>

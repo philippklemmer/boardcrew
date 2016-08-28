@@ -36,7 +36,7 @@
                   </div>
               </div>
 
-          <?php elseif($_GET['url'] === "timeline"): ?>
+          <?php elseif($_GET['url'] === "timeline" || $_GET['url'] === "userprofile" ): ?>
 
               <!--If User is LoggedIn TODO IF USER IS LOGGED IN, TEMPORARELY ONLY IF PAGE ON TIMELINE AND SO ON  -->
                   <nav id="loggedinNav" class="navbar">
