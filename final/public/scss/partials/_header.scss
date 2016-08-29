@@ -72,12 +72,11 @@
       }
   }
   .navbar-brand{
-    display: none;
+    display: inline-block;
     font-size: 30px;
     padding: 20px 0 0 30px;
     a{
       display: block;
-      line-height: 52px;
     }
     img{
       width: 100%;

@@ -107,10 +107,16 @@ section{
 }
 
 @media screen and (max-width: 468px){
+    .fullscreenHeader .headerBackground img {
+        width: 300px;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 300px){
     header .headerBackground img {
         width: 250px;
         height: 250px;
     }
 }
-
 // Style for LandingpagePoup => _landingpageForm.scss

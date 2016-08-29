@@ -14,8 +14,8 @@
         <?php if($_GET['url'] === "index" || !isset($_GET['url']) ): ?>
             <!-- Show Landingpage Header if url is not set, url = "index", first open the platform, NOT LOGGED IN-->
             <div class="fullscreenHeader">
-                  <nav class="navbar">
-                    <div class="container-fluid">
+                  <nav>
+                    <div>
                       <h1 class="navbar-brand">
                         <a id="indexLogoSmall" href="index">
                           <img src="public/img/navLogo.svg" alt="Kleinere Version des Logos von Boardcrew." />

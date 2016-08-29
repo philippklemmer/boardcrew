@@ -15,6 +15,7 @@
                 <input type="submit" name="followBtn" value="Follow">
             </form>
         </div>
+        <!-- additionalInformationsContainer only showing if the user has enter the informations-->
         <div class="additionalInfomartionsContainer">
             <span class="selfDecidingArrow">ArrowDown</span>
             <div class="additionalInformations">
@@ -31,7 +32,7 @@
 
     <!--UserProfile Timeline-->
     <div class="UPTimeline">
-        <section class="">
+        <section class="posts">
             <div class="postHeader">
                 <div class="profilImg"></div>
                 <div class="postTextContainer">
@@ -59,7 +60,7 @@
             </div>
 
             <!--Timeline Line-->
-            
+
 
 
 

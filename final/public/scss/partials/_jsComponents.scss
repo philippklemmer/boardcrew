@@ -15,7 +15,7 @@
     }
     .navbar-brand{
         padding: 0 5px;
-        display: block;
+        display: inline-block;;
         a img{
             width: 150px;
             height: 50px;
@@ -260,7 +260,7 @@
         top: calc(50% - 185px);
         left: calc(50% - 300px);
         position: fixed;
-        @include box-shadow(-1px 1px 1px, rgba(255,255,255,0.8));
+        @include box-shadow(-1px 1px 1px rgba(255,255,255,0.8));
         input{
             display: block;
             &.postTitle{

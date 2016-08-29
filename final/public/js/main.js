@@ -5,7 +5,7 @@ $(function(){
     let scrollNavigation = function (){
         // Navigation Change to fixed on Landingpage
         let view = $(window),
-            navigation = $(".fullscreenHeader .navbar"),
+            navigation = $(".fullscreenHeader nav"),
             header = $(".fullscreenHeader").height();
 
 
@@ -308,8 +308,8 @@ $(document).mouseup(function (e){
         loginContainer.hide();
         pwResetContainer.hide();
     }
-    // AddPostContainer -> TODO -> doesnt work with these conditions
-    if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0){
+    // AddPostContainer
+    if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0 && !$(".resetEntrys").is(e.target) && !$(".stayWithEntrys").is(e.target)){
         addPostContainer.hide();
     }
     //Function to hide elements triggering with buttons

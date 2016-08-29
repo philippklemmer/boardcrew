@@ -60,37 +60,30 @@
         </div>
         <main>
             <form class="" action="" method="post">
+
                 <!--Username-->
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                    <!-- TODO if user is trying to register fail or success-->
-                    <!-- <span class="input-group-addon glyphicon glyphicon-ok" id="basic-addon1"></span> -->
-                    <!-- <span class="input-group-addon glyphicon glyphicon-remove" id="basic-addon1"></span> -->
-                </div>
+                <input type="text" placeholder="Username">
+                <!-- TODO if user is trying to register fail or success underline -> red-->
+
                 <!--Mail-->
-                <div class="input-group">
-                    <input type="email" class="form-control" placeholder="Mail" aria-describedby="basic-addon1">
-                    <!-- <span class="input-group-addon glyphicon glyphicon-remove" id="basic-addon1"></span> -->
-                </div>
+                <input type="email" placeholder="Mail" >
+
                 <!--Password-->
-                <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-                    <!-- <span class="input-group-addon glyphicon glyphicon-remove" id="basic-addon1"></span> -->
-                </div>
+                <input type="password" placeholder="Password">
                 <!--Confirm Password-->
-                <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Confirm password" aria-describedby="basic-addon1">
-                    <!--<span class="input-group-addon glyphicon glyphicon-remove" id="basic-addon1"></span>-->
-                </div>
+                <input type="password" placeholder="Confirm password" >
+
                 <!--Fehlermeldungen will shown here-->
                 <div class="error-msg"></div>
-                <!--Submit-->
+
+                <!--Submit + Pw-reset -->
                 <div class="form-group">
                     <input type="submit" class="btn btn-default" value="Sign Up">
                     <small class="form-text">
                         <a href="#">By clicking this button you agree <br/> to Board Crew’s Terms of Service</a>
                     </small>
                 </div>
+
             </form>
         </main>
     </div>
@@ -106,23 +99,17 @@
         </div>
         <main>
             <form class="" action="" method="post">
+
                 <!--Username-->
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                    <!-- TODO if user is trying to register fail or success-->
-                    <!-- <span class="input-group-addon glyphicon glyphicon-ok" id="basic-addon1"></span> -->
-                    <!-- <span class="input-group-addon glyphicon glyphicon-remove" id="basic-addon1"></span> -->
-                </div>
+                <input type="text" placeholder="Username" >
+                <!-- TODO if user is trying to register fail or success do the underline red-->
+
                 <!--Password-->
-                <div class="input-group">
-                    <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
-                    <!-- <span class="input-group-addon glyphicon glyphicon-remove" id="basic-addon1"></span> -->
-                </div>
+                <input type="password" placeholder="Password">
+
                 <div class="checkbox">
-                  <label>
                     <input type="checkbox" value="">
-                    Remember me
-                  </label>
+                    <span>Remember me</span>
                 </div>
                 <!--Submit-->
                 <div class="form-group">
@@ -148,13 +135,11 @@
             <form class="" action="" method="post">
                 <!--Username-->
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
-                    <!-- TODO if user is trying to register fail or success-->
+                    <input type="text" placeholder="Username">
+                    <!-- TODO if user is trying to register fail or success underline -> red -->
                 </div>
                 <!--Submit-->
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default" value="Reset password">
-                </div>
+                <input type="submit" class="btn" value="Reset password">
             </form>
         </main>
     </div>

@@ -1,3 +1,104 @@
 //Doing extends for the style to get DRY code
+//User Posts
+.posts{
+    overflow: hidden;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: white;
+    @include box-shadow(-1px 1px 4px 2px rgba(0,0,0,0.5));
+    .postHeader{
+        margin-bottom: 10px;
+        overflow: hidden;
+        font-weight: 300;
+        .profilImg{
+            float: left;
+            display: inline-block;
+            padding: 5%;
+            background: url("/public/img/testThumnail.png") no-repeat center;
+            background-size: contain;
+            border-radius: 2.5px;
+            margin-right: 2%;
+        }
+        .postTextContainer{
+            width: 88%;
+            float: left;
+            h4{
+                float: left;
+                display: inline-block;
+            }
+            .circleSeperator{
+                float: left;
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: $circleSeperatorColor;
+                margin: 5px 5px 0 5px;
+            }
+            .timeAgo{
+                display: inline-block;
+                float: left;
+                color: $accentFontColor;
+            }
+            p{
+                display: inline-block;
+            }
+        }
+    }
+    .postMain{
+        overflow: hidden;
+        .vidOrImg{
+            display: block;
+            width: 560px;
+            height: 280px;
+            background: url("/public/img/testImg.png") no-repeat center;
+            background-size: cover;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .likeCountContainer{
+            cursor: pointer;
+            float: left;
+            display: inline-block;
+            .heart{
+                float: left;
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                background: url("/public/img/buttons/likeButton.svg") no-repeat center;
+            }
+            .likeCount{
+                line-height: 20px;
+                float: left;
+                margin-left: 5px;
+                font-weight: 300;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+            }
+        }
+        .postTags{
+            line-height: 20px;
+            float: right;
+            a{
+                margin-left: 2px;
+                span{
+                    font-weight: 800;
+                }
+            }
+        }
+    }
 
-//doing an extend for the PostContainer if the User is logged in
+}
+
+
+@media screen and (max-width: 500px){
+    #timelineWrapper section{
+        border-radius: 0;
+        .postMain .vidOrImg{
+            width: 300px;
+            height: 150px;
+            margin: 0 auto;
+        }
+    }
+}

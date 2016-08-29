@@ -1,6 +1,6 @@
 <!--MAIN CONTEN -> Post on Timeline-->
 <div id="timelineWrapper">
-    <section class="">
+    <section class="posts">
         <div class="postHeader">
             <div class="profilImg"></div>
             <div class="postTextContainer">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="posts">
         <div class="postHeader">
             <div class="profilImg"></div>
             <div class="postTextContainer">
