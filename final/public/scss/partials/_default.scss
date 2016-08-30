@@ -90,6 +90,7 @@ hr {
 }
 
 input, select {
+    box-sizing: border-box;
     vertical-align:middle;
 }
 
@@ -97,6 +98,7 @@ html{
   font-size: 10px;
   background-color: white;
   body{
+      height: 100%;
       margin: 0 !important;
       background-color: $bodyBackgroundColor;
   }
@@ -108,13 +110,18 @@ img{
 .radioprefix{
     float: right;
     input,label{
+        margin: 0;
         margin-right: 4px;
     }
-    input[type="radio"]{
+    input{
         @include appearance(none);
-        width: 15px;
-        height: 15px;
+        @include border-radius(0);
+    }
+    input[type="radio"]{
+        width: 18px;
+        height: 18px;
         border: 1px solid rgba(0,0,0,0.5);
+        @include border-radius(0);
         &:checked{
             outline: none;
             background-color: $lightBlue;
@@ -123,92 +130,19 @@ img{
     }
 }
 
-//Bootsrap rewrite
-
-.navbar{
-  margin: 0;
-  border: 0;
-  min-height: inherit;
-}
-.navbar-nav{
-  margin:0;
-}
-.nav li{
-  display:inline-block;
-}
-.nav li a{
-  display: inline-block;
-  padding: 0px;
-}
-.nav li a:hover{
-  background-color: transparent;
-}
-.displayNone{
-  display: none;
-}
-
-div.embed-responsive-16by9{
-padding: 0;
-height: 80vh;
-width: 100%;
-iframe{
-        height: 80vh;
-    }
-}
-
-.form-control{
-    border-radius: 0;
-}
-.glyphicon{
-    top: 0;
-}
-.glyphicon{
-    border-radius: 0;
-}
-
-.input-group-addon{
-    border-radius: 0;
-    border: 0;
-}
-
-.btn{
-    width: 50%;
-    border-radius: 0;
-}
-
-.form-group{
-    text-align: center;
-}
-input{
+input, label{
     font-family: $flowingText;
-    &:focus{
-        outline: 0;
+    &:active, &:focus{
+        outline: none;
     }
-}
-.form-control:focus {
-    border-color: transparent;
-    outline: 0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
 }
 
 @media screen and (min-width: 768px){
-  .navbar {
-       border-radius: 0;
-  }
 
-  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 0;
-}
-
-.navbar-nav > li {
-    float: none;
-}
 .navbar-right {
     float: right !important;
     margin-right: 0;
 }
-
 }
 @media screen and (max-width: 768px){
     .navbar-right{

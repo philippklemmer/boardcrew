@@ -1,19 +1,13 @@
-.posts, #timelineWrapper {
+.posts, .timelineWrapper {
   overflow: hidden;
   padding: 15px;
   border-radius: 5px;
-  margin-bottom: 20px;
-  background-color: white;
-  -moz-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-  -ms-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-  -o-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);
-  box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5); }
-  .posts .postHeader, #timelineWrapper .postHeader {
+  margin-bottom: 20px; }
+  .posts .postHeader, .timelineWrapper .postHeader {
     margin-bottom: 10px;
     overflow: hidden;
     font-weight: 300; }
-    .posts .postHeader .profilImg, #timelineWrapper .postHeader .profilImg {
+    .posts .postHeader .profilImg, .timelineWrapper .postHeader .profilImg {
       float: left;
       display: inline-block;
       padding: 5%;
@@ -21,28 +15,28 @@
       background-size: contain;
       border-radius: 2.5px;
       margin-right: 2%; }
-    .posts .postHeader .postTextContainer, #timelineWrapper .postHeader .postTextContainer {
+    .posts .postHeader .postTextContainer, .timelineWrapper .postHeader .postTextContainer {
       width: 88%;
       float: left; }
-      .posts .postHeader .postTextContainer h4, #timelineWrapper .postHeader .postTextContainer h4 {
+      .posts .postHeader .postTextContainer h4, .timelineWrapper .postHeader .postTextContainer h4 {
         float: left;
         display: inline-block; }
-      .posts .postHeader .postTextContainer .circleSeperator, #timelineWrapper .postHeader .postTextContainer .circleSeperator {
+      .posts .postHeader .postTextContainer .circleSeperator, .timelineWrapper .postHeader .postTextContainer .circleSeperator {
         float: left;
         width: 5px;
         height: 5px;
         border-radius: 50%;
         background-color: #9db5b2;
         margin: 5px 5px 0 5px; }
-      .posts .postHeader .postTextContainer .timeAgo, #timelineWrapper .postHeader .postTextContainer .timeAgo {
+      .posts .postHeader .postTextContainer .timeAgo, .timelineWrapper .postHeader .postTextContainer .timeAgo {
         display: inline-block;
         float: left;
         color: rgba(0, 0, 0, 0.2); }
-      .posts .postHeader .postTextContainer p, #timelineWrapper .postHeader .postTextContainer p {
+      .posts .postHeader .postTextContainer p, .timelineWrapper .postHeader .postTextContainer p {
         display: inline-block; }
-  .posts .postMain, #timelineWrapper .postMain {
+  .posts .postMain, .timelineWrapper .postMain {
     overflow: hidden; }
-    .posts .postMain .vidOrImg, #timelineWrapper .postMain .vidOrImg {
+    .posts .postMain .vidOrImg, .timelineWrapper .postMain .vidOrImg {
       display: block;
       width: 560px;
       height: 280px;
@@ -51,29 +45,29 @@
       margin-bottom: 10px;
       border-radius: 5px;
       margin-bottom: 10px; }
-    .posts .postMain .likeCountContainer, #timelineWrapper .postMain .likeCountContainer {
+    .posts .postMain .likeCountContainer, .timelineWrapper .postMain .likeCountContainer {
       cursor: pointer;
       float: left;
       display: inline-block; }
-      .posts .postMain .likeCountContainer .heart, #timelineWrapper .postMain .likeCountContainer .heart {
+      .posts .postMain .likeCountContainer .heart, .timelineWrapper .postMain .likeCountContainer .heart {
         float: left;
         width: 20px;
         height: 20px;
         display: inline-block;
         background: url("/public/img/buttons/likeButton.svg") no-repeat center; }
-      .posts .postMain .likeCountContainer .likeCount, #timelineWrapper .postMain .likeCountContainer .likeCount {
+      .posts .postMain .likeCountContainer .likeCount, .timelineWrapper .postMain .likeCountContainer .likeCount {
         line-height: 20px;
         float: left;
         margin-left: 5px;
         font-weight: 300;
         letter-spacing: 1px;
         text-transform: uppercase; }
-    .posts .postMain .postTags, #timelineWrapper .postMain .postTags {
+    .posts .postMain .postTags, .timelineWrapper .postMain .postTags {
       line-height: 20px;
       float: right; }
-      .posts .postMain .postTags a, #timelineWrapper .postMain .postTags a {
+      .posts .postMain .postTags a, .timelineWrapper .postMain .postTags a {
         margin-left: 2px; }
-        .posts .postMain .postTags a span, #timelineWrapper .postMain .postTags a span {
+        .posts .postMain .postTags a span, .timelineWrapper .postMain .postTags a span {
           font-weight: 800; }
 
 @media screen and (max-width: 500px) {
@@ -161,12 +155,14 @@ hr {
   padding: 0; }
 
 input, select {
+  box-sizing: border-box;
   vertical-align: middle; }
 
 html {
   font-size: 10px;
   background-color: white; }
   html body {
+    height: 100%;
     margin: 0 !important;
     background-color: rgba(0, 0, 0, 0.24); }
 
@@ -176,88 +172,33 @@ img {
 .radioprefix, .generalFilterContainer form {
   float: right; }
   .radioprefix input, .generalFilterContainer form input, .radioprefix label, .generalFilterContainer form label {
+    margin: 0;
     margin-right: 4px; }
-  .radioprefix input[type="radio"], .generalFilterContainer form input[type="radio"] {
+  .radioprefix input, .generalFilterContainer form input {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    width: 15px;
-    height: 15px;
-    border: 1px solid rgba(0, 0, 0, 0.5); }
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
+  .radioprefix input[type="radio"], .generalFilterContainer form input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0; }
     .radioprefix input[type="radio"]:checked, .generalFilterContainer form input[type="radio"]:checked {
       outline: none;
       background-color: #2196f3;
       border: #2196f3; }
 
-.navbar {
-  margin: 0;
-  border: 0;
-  min-height: inherit; }
-
-.navbar-nav {
-  margin: 0; }
-
-.nav li {
-  display: inline-block; }
-
-.nav li a {
-  display: inline-block;
-  padding: 0px; }
-
-.nav li a:hover {
-  background-color: transparent; }
-
-.displayNone {
-  display: none; }
-
-div.embed-responsive-16by9 {
-  padding: 0;
-  height: 80vh;
-  width: 100%; }
-  div.embed-responsive-16by9 iframe {
-    height: 80vh; }
-
-.form-control {
-  border-radius: 0; }
-
-.glyphicon {
-  top: 0; }
-
-.glyphicon {
-  border-radius: 0; }
-
-.input-group-addon {
-  border-radius: 0;
-  border: 0; }
-
-.btn {
-  width: 50%;
-  border-radius: 0; }
-
-.form-group {
-  text-align: center; }
-
-input {
+input, label {
   font-family: "Paralucent", sans-serif; }
-  input:focus {
-    outline: 0; }
-
-.form-control:focus {
-  border-color: transparent;
-  outline: 0;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  input:active, input:focus, label:active, label:focus {
+    outline: none; }
 
 @media screen and (min-width: 768px) {
-  .navbar {
-    border-radius: 0; }
-
-  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 0; }
-
-  .navbar-nav > li {
-    float: none; }
-
   .navbar-right {
     float: right !important;
     margin-right: 0; } }
@@ -532,13 +473,14 @@ section {
       .form-container .landing-form-container main form {
         overflow-x: hidden;
         display: block;
+        text-align: center;
         width: 100%; }
         .form-container .landing-form-container main form input {
           width: 100%;
           padding: 10px 0 5px 5px;
           border: 0;
           color: black;
-          margin-bottom: 10px;
+          margin-bottom: 15px;
           -moz-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
           -ms-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
           -o-box-shadow: -2px 2px 1px 0px rgba(0, 0, 0, 0.5);
@@ -556,6 +498,9 @@ section {
             color: rgba(0, 0, 0, 0.5); }
           .form-container .landing-form-container main form input:focus {
             border-bottom: 2px solid #2196f3; }
+        .form-container .landing-form-container main form .checkbox {
+          text-align: left;
+          margin-bottom: 10px; }
       .form-container .landing-form-container main input[type="submit"] {
         padding: 10px 0;
         min-width: 150px;
@@ -724,11 +669,25 @@ section {
     visibility: visible;
     z-index: 9999; }
 
-#timelineWrapper {
+.timelineWrapper {
+  overflow: visible;
+  padding: 0;
   padding-top: 70px;
   max-width: 600px;
   margin: 0 auto;
   font-size: 1.3rem; }
+  .timelineWrapper section {
+    -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+
+.profileUserWrapper {
+  padding-top: 50px;
+  font-size: 1.3rem; }
+  .profileUserWrapper .UPHeader .UPHeader {
+    background: url("/public/img/testBilder/userProfileBackground.jpg") no-repeat center; }
 
 .showHide {
   -webkit-transition: top 300ms ease-in-out 0s;
@@ -769,6 +728,7 @@ section {
   text-align: center;
   border-radius: 2.5px;
   background-color: white;
+  font-family: "Paralucent", sans-serif;
   -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
   -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
   -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
@@ -792,6 +752,7 @@ section {
       background-color: #2196f3; }
 
 .menuContainer {
+  font-family: "Paralucent", sans-serif;
   display: block;
   position: fixed;
   left: -302px;
@@ -867,8 +828,10 @@ section {
     border: 0;
     padding: 10px 0;
     text-align: center;
+    background-color: #DAF0EE;
     -webkit-appearance: none;
-    background-color: #DAF0EE; }
+    -moz-appearance: none;
+    appearance: none; }
     .searchBarContainer input:focus {
       outline: 0;
       border: 0; }
@@ -1013,6 +976,7 @@ section {
         width: calc(50% - 2.5%);
         padding: 50px 0;
         margin-right: 2.5%;
+        font-family: "Paralucent", sans-serif;
         -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
         -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
         -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
@@ -1041,7 +1005,8 @@ section {
           display: block;
           text-align: center;
           float: none;
-          margin: 0 auto; }
+          margin: 0 auto;
+          font-family: "Paralucent", sans-serif; }
           .addPostContainer form .postChooseContainer div span.chooseImg {
             width: 100px;
             height: 100px;
@@ -1061,23 +1026,30 @@ section {
         display: none;
         background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center; }
     .addPostContainer form .postChooseMainTags {
-      overflow-x: hidden;
+      overflow: hidden;
       margin-bottom: 15px;
-      line-height: 18px; }
+      line-height: 18px;
+      text-align: center; }
       .addPostContainer form .postChooseMainTags p, .addPostContainer form .postChooseMainTags input, .addPostContainer form .postChooseMainTags label {
+        font-family: "Paralucent", sans-serif;
         float: left; }
       .addPostContainer form .postChooseMainTags div {
+        overflow: hidden;
         float: right; }
-        .addPostContainer form .postChooseMainTags div input, .addPostContainer form .postChooseMainTags div label {
+        .addPostContainer form .postChooseMainTags div input, .addPostContainer form .postChooseMainTags div label, .addPostContainer form .postChooseMainTags div span {
           margin-right: 4px; }
         .addPostContainer form .postChooseMainTags div input[type="radio"] {
           -webkit-appearance: none;
           -moz-appearance: none;
           appearance: none;
-          width: 15px;
-          height: 15px;
+          width: 18px;
+          height: 18px;
           border: 1px solid rgba(0, 0, 0, 0.5);
-          margin-top: 3px; }
+          margin: 0;
+          margin-right: 5px;
+          -moz-border-radius: 0;
+          -webkit-border-radius: 0;
+          border-radius: 0; }
           .addPostContainer form .postChooseMainTags div input[type="radio"]:checked {
             outline: none;
             background-color: #2196f3;
@@ -1139,8 +1111,9 @@ section {
       padding: 25px 0; } }
 @media screen and (max-width: 400px) {
   .addPostContainer form {
-    width: 300px;
-    left: calc(50% - 150px); }
+    box-sizing: border-box;
+    width: 100%;
+    left: 0; }
     .addPostContainer form .postChooseContainer div {
       padding: 15px 0; }
     .addPostContainer form .postChooseMainTags p {
@@ -1148,9 +1121,9 @@ section {
       text-align: center;
       margin-bottom: 5px; }
     .addPostContainer form .postChooseMainTags div {
+      overflow: hidden;
       float: none;
       margin: 0 auto;
-      display: block;
-      width: 80%; } }
+      display: inline-block; } }
 
 /*# sourceMappingURL=main.css.map */

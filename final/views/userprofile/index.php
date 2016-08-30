@@ -1,5 +1,5 @@
 <!--Up == userprofile-->
-<div id="UP" class="">
+<div id="UP" class="profileUserWrapper">
 
     <!--UserProfileHeader-->
     <div class="UPHeader">

@@ -77,12 +77,10 @@
                 <div class="error-msg"></div>
 
                 <!--Submit + Pw-reset -->
-                <div class="form-group">
-                    <input type="submit" class="btn btn-default" value="Sign Up">
-                    <small class="form-text">
-                        <a href="#">By clicking this button you agree <br/> to Board Crew’s Terms of Service</a>
-                    </small>
-                </div>
+                <input type="submit" class="btn btn-default" value="Sign Up">
+                <small class="form-text">
+                    <a href="#">By clicking this button you agree <br/> to Board Crew’s Terms of Service</a>
+                </small>
 
             </form>
         </main>

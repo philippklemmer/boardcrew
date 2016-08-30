@@ -1,8 +1,13 @@
-#timelineWrapper{
+.timelineWrapper{
+    overflow: visible;
+    padding: 0;
     padding-top: 70px;
     max-width: 600px;
     margin: 0 auto;
     font-size: 1.3rem;
     //posts
     @extend .posts;
+    section{
+        @include box-shadow($smoothBoxShadow);
+    }
 }

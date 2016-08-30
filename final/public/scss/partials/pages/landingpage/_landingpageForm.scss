@@ -52,13 +52,14 @@
             form{
                 overflow-x:hidden;
                 display: block;
+                text-align: center;
                 width: 100%;
                 input{
                     width: 100%;
                     padding: 10px 0 5px 5px;
                     border: 0;
                     color: black;
-                    margin-bottom: 10px;
+                    margin-bottom: 15px;
                     @include box-shadow($boxShadow);
                     @include input-placeholder {
                             color: rgba(0, 0, 0, 0.5);
@@ -66,6 +67,10 @@
                     &:focus{
                         border-bottom: 2px solid $lightBlue;
                     }
+                }
+                .checkbox{
+                    text-align: left;
+                    margin-bottom: 10px;
                 }
             }
             // TODO IF ERROR BOXSHADOW RED

@@ -47,6 +47,7 @@
     text-align: center;
     border-radius: 2.5px;
     background-color: white;
+    font-family: $flowingText;
     @include box-shadow($smoothBoxShadow);
     h4{
         padding: 20px 10px;
@@ -75,6 +76,7 @@
 
 // menu
 .menuContainer{
+    font-family: $flowingText;
     display: block;
     position: fixed;
     left: -302px;
@@ -154,8 +156,8 @@
         border: 0;
         padding: 10px 0;
         text-align: center;
-        -webkit-appearance: none;
         background-color: $lightGreen;
+        @include appearance(none);
         &:focus{
             outline: 0;
             border: 0;
@@ -299,6 +301,7 @@
                 width: calc(50% - 2.5%);
                 padding: 50px 0;
                 margin-right: 2.5%;
+                font-family: $flowingText;
                 @include box-shadow($smoothBoxShadow);
                 &.videoContainer{
                     margin-right: 0;
@@ -329,6 +332,7 @@
                     text-align: center;
                     float: none;
                     margin: 0 auto;
+                    font-family: $flowingText;
                     &.chooseImg{
                         @include bgIcons(100px, 100px , block);
                         @include backgroundImage("buttons/choosePhoto.svg");
@@ -349,23 +353,28 @@
             }
         }
         .postChooseMainTags{
-            overflow-x: hidden;
+            overflow: hidden;
             margin-bottom: 15px;
             line-height: 18px;
+            text-align: center;
             p, input, label{
+                font-family: $flowingText;
                 float: left;
             }
             div{
+                overflow: hidden;
                 float: right;
-                input,label{
+                input,label,span{
                     margin-right: 4px;
                 }
                 input[type="radio"]{
                     @include appearance(none);
-                    width: 15px;
-                    height: 15px;
+                    width: 18px;
+                    height: 18px;
                     border: 1px solid rgba(0,0,0,0.5);
-                    margin-top: 3px;
+                    margin: 0;
+                    margin-right: 5px;
+                    @include border-radius(0);
                     &:checked{
                         outline: none;
                         background-color: $lightBlue;
@@ -420,8 +429,9 @@
 }
 @media screen and (max-width: 400px) {
     .addPostContainer form{
-        width: 300px;
-        left: calc(50% - 150px);
+        box-sizing: border-box;
+        width: 100%;
+        left: 0;
         .postChooseContainer div{
             padding: 15px 0;
         }
@@ -433,10 +443,10 @@
                 margin-bottom: 5px;
             }
             div{
+                overflow: hidden;
                 float:none;
                 margin: 0 auto;
-                display: block;
-                width: 80%;
+                display: inline-block;
             }
         }
     }

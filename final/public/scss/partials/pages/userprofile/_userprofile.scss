@@ -1,1 +1,10 @@
 // Scss for the user profile
+.profileUserWrapper{
+    padding-top: 50px;
+    font-size: 1.3rem;
+    .UPHeader{
+        .UPHeader{            
+            @include backgroundImage("testBilder/userProfileBackground.jpg");
+        }
+    }
+}

@@ -49,3 +49,9 @@
 	-o-transition: $value $time ease-in-out 0s;
     transition: $value $time ease-in-out 0s;
 }
+
+@mixin border-radius($value) {
+    -moz-border-radius: $value;
+    -webkit-border-radius: $value;
+    border-radius: $value;
+}

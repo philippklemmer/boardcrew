@@ -1,5 +1,5 @@
 <!--MAIN CONTEN -> Post on Timeline-->
-<div id="timelineWrapper">
+<div class="timelineWrapper">
     <section class="posts">
         <div class="postHeader">
             <div class="profilImg"></div>
