@@ -76,6 +76,7 @@
 
 // menu
 .menuContainer{
+    font-size: 1.2rem;
     font-family: $flowingText;
     display: block;
     position: fixed;
@@ -115,6 +116,11 @@
                 line-height: 20px;
                 a{
                     overflow: hidden;
+                    &:active,&:focus{
+                        background-color: transparent;
+                        outline: none;
+
+                    }
                     span{
                         @include bgIcons(20px, 20px, inline-block);
                         margin: 5px 10px 0 0;
@@ -125,6 +131,10 @@
                         &.editProfileIcon{
                             @include backgroundImage("graphics/editProfileIcon.svg");
                         }
+                        &.timelineIcon{
+                            @include backgroundImage("graphics/timelineIcon.svg");
+                        }
+
                     }
                 }
 
@@ -416,6 +426,10 @@
     @include box-shadow($smoothBoxShadow);
     @include bgIcons(50px, 50px, block);
     @include backgroundImage("buttons/addButton.svg");
+    @media screen and (max-width:500px){
+        width: 40px;
+        height: 40px;
+    }
 }
 .loadingBard{
 

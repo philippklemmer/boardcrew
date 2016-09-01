@@ -200,24 +200,52 @@ html {
 img {
   pointer-events: none; }
 
-input {
+input, select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
-  input[type="text"], input[type="password"], input[type="email"] {
+  input[type="text"], input[type="password"], input[type="email"], select[type="text"], select[type="password"], select[type="email"] {
     width: 100%;
-    border: 0;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     color: black; }
-    input[type="text"].placeholder, input[type="password"].placeholder, input[type="email"].placeholder {
+    input[type="text"].placeholder, input[type="password"].placeholder, input[type="email"].placeholder, select[type="text"].placeholder, select[type="password"].placeholder, select[type="email"].placeholder {
       color: rgba(0, 0, 0, 0.5); }
-    input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="email"]:-moz-placeholder {
+    input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="email"]:-moz-placeholder, select[type="text"]:-moz-placeholder, select[type="password"]:-moz-placeholder, select[type="email"]:-moz-placeholder {
       color: rgba(0, 0, 0, 0.5); }
-    input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="email"]::-moz-placeholder {
+    input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="email"]::-moz-placeholder, select[type="text"]::-moz-placeholder, select[type="password"]::-moz-placeholder, select[type="email"]::-moz-placeholder {
       color: rgba(0, 0, 0, 0.5); }
-    input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder {
+    input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, select[type="text"]:-ms-input-placeholder, select[type="password"]:-ms-input-placeholder, select[type="email"]:-ms-input-placeholder {
       color: rgba(0, 0, 0, 0.5); }
-    input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder {
+    input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, select[type="text"]::-webkit-input-placeholder, select[type="password"]::-webkit-input-placeholder, select[type="email"]::-webkit-input-placeholder {
       color: rgba(0, 0, 0, 0.5); }
+
+select {
+  box-sizing: border-box;
+  width: 150px;
+  padding: 5px 20px 5px 10px;
+  border-radius: 0;
+  border: 0;
+  background-color: white;
+  color: black;
+  font-weight: 300;
+  font-family: "Paralucent", sans-serif;
+  -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+  select:focus, select:active {
+    outline: none; }
+  select option {
+    border-radius: 0;
+    background-color: white; }
+
+.hideTerms {
+  margin: 0 auto;
+  background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center;
+  width: 75px;
+  height: 75px;
+  display: block; }
 
 input[type="submit"] {
   padding: 10px 0;
@@ -294,18 +322,17 @@ input, label {
     display: inline-block;
     float: right; }
     .fullscreenHeader ul li {
-      box-shadow: -4px 4px 2px 0px rgba(0, 0, 0, 0.5);
+      box-shadow: -2px 2px 2px 0px rgba(0, 0, 0, 0.8);
       margin: 20px 0px 0 20px;
       padding: 10px 30px;
       background-color: #fff;
       display: inline-block; }
       .fullscreenHeader ul li:active {
-        box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5); }
+        box-shadow: -4px 4px 2px 0px rgba(0, 0, 0, 0.8); }
       .fullscreenHeader ul li a {
         letter-spacing: 0.1rem;
         text-transform: uppercase;
         font-weight: 600;
-        text-shadow: -2px 1px 5px rgba(0, 0, 0, 0.5);
         font-size: 2rem;
         color: black;
         display: inline-block; }
@@ -383,7 +410,8 @@ input, label {
         width: 40px;
         height: 40px;
         float: left;
-        margin-right: 20px; }
+        margin-right: 20px;
+        /* Icon 1 */ }
         #loggedinNav div ul li#menu {
           background: url("/public/img/graphics/menu.svg") no-repeat center; }
         #loggedinNav div ul li#logo {
@@ -395,6 +423,65 @@ input, label {
           background: url("/public/img/graphics/search.svg") no-repeat center; }
         #loggedinNav div ul li:last-child {
           margin-right: 0; }
+        #loggedinNav div ul li#nav-icon {
+          width: 25px;
+          height: 25px;
+          position: relative;
+          margin-top: 10px;
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transition: 0.5s ease-in-out;
+          -moz-transition: 0.5s ease-in-out;
+          -o-transition: 0.5s ease-in-out;
+          transition: 0.5s ease-in-out;
+          cursor: pointer; }
+          #loggedinNav div ul li#nav-icon span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 100%;
+            background: black;
+            border-radius: 5px;
+            opacity: 1;
+            left: 0;
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: 0.25s ease-in-out;
+            -moz-transition: 0.25s ease-in-out;
+            -o-transition: 0.25s ease-in-out;
+            transition: 0.25s ease-in-out; }
+            #loggedinNav div ul li#nav-icon span:nth-child(1) {
+              top: 0px; }
+            #loggedinNav div ul li#nav-icon span:nth-child(2), #loggedinNav div ul li#nav-icon span:nth-child(3) {
+              top: 10px; }
+            #loggedinNav div ul li#nav-icon span:nth-child(4) {
+              top: 20px; }
+          #loggedinNav div ul li#nav-icon.open span:nth-child(1) {
+            top: 18px;
+            width: 0%;
+            left: 50%; }
+          #loggedinNav div ul li#nav-icon.open span:nth-child(2) {
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg); }
+          #loggedinNav div ul li#nav-icon.open span:nth-child(3) {
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg); }
+          #loggedinNav div ul li#nav-icon.open span:nth-child(4) {
+            top: 18px;
+            width: 0%;
+            left: 50%; }
 
 @media screen and (max-device-width: 600px) and (orientation: landscape) {
   header .headerBackground img {
@@ -662,12 +749,6 @@ section {
     width: 80%;
     margin: 0 auto;
     padding: 50px 0; }
-    .termsContainer div .hideTerms {
-      margin: 0 auto;
-      background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center;
-      width: 75px;
-      height: 75px;
-      display: block; }
     .termsContainer div h2 {
       font-size: 2rem;
       font-family: "Prohibition", "Oswald", sans-serif; }
@@ -872,6 +953,85 @@ section {
     padding: 0 0 2px 0; }
     .profileUserWrapper .UPTimeline .UPTimelineContainer section {
       border-radius: 0; } }
+.UB {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  margin-top: 70px;
+  background-color: white;
+  -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+  .UB .UBContainer .hideTerms {
+    padding: 0;
+    width: 50px; }
+  .UB .UBContainer form > * {
+    padding: 10px 20px; }
+  .UB .UBContainer form .UBBackgroundImageUpload {
+    position: relative;
+    padding: 0;
+    width: 100%;
+    height: 200px;
+    margin-bottom: 70px;
+    background: url("/public/img/testBilder/userProfileBackground.jpg") no-repeat top;
+    background-size: cover; }
+    .UB .UBContainer form .UBBackgroundImageUpload label {
+      display: block;
+      height: 200px;
+      position: relative; }
+      .UB .UBContainer form .UBBackgroundImageUpload label .imageUploadPic {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        display: block;
+        z-index: 10;
+        top: calc(50% - 25px);
+        left: calc(50% - 25px);
+        background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
+      .UB .UBContainer form .UBBackgroundImageUpload label input {
+        display: none; }
+    .UB .UBContainer form .UBBackgroundImageUpload .UBProfileImageUpload {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      top: calc(200px - 50px);
+      left: 10%;
+      background: url("/public/img/testBilder/userProfileImage.jpg") no-repeat top;
+      background-size: cover;
+      border-radius: 100%; }
+      .UB .UBContainer form .UBBackgroundImageUpload .UBProfileImageUpload label {
+        height: 100%;
+        border-radius: 100%; }
+  .UB .UBContainer form .radioprefix, .UB .UBContainer form .generalFilterContainer form, .generalFilterContainer .UB .UBContainer form form {
+    float: none; }
+  .UB .UBContainer form .mainForm label {
+    display: block;
+    margin-bottom: 5px; }
+  .UB .UBContainer form .mainForm input, .UB .UBContainer form .mainForm select {
+    margin-bottom: 10px; }
+  .UB .UBContainer form .mainForm select {
+    margin: 5px 0 15px 0; }
+  .UB .UBContainer form .mainForm input {
+    padding: 5px 0px 5px 10px;
+    -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    border: 0; }
+  .UB .UBContainer form .mainForm div {
+    position: relative; }
+    .UB .UBContainer form .mainForm div .littleArrow {
+      position: absolute;
+      top: 11px;
+      left: 110px;
+      width: 10px;
+      height: 10px;
+      display: inline-block;
+      background: url("/public/img/buttons/selectArrowDown.svg") no-repeat center; }
+
 .showHide {
   -webkit-transition: top 300ms ease-in-out 0s;
   -moz-transition: top 300ms ease-in-out 0s;
@@ -935,6 +1095,7 @@ section {
       background-color: #2196f3; }
 
 .menuContainer {
+  font-size: 1.2rem;
   font-family: "Paralucent", sans-serif;
   display: block;
   position: fixed;
@@ -981,6 +1142,9 @@ section {
         line-height: 20px; }
         .menuContainer .menuMain div p a {
           overflow: hidden; }
+          .menuContainer .menuMain div p a:active, .menuContainer .menuMain div p a:focus {
+            background-color: transparent;
+            outline: none; }
           .menuContainer .menuMain div p a span {
             width: 20px;
             height: 20px;
@@ -990,6 +1154,8 @@ section {
               background: url("/public/img/graphics/userprofileIcon.svg") no-repeat center; }
             .menuContainer .menuMain div p a span.editProfileIcon {
               background: url("/public/img/graphics/editProfileIcon.svg") no-repeat center; }
+            .menuContainer .menuMain div p a span.timelineIcon {
+              background: url("/public/img/graphics/timelineIcon.svg") no-repeat center; }
   .menuContainer .menuFooter {
     padding: 25px 0; }
     .menuContainer .menuFooter a {
@@ -1287,6 +1453,10 @@ section {
   height: 50px;
   display: block;
   background: url("/public/img/buttons/addButton.svg") no-repeat center; }
+  @media screen and (max-width: 500px) {
+    .addPostBtn {
+      width: 40px;
+      height: 40px; } }
 
 @media screen and (max-width: 600px) {
   .addPostContainer form {

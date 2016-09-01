@@ -1,1 +1,96 @@
 //userbackend style
+.UB{
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 70px;
+    background-color: white;
+    @include box-shadow($smoothBoxShadow);
+    //TODO adding with js that the height of the site is allways min 100%
+    .UBContainer{
+        .hideTerms{
+            padding: 0;
+            width: 50px;
+        }
+        form{
+            & > *{
+                padding: 10px 20px;
+            }
+            .UBBackgroundImageUpload{
+                position: relative;
+                padding: 0;
+                width: 100%;
+                height: 200px;
+                margin-bottom: 70px;
+                background: url("/public/img/testBilder/userProfileBackground.jpg") no-repeat top;
+                background-size: cover;
+                label{
+                    display: block;
+                    height: 200px;
+                    position: relative;
+                    .imageUploadPic{
+                        position: absolute;
+                        width: 50px;
+                        height: 50px;
+                        display: block;
+                        z-index: 10;
+                        top: calc(50% - 25px);
+                        left: calc(50% - 25px);
+                        background: url("/public/img/buttons/choosePhoto.svg") no-repeat center;
+                    }
+                    input{
+                        display: none;
+                    }
+                }
+                .UBProfileImageUpload{
+                    width: 100px;
+                    height: 100px;
+                    position: absolute;
+                    top: calc(200px - 50px);
+                    left: 10%;
+                    background: url("/public/img/testBilder/userProfileImage.jpg") no-repeat top;
+                    background-size: cover;
+                    border-radius: 100%;
+                    label{
+                        height: 100%;
+                        border-radius: 100%;
+                    }
+                }
+            }
+            .radioprefix{
+                float: none;
+            }
+            .mainForm{
+                label{
+                    display: block;
+                    margin-bottom: 5px;
+                }
+                input, select{
+                    margin-bottom: 10px;
+                }
+                select{
+                    margin: 5px 0 15px 0;
+                }
+                input{
+                    padding: 5px 0px 5px 10px;
+                    @include box-shadow($smoothBoxShadow);
+                    border: 0;
+                }
+                div{
+                    position: relative;
+                    .littleArrow{
+                        position: absolute;
+                        top: 11px;
+                        left: 110px;
+                        @include bgIcons(10px, 10px, inline-block);
+                        @include backgroundImage("buttons/selectArrowDown.svg");
+                    }
+                }
+
+            }
+
+        }
+
+    }
+
+}

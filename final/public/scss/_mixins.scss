@@ -63,3 +63,10 @@
     -webkit-transform: rotate($value);
     transform: rotate($value);
 }
+
+@mixin transitionMixin($value) {
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -o-transition: $value;
+    transition: $value;
+}

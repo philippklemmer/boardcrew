@@ -16,19 +16,19 @@
     display: inline-block;
     float: right;
     li{
-      box-shadow: -4px 4px 2px 0px rgba(0,0,0,0.5);
+      box-shadow: -2px 2px 2px 0px rgba(0,0,0,0.8);
       margin: 20px 0px 0 20px;
       padding: 10px 30px;
       background-color: #fff;
       display: inline-block;
       &:active{
-          box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+          box-shadow: -4px 4px 2px 0px rgba(0, 0, 0, 0.8);
       }
       a{
           letter-spacing: 0.1rem;
           text-transform: uppercase;
           font-weight: 600;
-          text-shadow: -2px 1px 5px rgba(0, 0, 0, 0.5);
+          //text-shadow: -2px 1px 5px rgba(0, 0, 0, 0.5);
           font-size: 2rem;
           color: black;
           display: inline-block;
@@ -147,6 +147,60 @@
                 &:last-child{
                     margin-right: 0;
                 }
+                /* Icon 1 */
+                &#nav-icon {
+                  width: 25px;
+                  height: 25px;
+                  position: relative;
+                  margin-top: 10px;
+                  @include transform(0deg);
+                  @include transitionMixin(.5s ease-in-out);
+
+                  cursor: pointer;
+                  span{
+                    display: block;
+                    position: absolute;
+                    height: 3px;
+                    width: 100%;
+                    background: rgba(0,0,0,1);
+                    border-radius: 5px;
+                    opacity: 1;
+                    left: 0;
+                    @include transform(0deg);
+                    @include transitionMixin(.25s ease-in-out);
+                    &:nth-child(1) {
+                      top: 0px;
+                    }
+                    &:nth-child(2), &:nth-child(3) {
+                      top: 10px;
+                    }
+                    &:nth-child(4) {
+                      top: 20px;
+                    }
+
+                  }
+                  &.open {
+                    span{
+                        &:nth-child(1) {
+                            top: 18px;
+                            width: 0%;
+                            left: 50%;
+                        }
+                        &:nth-child(2) {
+                          @include transform(45deg);
+                        }
+                        &:nth-child(3) {
+                          @include transform(-45deg);
+                        }
+                        &:nth-child(4) {
+                          top: 18px;
+                          width: 0%;
+                          left: 50%;
+                        }
+                    }
+                  }
+                }
+
             }
         }
     }

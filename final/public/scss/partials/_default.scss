@@ -117,17 +117,15 @@ html {
     background: #fff;
 }
 
-
-
 img{
   pointer-events: none;
 }
 // input style
-input{
+input,select{
     @include appearance(none);
     &[type="text"], &[type="password"], &[type="email"]{
         width: 100%;
-        border: 0;
+        border: 1px solid rgba(0,0,0,0.1);
         color: black;
         @include input-placeholder {
                 color: rgba(0, 0, 0, 0.5);
@@ -135,6 +133,33 @@ input{
     }
 }
 
+select{
+    box-sizing: border-box;
+    width: 150px;
+    padding: 5px 20px 5px 10px;
+    border-radius: 0;
+    border:0;
+    background-color: white;
+    color: black;
+    font-weight: 300;
+    font-family: $flowingText;
+    @include box-shadow($smoothBoxShadow);
+    &:focus, &:active{
+        outline: none;
+    }
+    option{
+        border-radius: 0;
+        background-color: white;
+
+    }
+}
+
+//writing the style for backGroundArrows
+.hideTerms{
+    margin: 0 auto;
+    @include backgroundImage("buttons/arrow-back-blue.svg");
+    @include bgIcons(75px, 75px, block);
+}
 
 // rewrite input[type="submit"]
 input[type="submit"]{

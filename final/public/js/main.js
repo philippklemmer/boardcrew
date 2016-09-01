@@ -241,7 +241,7 @@ $(function(){
     let logo = $("#logo"),
         filterBtn = $("#filter"),
         searchBtn = $("#search"),
-        menuBtn = $("#menu"),
+        menuBtn = $("#nav-icon"),
         view = $(window),
         // links to btns
         filterContainer = $(".generalFilterContainer"),
@@ -274,8 +274,12 @@ $(function(){
 
     // Animations On/Off Toggling CSS§ Transition
     let onOffAnimation = function($controller, $movedObject, $class){
+
         $controller.on("click touch", function(){
             $movedObject.toggleClass($class);
+            if($controller === menuBtn ){
+                menuBtn.toggleClass('open');
+            }
         });
     }
     // Logged Filter & Searchbar
@@ -283,6 +287,7 @@ $(function(){
     onOffAnimation(searchBtn, searchContainer, "toggleUp");
     // Logged Menu
     onOffAnimation(menuBtn, menuContainer, "toggleSide");
+
 
 
 
@@ -335,6 +340,8 @@ $(document).mouseup(function (e){
         $input -> the button can also be used to close the object
     */
     var hideingOutOfBox = function ($input, classCheck, $btnCheck ){
+        //console.log(e.target);
+        //console.log($("#nav-icon span:nth-child(1)")[0]);
         if($input.hasClass(classCheck)){
             if($btnCheck.is(e.target)){
                 $input.toggleClass(classCheck);

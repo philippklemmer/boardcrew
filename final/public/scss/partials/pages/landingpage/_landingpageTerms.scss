@@ -17,11 +17,7 @@
         width: 80%;
         margin: 0 auto;
         padding: 50px 0;
-        .hideTerms{
-            margin: 0 auto;
-            @include backgroundImage("buttons/arrow-back-blue.svg");
-            @include bgIcons(75px, 75px, block);
-        }
+
         h2{
             font-size: 2rem;
             font-family: $mainFontFamily;

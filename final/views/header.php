@@ -46,7 +46,12 @@
                             <ul class="navbar-right">
                                 <li id="filter"></li>
                                 <li id="search"></li>
-                                <li id="menu" ></li>
+                                <li id="nav-icon" >
+                                      <span></span>
+                                      <span></span>
+                                      <span></span>
+                                      <span></span>
+                                </li>
                             </ul>
                         </ul>
                     </div>
@@ -65,8 +70,9 @@
             </div>
             <div class="menuMain">
                 <div>
-                    <p><a href="#"><span class="userprofileIcon"></span>Profile</a></p>
-                    <p><a href="#"><span class="editProfileIcon"></span>Edit</a></p>
+                    <p><a href="<?=URL?>timeline"><span class="timelineIcon"></span>Timeline</a></p>
+                    <p><a href="<?=URL?>userprofile"><span class="userprofileIcon"></span>Profile</a></p>
+                    <p><a href="<?=URL?>userbackend"><span class="editProfileIcon"></span>Edit</a></p>
                 </div>
 
             </div>
