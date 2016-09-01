@@ -223,12 +223,12 @@ $(function(){
     addPostBtn = $(".addPostBtn")
     //show addPostContainer
     addPostBtn.on("click touch", function(){
-        addPostContainer.show();
+        addPostContainer.css({display:"flex"});
     });
 
     //Hide Element if the clode button gets clicked or somewhere around the box -> see also 287+
     $(".postExitBtn").on("click touch", function(){
-        addPostContainer.hide();
+        addPostContainer.removeAttr('style');
     });
 
 
@@ -294,6 +294,22 @@ TODO
 LoadingBar -> Animate the loadingbar from left to right, adjusted to the loadingstatus
 */
 //---------TIMELINE  END-------------------------------------------------------------------------------------------
+
+//---------Userprofile  Start-------------------------------------------------------------------------------------------
+
+let arrow = $(".selfDecidingArrow");
+let additionalInfomartionsContainer = $(".additionalInformations");
+arrow.on("click touch", function(){
+    arrow.toggleClass('rotateArrow');
+    additionalInfomartionsContainer.parent("div").css({paddingBottom:"20px"});
+    additionalInfomartionsContainer.slideToggle('400', function(){});
+});
+
+
+
+
+//---------Userprofile  End-------------------------------------------------------------------------------------------
+
 //---------Additional Elements belong to each side Start-------------------------------------------------------------------------------------------
 
 // Hiding Elements if the user clicks outside the box
@@ -309,7 +325,7 @@ $(document).mouseup(function (e){
         pwResetContainer.hide();
     }
     // AddPostContainer
-    if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0 && !$(".resetEntrys").is(e.target) && !$(".stayWithEntrys").is(e.target)){
+    if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0 && !$(".resetEntrys").is(e.target) && !$(".stayWithEntrys").is(e.target) && !$(".resetEntrys a").is(e.target) && !$(".stayWithEntrys").is(e.target)){
         addPostContainer.hide();
     }
     //Function to hide elements triggering with buttons

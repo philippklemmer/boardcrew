@@ -30,7 +30,6 @@
     appearance: $val;
 }
 
-
 // sizing for backgroundimages
 @mixin bgIcons($w, $h, $display){
     width: $w;
@@ -49,9 +48,18 @@
 	-o-transition: $value $time ease-in-out 0s;
     transition: $value $time ease-in-out 0s;
 }
-
+//border radius
 @mixin border-radius($value) {
     -moz-border-radius: $value;
     -webkit-border-radius: $value;
     border-radius: $value;
+}
+
+//rotate elements
+@mixin transform($value){
+    -moz-transform: rotate($value);
+    -ms-transform: rotate($value);
+    -o-transform: rotate($value);
+    -webkit-transform: rotate($value);
+    transform: rotate($value);
 }

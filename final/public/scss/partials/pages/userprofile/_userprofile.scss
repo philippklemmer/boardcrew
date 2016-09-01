@@ -1,10 +1,189 @@
-// Scss for the user profile
+// Style for the user profile
+$profileImageWidth: 200px;
+$profileBackgroundHeight: 250px;
 .profileUserWrapper{
     padding-top: 50px;
     font-size: 1.3rem;
+    font-family: $flowingText;
     .UPHeader{
-        .UPHeader{            
+        background-color: white;
+        @include box-shadow($smoothBoxShadow);
+        .UPHeaderImg{
+            position: relative;
             @include backgroundImage("testBilder/userProfileBackground.jpg");
+            background-size: cover;
+            background-position: top;
+            @include bgIcons(100%, #{$profileBackgroundHeight},block);
+            margin-bottom: $profileImageWidth/2 + 20px;
+            span img{
+                left: calc(50% - #{$profileImageWidth/2});
+                top: calc(#{$profileBackgroundHeight} - #{$profileImageWidth/2});
+                position: absolute;
+                width: $profileImageWidth;
+                height: $profileImageWidth;
+                border-radius: 100%;
+                display: inline-block;
+            }
+        }
+        .UPMain{
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 300;
+            p{
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+            span:nth-child(3){
+                margin: 0 20px;
+            }
+            span{
+                font-family: $mainFontFamily;
+            }
+            form{
+                margin: 30px 0;
+                input{
+                    margin-bottom: 0;
+                    &:hover, &:active, &:focus{
+                        background-color: $lightRed;
+                    }
+                }
+
+            }
+        }
+        .additionalInfomartionsContainer{
+            text-align: center;
+            .selfDecidingArrow{
+                cursor: pointer;
+                margin-bottom: 30px;
+                @include transform(-90deg);
+                @include transitionPrefix(transform,400ms);
+                @include bgIcons(#{$profileImageWidth/4}, #{$profileImageWidth/4}, inline-block);
+                @include backgroundImage("buttons/arrow-back-blue.svg");
+                &.rotateArrow{
+                    transform: rotate(90deg);
+                }
+            }
+            .additionalInformations{
+                display: none;
+                width: 50%;
+                margin: 0 auto;
+                margin-top: 20px;
+                font-size: 1.5rem;
+                h4{
+                    margin-bottom: 10px;
+                }
+                span{
+                    color: $lightRed;
+                }
+            }
         }
     }
+    .UPTimeline{
+        margin: 0 auto;
+        padding: 50px 0;
+        overflow: hidden;
+        .UPTimelineContainer{
+            max-width: 680px;
+            margin: 0 auto;
+            overflow-x: hidden;
+            position: relative;
+            padding: 2px;
+            margin-bottom: 30px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+            section{
+                float: left;
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                box-sizing: border-box;
+                @include box-shadow($smoothBoxShadow);
+                .postMain{
+
+                }
+            }
+            .timelineStroke{
+                max-width: 80px;
+                float: left;
+                @extend .flexboxContainer;
+                margin-top: calc(205px - 26px);
+                div{
+                    .timelineStrokeConnection{
+                        width: 10px;
+                        height: 1px;
+                        background-color: rgba(0,0,0,0.1);
+                        display: inline-block;
+                        float: left;
+                        margin-top: calc(26px - 2px);
+                        width: 30px;
+                        height: 1px;
+
+                    }
+                    .timelineContainer{
+                        float: left;
+                        background-color: white;
+                        border-radius: 100%;
+                        width: 50px;
+                        height: 50px;
+                        @include box-shadow(-1px 1px 1px 1px rgba(0,0,0,0.1));
+                    }
+                    span{
+                        font-weight: 300;
+                        letter-spacing: 1px;
+                        line-height: 52px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px){
+    .profileUserWrapper .UPTimeline .UPTimelineContainer{
+        section{
+            margin-top: 70px;
+        }
+        .timelineStroke{
+            float: none;
+            margin-top: 0;
+            position: absolute;
+            left: calc(50% - 25px);
+            div{
+                .timelineStrokeConnection{
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px){
+    $profileBackgroundHeight: 200px;
+    $profileImageWidth: 150px;
+    .profileUserWrapper .UPHeader{
+        .additionalInfomartionsContainer .additionalInformations{
+             width: 100%;
+        }
+        .UPHeaderImg{
+                @include bgIcons(100%, #{$profileBackgroundHeight},block);
+                margin-bottom: $profileImageWidth/2 + 20px;
+                span img{
+                    left: calc(50% - #{$profileImageWidth/2});
+                    top: calc(#{$profileBackgroundHeight} - #{$profileImageWidth/2});
+                    width: $profileImageWidth;
+                    height: $profileImageWidth;
+                }
+        }
+    }
+    .profileUserWrapper .UPTimeline .UPTimelineContainer{
+        padding: 0 0 2px 0;
+        section{
+            border-radius: 0;
+        }
+    }
+
 }

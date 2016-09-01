@@ -1,4 +1,23 @@
 //Doing extends for the style to get DRY code
+
+//Input type=text
+.inputText{
+    padding: 10px 0 5px 5px;
+    margin-bottom: 15px;
+    @include box-shadow($boxShadow);
+    &:focus{
+        border-bottom: 2px solid $lightBlue;
+    }
+}
+// FlexBox Position
+.flexboxContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
 //User Posts
 .posts{
     overflow: hidden;
@@ -46,14 +65,14 @@
     .postMain{
         overflow: hidden;
         .vidOrImg{
-            display: block;
-            width: 560px;
-            height: 280px;
-            background: url("/public/img/testImg.png") no-repeat center;
-            background-size: cover;
+            margin: 0 auto;
             margin-bottom: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
+            img{
+                width: 100%;
+                border-radius: 5px;
+                width: 100%;
+                @include box-shadow($smoothBoxShadow);
+            }
         }
         .likeCountContainer{
             cursor: pointer;
@@ -94,9 +113,9 @@
     #timelineWrapper section{
         border-radius: 0;
         .postMain .vidOrImg{
-            width: 300px;
-            height: 150px;
-            margin: 0 auto;
+            // width: 300px;
+            // height: 150px;
+            // margin: 0 auto;
         }
     }
 }

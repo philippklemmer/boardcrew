@@ -98,14 +98,68 @@ html{
   font-size: 10px;
   background-color: white;
   body{
-      height: 100%;
-      margin: 0 !important;
+      overflow: hidden;
+      margin: 0;
       background-color: $bodyBackgroundColor;
   }
 }
+
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #fff;
+}
+
+
+
 img{
   pointer-events: none;
 }
+// input style
+input{
+    @include appearance(none);
+    &[type="text"], &[type="password"], &[type="email"]{
+        width: 100%;
+        border: 0;
+        color: black;
+        @include input-placeholder {
+                color: rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+
+// rewrite input[type="submit"]
+input[type="submit"]{
+    padding: 10px 0;
+    min-width: 150px;
+    font-family: $mainFontFamily;
+    background-color: $lightBlue;
+    color: white;
+    font-size: 1.5rem;
+    border: 0;
+    margin-bottom: 10px;
+    @include box-shadow($boxShadow);
+    &:hover, &:focus{
+        outline: 0;
+        outline-offset: 0;
+    }
+    &:active, &:visited{
+        @include box-shadow(none);
+        outline: 0;
+        outline-offset: 0;
+    }
+}
+
+
+
 // Rewrite for input type = radiobuttons
 .radioprefix{
     float: right;

@@ -1,12 +1,5 @@
 //Style for Header
 
-.flexboxContainer{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-}
 
 // HEADER STYLE FOR INDEX
 
@@ -125,6 +118,13 @@
             overflow: hidden;
             margin: 0 auto;
             //padding: 0 20px;
+            @media screen and (max-width: 500px){
+                ul li{
+                    margin-top: 5px;
+                    width: 30px;
+                    height: 30px;
+                }
+            }
             li{
                 display: inline-block;
                 width: 40px;

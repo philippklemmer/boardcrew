@@ -1,5 +1,5 @@
 <!--MAIN CONTEN -> Post on Timeline-->
-<div class="timelineWrapper">
+<div class="timelineWrapper">    
     <section class="posts">
         <div class="postHeader">
             <div class="profilImg"></div>
@@ -14,7 +14,10 @@
         </div>
         <div class="postMain">
             <!--Video oder Image-->
-            <div class="vidOrImg"></div>
+            <!--If video do videohtml otherwise go for an img tag-->
+            <div class="vidOrImg">
+                <img src="/public/img/testImg.png" alt="" />
+            </div>
             <div class="likeCountContainer">
                 <span class="heart"></span>
                 <p class="likeCount">Like</p>
@@ -41,7 +44,9 @@
         </div>
         <div class="postMain">
             <!--Video oder Image-->
-            <div class="vidOrImg"></div>
+            <div class="vidOrImg">
+                <img src="/public/img/testImg.png" alt="" />
+            </div>
             <div class="likeCountContainer">
                 <span class="heart"></span>
                 <p class="likeCount">Like</p>
