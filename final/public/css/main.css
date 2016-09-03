@@ -94,6 +94,9 @@
 @media screen and (max-width: 500px) {
   #timelineWrapper section {
     border-radius: 0; } }
+*, *::after, *::before {
+  box-sizing: border-box; }
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -112,7 +115,8 @@ time, mark, audio, video {
   outline: 0;
   font-size: 100%;
   vertical-align: baseline;
-  background: transparent; }
+  background: transparent;
+  box-sizing: border-box !important; }
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, section {
@@ -295,7 +299,11 @@ input[type="submit"] {
     .radioprefix input[type="radio"]:checked, .generalFilterContainer form input[type="radio"]:checked {
       outline: none;
       background-color: #2196f3;
-      border: #2196f3; }
+      border: #2196f3;
+      -webkit-transition: all 400ms ease-in-out 0s;
+      -moz-transition: all 400ms ease-in-out 0s;
+      -o-transition: all 400ms ease-in-out 0s;
+      transition: all 400ms ease-in-out 0s; }
 
 input, label {
   font-family: "Paralucent", sans-serif; }
@@ -394,94 +402,34 @@ input, label {
     z-index: 9999;
     max-width: 960px;
     max-height: 50px;
-    padding: 5px 0;
+    padding: 10px 0;
     width: 100%;
     margin: 0 auto; }
     #loggedinNav div ul {
       overflow: hidden;
-      margin: 0 auto; }
+      margin: 0 auto;
+      padding: 0 5px; }
       @media screen and (max-width: 500px) {
         #loggedinNav div ul ul li {
-          margin-top: 5px;
           width: 30px;
           height: 30px; } }
       #loggedinNav div ul li {
         display: inline-block;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         float: left;
-        margin-right: 20px;
-        /* Icon 1 */ }
+        margin-right: 20px; }
         #loggedinNav div ul li#menu {
-          background: url("/public/img/graphics/menu.svg") no-repeat center; }
+          background: url("/public/img/graphics/menu2.svg") no-repeat center; }
         #loggedinNav div ul li#logo {
           width: 200px;
           background: url("/public/img/graphics/logologgedin.svg") no-repeat center; }
         #loggedinNav div ul li#filter {
-          background: url("/public/img/graphics/filter.svg") no-repeat center; }
+          background: url("/public/img/graphics/filter2.svg") no-repeat center; }
         #loggedinNav div ul li#search {
-          background: url("/public/img/graphics/search.svg") no-repeat center; }
+          background: url("/public/img/graphics/search2.svg") no-repeat center; }
         #loggedinNav div ul li:last-child {
           margin-right: 0; }
-        #loggedinNav div ul li#nav-icon {
-          width: 25px;
-          height: 25px;
-          position: relative;
-          margin-top: 10px;
-          -moz-transform: rotate(0deg);
-          -ms-transform: rotate(0deg);
-          -o-transform: rotate(0deg);
-          -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-          -webkit-transition: 0.5s ease-in-out;
-          -moz-transition: 0.5s ease-in-out;
-          -o-transition: 0.5s ease-in-out;
-          transition: 0.5s ease-in-out;
-          cursor: pointer; }
-          #loggedinNav div ul li#nav-icon span {
-            display: block;
-            position: absolute;
-            height: 3px;
-            width: 100%;
-            background: black;
-            border-radius: 5px;
-            opacity: 1;
-            left: 0;
-            -moz-transform: rotate(0deg);
-            -ms-transform: rotate(0deg);
-            -o-transform: rotate(0deg);
-            -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-            -webkit-transition: 0.25s ease-in-out;
-            -moz-transition: 0.25s ease-in-out;
-            -o-transition: 0.25s ease-in-out;
-            transition: 0.25s ease-in-out; }
-            #loggedinNav div ul li#nav-icon span:nth-child(1) {
-              top: 0px; }
-            #loggedinNav div ul li#nav-icon span:nth-child(2), #loggedinNav div ul li#nav-icon span:nth-child(3) {
-              top: 10px; }
-            #loggedinNav div ul li#nav-icon span:nth-child(4) {
-              top: 20px; }
-          #loggedinNav div ul li#nav-icon.open span:nth-child(1) {
-            top: 18px;
-            width: 0%;
-            left: 50%; }
-          #loggedinNav div ul li#nav-icon.open span:nth-child(2) {
-            -moz-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            -o-transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-            transform: rotate(45deg); }
-          #loggedinNav div ul li#nav-icon.open span:nth-child(3) {
-            -moz-transform: rotate(-45deg);
-            -ms-transform: rotate(-45deg);
-            -o-transform: rotate(-45deg);
-            -webkit-transform: rotate(-45deg);
-            transform: rotate(-45deg); }
-          #loggedinNav div ul li#nav-icon.open span:nth-child(4) {
-            top: 18px;
-            width: 0%;
-            left: 50%; }
 
 @media screen and (max-device-width: 600px) and (orientation: landscape) {
   header .headerBackground img {
@@ -721,6 +669,9 @@ section {
     border-bottom: none; }
   #pw-reset main {
     border-top: none; } }
+@media screen and (max-width: 350px) {
+  .landing-form-container {
+    padding: 0; } }
 @media screen and (orientation: landscape) {
   .form-container {
     overflow: scroll; }
@@ -877,7 +828,7 @@ section {
     padding: 50px 0;
     overflow: hidden; }
     .profileUserWrapper .UPTimeline .UPTimelineContainer {
-      max-width: 680px;
+      max-width: 684px;
       margin: 0 auto;
       overflow-x: hidden;
       position: relative;
@@ -1021,16 +972,48 @@ section {
     -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
     box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
     border: 0; }
-  .UB .UBContainer form .mainForm div {
-    position: relative; }
-    .UB .UBContainer form .mainForm div .littleArrow {
-      position: absolute;
-      top: 11px;
-      left: 110px;
-      width: 10px;
-      height: 10px;
+  .UB .UBContainer form .mainForm #radio-button {
+    font-family: "Paralucent", sans-serif;
+    font-weight: 300;
+    font-size: 0;
+    margin-bottom: 10px;
+    -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+    .UB .UBContainer form .mainForm #radio-button li {
       display: inline-block;
-      background: url("/public/img/buttons/selectArrowDown.svg") no-repeat center; }
+      width: 33.3%;
+      height: 23px;
+      position: relative;
+      font-size: 1.2rem;
+      text-align: center;
+      line-height: 23px; }
+      .UB .UBContainer form .mainForm #radio-button li div {
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+        -webkit-transition: all 200ms ease-in-out 0s;
+        -moz-transition: all 200ms ease-in-out 0s;
+        -o-transition: all 200ms ease-in-out 0s;
+        transition: all 200ms ease-in-out 0s; }
+    .UB .UBContainer form .mainForm #radio-button input[type="radio"] {
+      display: block;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 3;
+      cursor: pointer; }
+      .UB .UBContainer form .mainForm #radio-button input[type="radio"]:checked + div {
+        background: #2196f3;
+        color: white; }
+  .UB .UBContainer form input[type="submit"] {
+    display: block;
+    margin: auto; }
 
 .showHide {
   -webkit-transition: top 300ms ease-in-out 0s;

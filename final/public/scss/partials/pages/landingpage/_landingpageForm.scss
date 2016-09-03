@@ -180,6 +180,13 @@
 
 }
 
+@media screen and (max-width: 350px){
+    .landing-form-container{
+        padding: 0;
+    }
+}
+
+
 @media screen and (orientation: landscape){
     .form-container{
         overflow: scroll;

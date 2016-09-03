@@ -76,17 +76,46 @@
                     @include box-shadow($smoothBoxShadow);
                     border: 0;
                 }
-                div{
-                    position: relative;
-                    .littleArrow{
+                #radio-button{
+                    font-family: $flowingText;
+                    font-weight: 300;
+                    font-size: 0;
+                    margin-bottom: 10px;
+                    @include box-shadow($smoothBoxShadow);
+                    li{
+                        display: inline-block;
+                        width: 33.3%; height: 23px;
+                        position: relative;
+                        font-size: 1.2rem;
+                        text-align: center;
+                        line-height: 23px;
+                        div{
+                            width: 100%; height: 100%;
+                            background: rgba(0,0,0,0.1);
+                            @include transitionPrefix(all, 200ms);
+                        }
+                    }
+                    input[type="radio"]{
+                        display: block;
+                        width: 100%; height: 100%;
+
+                        opacity: 0;
+
                         position: absolute;
-                        top: 11px;
-                        left: 110px;
-                        @include bgIcons(10px, 10px, inline-block);
-                        @include backgroundImage("buttons/selectArrowDown.svg");
+                        top: 0; left: 0;
+                        z-index: 3;
+
+                        cursor: pointer;
+                        &:checked + div {
+                            background: #2196f3;
+                            color: white;
+                        }
                     }
                 }
-
+            }
+            input[type="submit"]{
+                display: block;
+                margin: auto;
             }
 
         }

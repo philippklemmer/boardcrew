@@ -241,7 +241,7 @@ $(function(){
     let logo = $("#logo"),
         filterBtn = $("#filter"),
         searchBtn = $("#search"),
-        menuBtn = $("#nav-icon"),
+        menuBtn = $("#menu"),
         view = $(window),
         // links to btns
         filterContainer = $(".generalFilterContainer"),

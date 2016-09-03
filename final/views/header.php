@@ -46,12 +46,7 @@
                             <ul class="navbar-right">
                                 <li id="filter"></li>
                                 <li id="search"></li>
-                                <li id="nav-icon" >
-                                      <span></span>
-                                      <span></span>
-                                      <span></span>
-                                      <span></span>
-                                </li>
+                                <li id="menu" ></li>
                             </ul>
                         </ul>
                     </div>
@@ -97,7 +92,7 @@
             <!-- <div class="searchResults">
                 <p><span class="searchHash"></span>freestyle</p>
                 <p><span class="searchUser"></span>flipper_skate</p>
-                Foreach for SearchResults
+                Foreach for SearchResults   
             </div> -->
         </div>
 

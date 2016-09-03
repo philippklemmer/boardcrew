@@ -28,15 +28,21 @@
             <div class="mainForm">
                 <label for="">Name</label>
                 <input type="text" name="fullName" value="">
-                <div>
-                    <span class="littleArrow"></span>
-                    <select class="ChooseYourStyle" name="">
-                        <option value="option">Choose your Style...</option>
-                        <option value="option">Dance</option>
-                        <option value="option">Freestyle</option>
-                        <option value="option">Downhill</option>
-                    </select>
-                </div>
+                <label>Choose your Style</label>
+                <ul id="radio-button">
+                    <li>
+                        <input type="radio" name="style" value="dancing">
+                        <div>Dancing</div>
+                    </li>
+                    <li>
+                        <input type="radio" name="style" value="freestyle">
+                        <div>Freestyle</div>
+                    </li>
+                    <li>
+                        <input type="radio" name="style" value="downhill">
+                        <div>Downhill</div>
+                    </li>
+                </ul>
                 <label for="">Country</label>
                 <input type="text" name="country" value="">
                 <label for="">City</label>

@@ -43,7 +43,7 @@
             </div>
             <div class="postChooseMainTags">
                 <p>Choose your style</p>
-                <div>
+                <div class="radioprefix">
                     <input type="radio" name="danceStyle" value="">
                     <label for="dancingStyle">#dancing</label>
                     <input type="radio" name="danceStyle" value="">

@@ -1,4 +1,8 @@
 //Default Style AND Bootstrap Rewrites
+*,*::after,*::before {
+    box-sizing: border-box;
+}
+
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 abbr, address, cite, code,
@@ -18,6 +22,7 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    box-sizing: border-box !important;
 }
 
 
@@ -205,6 +210,7 @@ input[type="submit"]{
             outline: none;
             background-color: $lightBlue;
             border: $lightBlue;
+            @include transitionPrefix(all, 400ms);
         }
     }
 }
