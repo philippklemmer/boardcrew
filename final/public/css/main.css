@@ -9,7 +9,14 @@
   .inputText:focus, .form-container .landing-form-container main form input:focus {
     border-bottom: 2px solid #2196f3; }
 
-.flexboxContainer, .fullscreenHeader .error-page, .fullscreenHeader .headerBackground, #landing-presentation-vid, .profileUserWrapper .UPTimeline .UPTimelineContainer .timelineStroke, .addPostContainer {
+.postExitBtn {
+  margin-top: 3px;
+  width: 5%;
+  height: 25px;
+  display: block;
+  background: url("/public/img/buttons/closeButton.svg") no-repeat center; }
+
+.flexboxContainer, .fullscreenHeader .error-page, .fullscreenHeader .headerBackground, #landing-presentation-vid, .profileUserWrapper .UPTimeline .UPTimelineContainer .timelineStroke, .pwCheck, .addPostContainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -181,7 +188,8 @@ input, select {
 
 html {
   font-size: 10px;
-  background-color: white; }
+  background-color: white;
+  height: 100%; }
   html body {
     overflow: hidden;
     margin: 0;
@@ -910,6 +918,7 @@ section {
   margin: 0 auto;
   margin-top: 70px;
   background-color: white;
+  font-family: "Paralucent", sans-serif;
   -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
   -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
   -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
@@ -918,103 +927,159 @@ section {
   .UB .UBContainer .hideTerms {
     padding: 0;
     width: 50px; }
-  .UB .UBContainer form > * {
-    padding: 10px 20px; }
-  .UB .UBContainer form .UBBackgroundImageUpload {
-    position: relative;
-    padding: 0;
-    width: 100%;
-    height: 200px;
-    margin-bottom: 70px;
-    background: url("/public/img/testBilder/userProfileBackground.jpg") no-repeat top;
-    background-size: cover; }
-    .UB .UBContainer form .UBBackgroundImageUpload label {
-      display: block;
+  .UB .UBContainer form {
+    padding-bottom: 20px; }
+    .UB .UBContainer form > * {
+      padding: 10px 20px; }
+    .UB .UBContainer form .UBBackgroundImageUpload {
+      position: relative;
+      padding: 0;
+      width: 100%;
       height: 200px;
-      position: relative; }
-      .UB .UBContainer form .UBBackgroundImageUpload label .imageUploadPic {
-        position: absolute;
-        width: 50px;
-        height: 50px;
+      margin-bottom: 70px;
+      background: url("/public/img/testBilder/userProfileBackground.jpg") no-repeat top;
+      background-size: cover; }
+      .UB .UBContainer form .UBBackgroundImageUpload label {
         display: block;
-        z-index: 10;
-        top: calc(50% - 25px);
-        left: calc(50% - 25px);
-        background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
-      .UB .UBContainer form .UBBackgroundImageUpload label input {
-        display: none; }
-    .UB .UBContainer form .UBBackgroundImageUpload .UBProfileImageUpload {
-      width: 100px;
-      height: 100px;
-      position: absolute;
-      top: calc(200px - 50px);
-      left: 10%;
-      background: url("/public/img/testBilder/userProfileImage.jpg") no-repeat top;
-      background-size: cover;
-      border-radius: 100%; }
-      .UB .UBContainer form .UBBackgroundImageUpload .UBProfileImageUpload label {
-        height: 100%;
+        height: 200px;
+        position: relative; }
+        .UB .UBContainer form .UBBackgroundImageUpload label .imageUploadPic {
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          display: block;
+          z-index: 3;
+          top: calc(50% - 25px);
+          left: calc(50% - 25px);
+          background: url("/public/img/buttons/choosePhoto.svg") no-repeat center; }
+        .UB .UBContainer form .UBBackgroundImageUpload label input {
+          display: none; }
+      .UB .UBContainer form .UBBackgroundImageUpload .UBProfileImageUpload {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: calc(200px - 50px);
+        left: 10%;
+        background: url("/public/img/testBilder/userProfileImage.jpg") no-repeat top;
+        background-size: cover;
         border-radius: 100%; }
-  .UB .UBContainer form .radioprefix, .UB .UBContainer form .generalFilterContainer form, .generalFilterContainer .UB .UBContainer form form {
-    float: none; }
-  .UB .UBContainer form .mainForm label {
-    display: block;
-    margin-bottom: 5px; }
-  .UB .UBContainer form .mainForm input, .UB .UBContainer form .mainForm select {
-    margin-bottom: 10px; }
-  .UB .UBContainer form .mainForm select {
-    margin: 5px 0 15px 0; }
-  .UB .UBContainer form .mainForm input {
-    padding: 5px 0px 5px 10px;
-    -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-    border: 0; }
-  .UB .UBContainer form .mainForm #radio-button {
-    font-family: "Paralucent", sans-serif;
-    font-weight: 300;
-    font-size: 0;
-    margin-bottom: 10px;
+        .UB .UBContainer form .UBBackgroundImageUpload .UBProfileImageUpload label {
+          height: 100%;
+          border-radius: 100%; }
+    .UB .UBContainer form .radioprefix, .UB .UBContainer form .generalFilterContainer form, .generalFilterContainer .UB .UBContainer form form {
+      float: none; }
+    .UB .UBContainer form .mainForm label {
+      display: block;
+      margin-bottom: 5px; }
+    .UB .UBContainer form .mainForm input, .UB .UBContainer form .mainForm select {
+      margin-bottom: 10px; }
+    .UB .UBContainer form .mainForm select {
+      margin: 5px 0 15px 0; }
+    .UB .UBContainer form .mainForm input {
+      padding: 5px 0px 5px 10px;
+      -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      border: 0; }
+    .UB .UBContainer form .mainForm #radio-button {
+      font-family: "Paralucent", sans-serif;
+      font-weight: 300;
+      font-size: 0;
+      margin-bottom: 10px;
+      -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+      .UB .UBContainer form .mainForm #radio-button li {
+        display: inline-block;
+        width: 33.3%;
+        height: 23px;
+        position: relative;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 23px; }
+        .UB .UBContainer form .mainForm #radio-button li div {
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.1);
+          -webkit-transition: all 200ms ease-in-out 0s;
+          -moz-transition: all 200ms ease-in-out 0s;
+          -o-transition: all 200ms ease-in-out 0s;
+          transition: all 200ms ease-in-out 0s; }
+      .UB .UBContainer form .mainForm #radio-button input[type="radio"] {
+        display: block;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        cursor: pointer; }
+        .UB .UBContainer form .mainForm #radio-button input[type="radio"]:checked + div {
+          background: #2196f3;
+          color: white; }
+    .UB .UBContainer form input[type="submit"] {
+      display: block;
+      margin: auto; }
+
+.pwCheck {
+  display: none;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  font-family: "Paralucent", sans-serif;
+  letter-spacing: 1px;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0.1;
+  transform: scale(0.1); }
+  .pwCheck div {
+    padding: 10px;
+    width: 300px;
+    background-color: white;
+    text-align: left;
+    overflow: hidden;
     -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
     -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
     -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
     box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-    .UB .UBContainer form .mainForm #radio-button li {
+    .pwCheck div h4, .pwCheck div form, .pwCheck div input {
+      margin-bottom: 10px; }
+    .pwCheck div h4 {
+      font-size: 1.25rem;
+      float: left;
       display: inline-block;
-      width: 33.3%;
-      height: 23px;
-      position: relative;
-      font-size: 1.2rem;
+      line-height: 25px; }
+    .pwCheck div span {
+      display: inline-block;
+      float: right;
+      margin: 0; }
+    .pwCheck div form input {
+      padding: 10px; }
+    .pwCheck div form input[type="submit"] {
       text-align: center;
-      line-height: 23px; }
-      .UB .UBContainer form .mainForm #radio-button li div {
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.1);
-        -webkit-transition: all 200ms ease-in-out 0s;
-        -moz-transition: all 200ms ease-in-out 0s;
-        -o-transition: all 200ms ease-in-out 0s;
-        transition: all 200ms ease-in-out 0s; }
-    .UB .UBContainer form .mainForm #radio-button input[type="radio"] {
       display: block;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 3;
-      cursor: pointer; }
-      .UB .UBContainer form .mainForm #radio-button input[type="radio"]:checked + div {
-        background: #2196f3;
-        color: white; }
-  .UB .UBContainer form input[type="submit"] {
-    display: block;
-    margin: auto; }
+      margin: 0 auto; }
+  .pwCheck.showUpCheck {
+    animation-name: pwCheck;
+    animation-duration: 300ms;
+    display: flex;
+    animation-fill-mode: forwards; }
 
+@keyframes pwCheck {
+  0% {
+    opacity: 0;
+    transform: scale(0.1); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
 .showHide {
   -webkit-transition: top 300ms ease-in-out 0s;
   -moz-transition: top 300ms ease-in-out 0s;

@@ -50,17 +50,21 @@
                 <hr>
                 <!--if someone clicks in the email inputfield, check passwort again-->
                 <label for="">Mail</label>
-                <input type="text" name="email" value="">
+                <input id="pwCheck" type="text" name="email" value="">
             </div>
             <!--SaveBtn-->
             <input type="submit" name="name" value="Save">
         </form>
     </div>
+</div>
+<!--Checking pw again-->
+<div class="pwCheck">
     <div class="">
-        <h4>Type in your Password again</h4>
-        <form class="" action="index.html" method="post">
-            <input type="text" name="reenterPassword" value="">
+        <h4>Type in your Password again</h4><span class="postExitBtn"></span>
+        <form class="" action="" method="post">
+            <input type="password" name="reenterPassword" value="">
             <input type="submit" name="name" value="Enter">
         </form>
     </div>
+
 </div>

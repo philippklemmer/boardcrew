@@ -5,6 +5,7 @@
     margin: 0 auto;
     margin-top: 70px;
     background-color: white;
+    font-family: $flowingText;
     @include box-shadow($smoothBoxShadow);
     //TODO adding with js that the height of the site is allways min 100%
     .UBContainer{
@@ -13,6 +14,7 @@
             width: 50px;
         }
         form{
+            padding-bottom: 20px;
             & > *{
                 padding: 10px 20px;
             }
@@ -33,7 +35,7 @@
                         width: 50px;
                         height: 50px;
                         display: block;
-                        z-index: 10;
+                        z-index: 3;
                         top: calc(50% - 25px);
                         left: calc(50% - 25px);
                         background: url("/public/img/buttons/choosePhoto.svg") no-repeat center;
@@ -121,5 +123,70 @@
         }
 
     }
+}
 
+.pwCheck{
+    display: none;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    font-family: $flowingText;
+    letter-spacing: 1px;
+    @extend .flexboxContainer;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0.1;
+    transform: scale(0.1);
+
+    div{
+        padding: 10px;
+        width: 300px;
+        background-color: white;
+        text-align: left;
+        overflow: hidden;
+        @include box-shadow($smoothBoxShadow);
+        h4, form, input{
+            margin-bottom: 10px;
+        }
+        h4{
+            font-size: 1.25rem;
+            float: left;
+            display: inline-block;
+            line-height: 25px;
+        }
+        span{
+            display: inline-block;
+            float: right;
+            margin: 0;
+        }
+        form{
+            input{
+                padding: 10px;
+            }
+            input[type="submit"]{
+                text-align: center;
+                display: block;
+                margin: 0 auto;
+            }
+        }
+    }
+    &.showUpCheck{
+        animation-name: pwCheck;
+        animation-duration:  300ms;
+        display: flex;
+        animation-fill-mode: forwards;
+    }
+
+}
+@keyframes pwCheck{
+    0%{
+        opacity: 0;
+        transform: scale(.1);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
 }

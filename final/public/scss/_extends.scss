@@ -9,6 +9,14 @@
         border-bottom: 2px solid $lightBlue;
     }
 }
+
+//close button
+.postExitBtn{
+    margin-top: 3px;
+    @include bgIcons(5%, 25px , block);
+    @include backgroundImage("buttons/closeButton.svg");
+}
+
 // FlexBox Position
 .flexboxContainer{
     display: flex;

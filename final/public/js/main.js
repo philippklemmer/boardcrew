@@ -50,10 +50,10 @@ $(function(){
         $target.on("click touch", function(e){
             e.preventDefault();
             if($targetHide !== "null"){
-                $targetHide.hide();
+                $targetHide.css({display:"none"});
             }
             if($targetShow !== "null"){
-                $targetShow.show();
+                $targetShow.css({display:"block"});
             }
         });
     }
@@ -314,6 +314,27 @@ arrow.on("click touch", function(){
 
 
 //---------Userprofile  End-------------------------------------------------------------------------------------------
+//---------Userbackend  Start-------------------------------------------------------------------------------------------
+
+//Userbackend height on huge screens
+if($("html").height() > $("body").height()){
+    $("body").height($("html").height());
+
+}
+
+
+let pwCheckContainer = $(".pwCheck");
+let pwCheckInput = $("#pwCheck");
+let pwCheckSubmit = $(".pwCheck").find('input[type="submit"]');
+let pwCheckCloseBtn = $(".pwCheck span");
+
+//TODO AJAX and close smoothly the box and continue writing the new email
+pwCheckInput.add(pwCheckSubmit).add(pwCheckCloseBtn).on("click touch", function(){
+    pwCheckContainer.toggleClass("showUpCheck");
+});
+
+
+//---------Userbackend  End-------------------------------------------------------------------------------------------
 
 //---------Additional Elements belong to each side Start-------------------------------------------------------------------------------------------
 
@@ -333,6 +354,7 @@ $(document).mouseup(function (e){
     if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0 && !$(".resetEntrys").is(e.target) && !$(".stayWithEntrys").is(e.target) && !$(".resetEntrys a").is(e.target) && !$(".stayWithEntrys").is(e.target)){
         addPostContainer.hide();
     }
+
     //Function to hide elements triggering with buttons
     /*
         $input -> Object itself
@@ -357,8 +379,10 @@ $(document).mouseup(function (e){
     hideingOutOfBox(searchContainer, "toggleUp", searchBtn);
     // Filterbar
     hideingOutOfBox(filterContainer, "toggleUp", filterBtn);
-
+    // userbackend check input
+    hideingOutOfBox(pwCheckContainer.parent(), "showUpCheck", filterBtn);
 });
+
 
 
 
