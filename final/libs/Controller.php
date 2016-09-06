@@ -1,23 +1,30 @@
 <?php
 
 class Controller {
-
-    function __construct() {
+    
+    //model and view attributes
+    protected $model;
+    protected $view;
+    /**
+     * Instanciate the View
+     */
+    public function __construct() {
         $this->view = new View();
     }
     /**
-     * 
+     * Load the Models of the controller with the same name || Keep Attention on naming conventions
      * @param string $name Name of the model
      * @param string $modelPath Location of the model
      */
-    function loadModel($name, $modelPath = 'models/'){
+    public function loadModel($name, $modelPath = 'models/'){
+        //define Model name and path 
+        $model_file = 'models/' . $name . '_model.php';
+        $model_name = $name . '_Model';
         
-        $path = $modelPath . $name . '_model.php';
-        
-        if(file_exists($path)){
-            require $modelPath . $name . '_model.php';
-            $modelName   = $name . '_Model';
-            $this->model = new $modelName;
+        if(file_exists($model_file)){
+            //create Model Object
+            require $model_file;
+            $this->model = new $model_name;
         }
         
     }

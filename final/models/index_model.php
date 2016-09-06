@@ -6,13 +6,22 @@ class Index_Model extends Model {
         parent::__construct();
     }
 
-    //testing
-    public function say() {
-        echo "hello";
+    /**
+     * Checks if there the email allready exists
+     * @param type $type
+     * @param type $input
+     * @return type
+     */
+    public function dataExists($type, $input) {
+        $sth = $this->db->prepare("SELECT {$type} from bc_users WHERE {$type} = :{$type} ");
+        $sth->execute(array(
+            ":{$type}" => "{$input}"
+        ));
+        return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
     
     public function registerUser($username, $mail, $password) {
-        var_dump($username, $mail, $password);
+        
         //Salt
         //Eine einzigartige Zeichenkette vom Programm erstellen lassen
         $randomSalt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
@@ -26,67 +35,73 @@ class Index_Model extends Model {
         $randomHash = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
         // Jetzt wird die gesalzene Email ertellt für den Validierungsprozess
         $validationHash = hash('sha512', $mail . $randomHash);
-
-        //Query ausführen, Usereingaben bei der Registrierung werden in der Datenbank gespeichert
-        $query = "INSERT INTO bc_users ";
-        $query .= "(user_username, user_mail, user_hash, user_salt, user_validation, user_valHash, user_regDate) ";
-        $query .= "VALUES ";
-        $query .= "('$username', '$mail', '$hashedPw', '$randomSalt', 0, '$validationHash', NOW())";
-
-        //Query ausführen
-        mysqli_query($db, $query);
-        //Affected Rows gibt die Anzahl der 
-        $affectedRows = mysqli_affected_rows($db);
-
-        if ($affectedRows > 0) {
+        
+        //insert data
+        $sql  = "INSERT INTO bc_users ";
+        $sql .= "(`user_username`, `user_mail`, `user_hash`, `user_salt`, `user_validation`, `user_valHash`, `user_regDate` )";
+        $sql .= "VALUES (:username, :mail, :hash, :salt, :validation, :valHash, NOW())";
+        //preparing the pdo statement
+        $sth = $this->db->prepare($sql);
+        //if all is correct -> execute
+        $sth->execute(array(
+            "username" => "$username",
+            "mail" => "$mail",
+            "hash" => "$hashedPw",
+            "salt" => "$randomSalt",
+            "validation" => 0,
+            "valHash" => "$validationHash",
+        ));
+        $result = $sth->rowCount();
+        if ($result > 0) {
             //Validierungs Mail schicken
-            sendValidationMail($mail, $validationHash);
+            //sendValidationMail($mail, $validationHash);
             return true;
         } else {
-
             return false;
         }
     }
 
     // Check login
-    public function login() {
-
+    public function loginUser($username, $password) {
+        
         // Prepare SQL statement
-        $obj = $this->db->prepare("
-            SELECT id FROM user WHERE login = :login AND password = MD5(:password)
-        ");
-
-        // Save login and password from POST array
-        $login = $_POST['login'];
-        $pass = $_POST['password'];
-
+        $sth = $this->db->prepare("SELECT * FROM bc_users WHERE user_username = :username ");
+        
         // Execute Statement
-        $obj->execute(array(
-            ':login' => $login,
-            ':password' => $pass,
+        $sth->execute(array(
+            ':username' => "$username"
         ));
-
         // Count rows of SQL result (0: wrong login)
-        $count = $obj->rowCount();
-
+        $count = $sth->rowCount();
+        
         // Check user login
         if ($count > 0) {
-
-            // Get User id from database
-            $data = $obj->fetchAll();
-            $id_user = $data[0]['id'];
-
-            // Set User session data
-            Session::set('id_user', $id_user);
-            Session::set('login', $login);
-
-            // Go to schedule creation
-            header('location: ' . URL . 'schedule');
+            
+            // Get User from database
+            $data = $sth->fetch(PDO::FETCH_ASSOC);
+            //rebuild the saved password for the user
+            $hashedPassword = hash('sha512', $password . $data['user_salt']);
+            //check if the passwords are equal
+            if($hashedPassword === $data['user_hash']){
+                //Set User session data
+                Session::set('status', "loggedIn");
+                Session::set('id_user', $data['user_id']);  
+                Session::set('user_username', $data['user_username']);  
+                
+                // Go to schedule creation
+                header('location: ' . URL . 'timeline');
+                return true;
+            }else{
+                ErrorHandling::setError("login", "Passwörter stimmen nicht überein");
+                header('location: ' . URL . 'index');
+                return false;
+            }
+            
         } else {
 
             // Debug: show login error in DEBUG area
-            Debug::setValue('Login error for user ' . $login);
-
+            //Debug::setValue('Login error for user ' . $login);
+            header('Location:' . URL .'index');
             //TODO: error handling, error page
         }
     }

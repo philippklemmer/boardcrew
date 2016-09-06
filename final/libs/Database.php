@@ -1,9 +1,17 @@
 <?php
 
 class Database extends PDO {
-
+    /**
+     * Connect to DB with PDO
+     */
     public function __construct() {
-        parent::__construct(DB_TYPE . ':host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+        try{
+            //if there is no connection throw an error
+            parent::__construct(DB_TYPE . ':host=' . DB_HOST . ';port=' . DB_PORT . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+        } catch (Exception $e) {
+            $e->getMessage();
+        }
+        
     }
     
     /**
@@ -38,6 +46,7 @@ class Database extends PDO {
         ksort($data);
         $fieldNames = implode("`, `", array_keys($data));
         $fieldValues = ":" . implode(", :", array_keys($data));
+        var_dump($fieldValues);
         
         
         $sth = $this->prepare("INSERT INTO $table (`$fieldNames`) VALUES ($fieldValues)");

@@ -6,7 +6,7 @@ class Timeline extends Controller {
     }
 
     function index(){
-        $this->view->render('timeline/index');
+        $this->view->render('timeline', "loggedIn",1);
     }
 
 }

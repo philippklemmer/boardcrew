@@ -226,7 +226,7 @@ $(function(){
         addPostContainer.css({display:"flex"});
     });
 
-    //Hide Element if the clode button gets clicked or somewhere around the box -> see also 287+
+    //Hide Element if the close button gets clicked or somewhere around the box -> see also 287+
     $(".postExitBtn").on("click touch", function(){
         addPostContainer.removeAttr('style');
     });

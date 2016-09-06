@@ -10,6 +10,6 @@ class Userbackend extends Controller{
     }
 
     function index(){
-        $this->view->render('userbackend/index');
+        $this->view->render('userbackend', 1, 1);
     }
 }

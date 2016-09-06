@@ -34,7 +34,6 @@
         </p>
     </div>
 </section>
-
 <!--Section for the statistics-->
 <section id="landing-stats">
     <div class="inner-wrap">
@@ -48,7 +47,6 @@
         <figure><img src="../public/img/graphics/tv.svg" alt="" /></figure>
     </div>
 </section>
-
 <!-- Pop-Ups for the Register/Login/PasswordRepeat-->
 <!-- REGISTER START -->
 <div id="register" class="form-container" >
@@ -59,7 +57,7 @@
             <div class="landing-form-logo"></div>
         </div>
         <main>
-            <form class="" action="<?php URL ?>index/register" method="post">
+            <form class="" action="<?php URL ?>index/registerUser" method="post">
 
                 <!--Username-->
                 <input type="text" name="username" placeholder="Username">
@@ -86,7 +84,7 @@
         </main>
     </div>
 </div>
-    <!-- REGISTER END -->
+<!-- REGISTER END -->
 <!-- Login START -->
 <div id="login" class="form-container" >
     <div class="landing-form-container">
@@ -96,14 +94,13 @@
             <div class="landing-form-logo"></div>
         </div>
         <main>
-            <form class="" action="" method="post">
-
+            <form class="" action="<?php URL ?>index/loginUser" method="post">
                 <!--Username-->
-                <input type="text" placeholder="Username" >
+                <input type="text" name="username" placeholder="Username" >
                 <!-- TODO if user is trying to register fail or success do the underline red-->
 
                 <!--Password-->
-                <input type="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password">
 
                 <div class="checkbox">
                     <input type="checkbox" value="">
@@ -111,7 +108,7 @@
                 </div>
                 <!--Submit-->
                 <div class="form-group">
-                    <input type="submit" class="btn btn-default" value="Login">
+                    <input type="submit" name="loginSubmit" class="btn btn-default" value="Login">
                     <small class="form-text">
                         <a id="pwRepeat" href="#">Reset your password</a>
                     </small>
@@ -145,7 +142,7 @@
 <!-- Password Reset END -->
 <div id="term" class="termsContainer">
     <div>
-        <a href="#" class="hideTerms"></a>
+        <a href="#footer" class="hideTerms"></a>
         <h2>Privacy Policy</h2>
         <hr/>
         <h3>1. Information we collect</h3>
@@ -197,7 +194,7 @@
 </div>
 <div id="privac" class="termsContainer">
     <div class="">
-         <a href="#" class="hideTerms"></a>
+         <a href="#footer" class="hideTerms"></a>
          <h2>Terms of use</h2>
          <hr>
          <p>

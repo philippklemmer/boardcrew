@@ -9,6 +9,6 @@ class Userprofile extends Controller{
     }
 
     function index(){
-        $this->view->render('userprofile/index');
+        $this->view->render('userprofile', "loggedIn",1);
     }
 }
