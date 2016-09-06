@@ -59,25 +59,25 @@
             <div class="landing-form-logo"></div>
         </div>
         <main>
-            <form class="" action="" method="post">
+            <form class="" action="<?php URL ?>index/register" method="post">
 
                 <!--Username-->
-                <input type="text" placeholder="Username">
+                <input type="text" name="username" placeholder="Username">
                 <!-- TODO if user is trying to register fail or success underline -> red-->
 
                 <!--Mail-->
-                <input type="email" placeholder="Mail" >
+                <input type="email" name="mail" placeholder="Mail" >
 
                 <!--Password-->
-                <input type="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password">
                 <!--Confirm Password-->
-                <input type="password" placeholder="Confirm password" >
+                <input type="password" name="password-repeat" placeholder="Confirm password" >
 
                 <!--Fehlermeldungen will shown here-->
                 <div class="error-msg"></div>
 
                 <!--Submit + Pw-reset -->
-                <input type="submit" class="btn btn-default" value="Sign Up">
+                <input type="submit" name="registerSubmit" class="btn btn-default" value="Sign Up" >
                 <small class="form-text">
                     <a href="#">By clicking this button you agree <br/> to Board Crew’s Terms of Service</a>
                 </small>

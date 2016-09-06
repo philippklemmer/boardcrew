@@ -6,14 +6,10 @@ class View {
         
     }
 
-    function render($name,$noInclude = false){
-        if($noInclude){
-            require 'views/' . $name . '.php';
-        }else{
-            require 'views/header.php';
-            require 'views/' . $name . '.php';
-            require 'views/footer.php';
-        }
+    function render($name,$header = 'header', $footer = "footer"){
+        require "views/partials/$header.php";
+        require "views/$name.php";
+        require "views/partials/$footer.php";
     }
     
 }

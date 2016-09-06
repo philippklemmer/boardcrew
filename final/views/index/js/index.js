@@ -1,0 +1,1 @@
+//js file for the index controller
