@@ -1,7 +1,7 @@
 <footer>
 <!--Add another Post-->
     <div class="addPostContainer">
-        <form class="" action="index.html" method="post">
+        <form enctype="multipart/form-data" action="<?php URL?>timeline/addPost" method="post" >
 
             <input class="postTitle" type="text" name="postTitle" value="" placeholder="Enter your title in here..." />
             <span class="postExitBtn"></span>
@@ -10,7 +10,7 @@
                 <!--Custom FileUpload-->
                 <div class="imgContainer">
                     <label class="custom-file-upload">
-                        <input type="file"/>
+                        <input type="file" name="imageUrl"/>
                     </label>
                     <span class="chooseImg"></span>
                     <span class="fileInput"></span>
@@ -22,7 +22,6 @@
                         <p>Youtube URL</p>
                         <input type="input" name="videoUrl" value="">
                     </div>
-
                 </div>
                 <!-- if one type is selected then show another icon to swap between these two-->
                 <p class="swapItem"></p>
@@ -31,21 +30,21 @@
             <div class="postChooseMainTags">
                 <p>Choose your style</p>
                 <div class="radioprefix">
-                    <input type="radio" name="danceStyle" value="">
+                    <input type="radio" name="danceStyle" value="dancing">
                     <label for="dancingStyle">#dancing</label>
-                    <input type="radio" name="danceStyle" value="">
+                    <input type="radio" name="danceStyle" value="downhill">
                     <label for="downhillStyle">#downhill</label>
-                    <input type="radio" name="danceStyle" value="">
+                    <input type="radio" name="danceStyle" value="freestyle">
                     <label for="freestyleStyle">#freestyle</label>
                 </div>
             </div>
 
             <input type="text" name="addAdditionalTags" value="" placeholder="Add additional tags to your post...">
-            <input type="submit" name="name" value="Post">
+            <input type="submit" name="addPostSubmit" value="Post">
         </form>
     </div>
     <!--Btn to add another Post for your profile-->
     <div class="addPostBtn"></div>
     <!--LoadingBar trought the screen TODO -> adding js for the animation-->
     <div class="loadingBar"></div>
-</footer>    
+</footer>

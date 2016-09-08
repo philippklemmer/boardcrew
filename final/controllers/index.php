@@ -2,14 +2,15 @@
 
 
 class Index extends Controller{
-    
+
     public $success = null;
-    
+
     public function __construct() {
         parent::__construct();
         $this->view->js = array('index/js/index.js');
+        Session::init();
     }
-   
+
     public function index(){
         $this->view->render('index',1,1);
     }
@@ -19,7 +20,7 @@ class Index extends Controller{
      * @return boolean if true go to timeline
      */
     public function registerUser(){
-        
+
         $formSubmit = filter_input(INPUT_POST, 'registerSubmit', FILTER_SANITIZE_STRING);
         if (isset($formSubmit)) {
             //Eingaben in Variablen speichern
@@ -43,7 +44,7 @@ class Index extends Controller{
                         $errors['username'][] = 'Bitte geben Sie einen gültigen Username ein.';
                     }
                 }
-               
+
             }
             //Check on valid mail
             if (empty($mail)) {
@@ -82,12 +83,12 @@ class Index extends Controller{
         if (isset($errors) && empty($errors)) {
             //keine Fehler
             $saved = $this->model->registerUser($username, $mail, $password);
-            
+
             if ($saved == true) {
                 $success = 'Sie haben sich erfolgreich angemeldet';
                 header('Location:' . URL . 'timeline');
                 return true;
-            } else {           
+            } else {
                 $dbError = 'Der Benutzer konnte leider nicht angelegt werden';
                 header('Location: ' . URL . 'index');
                 return false;
@@ -98,39 +99,37 @@ class Index extends Controller{
         }
     }
     /**
-     * Login in the user 
+     * Login in the user
      * load model ->loginUser from index_model.php
      */
     public function loginUser(){
-        
-        
+
+
         $loginSubmit = filter_input(INPUT_POST, 'loginSubmit', FILTER_SANITIZE_STRING);
         if($loginSubmit){
             // filter the past data
             $username = filter_input(INPUT_POST, 'username');
             $password = filter_input(INPUT_POST, 'password');
-            
+
             $errors = [];
-         
-            //Checks if there was something typed in 
+            //Checks if there was something typed in
             if (empty($username)) {
                 $errors['loginUser'][] = 'Bitte geben Sie ihren Benutzernamen ein';
-                
+
             } else if ($this->model->dataExists("user_username",$username) === false) {
                 $errors['loginUser'][] = 'Diesen Benutzer gibt es nicht';
             }
-            
             //compare passwords and if it is correct
             if (FormValidation::filterPasswort($password) === false) {
                 $errors['loginPassword'][] = 'Das Passwort ist ungültig';
+                //TODO stops here if password isn't correct
             } else {
-                
                 $loginStatus = $this->model->loginUser($username, $password);
                 if ($loginStatus === true) {
                     //if user data were valid go to timeline
                     header('Location:' . URL . 'timeline');
                 } else {
-                    //if userpassword is not equal to the one in the db 
+                    //if userpassword is not equal to the one in the db
                     if ($loginStatus == 'loginPassword') {
                         $errorMsg = 'Das angegebene Passwort ist falsch';
                     } else {
@@ -138,17 +137,18 @@ class Index extends Controller{
                     }
                     //adding errormsg to array
                     $errors[$loginStatus][] = $errorMsg;
+                    header('Location:' . URL . 'index');
                 }
             }
         }
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
     }
-    
+
     /**
      * Loging out the User if logged in
      */
@@ -157,5 +157,5 @@ class Index extends Controller{
         Session::destroy();
         header('Location: ' . URL . 'index' );
     }
-    
+
 }

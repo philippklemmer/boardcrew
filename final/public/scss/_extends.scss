@@ -40,7 +40,9 @@
             float: left;
             display: inline-block;
             padding: 5%;
-            background: url("/public/img/testThumnail.png") no-repeat center;
+            background: rgba(0,0,0,0.1);
+            background-repeat: no-repeat;
+            background-position: center;
             background-size: contain;
             border-radius: 2.5px;
             margin-right: 2%;

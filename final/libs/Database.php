@@ -21,18 +21,19 @@ class Database extends PDO {
      * @return mixed 
      */
     public function select($sql, $array = array(), $fetchMode = PDO::FETCH_ASSOC){
+        
         $sth = $this->prepare($sql);
-        foreach($data as $key => $value){
-            $sth->bindValue(":$key", $value);
+        
+        if(count($array) !== 0 ){
+            foreach($data as $key => $value){
+                $sth->bindValue(":$key", $value);
+            }
         }
+        
         $sth->execute();
+        
         return $sth->fetchAll($fetchMode);
         
-        
-        //Example
-//        public function userList(){
-//            return $this->db->select("SELECT id, login, role FROM users WHERE id = :id", array('id' => $id));
-//        }
     }
     
     /**

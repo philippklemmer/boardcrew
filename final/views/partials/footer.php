@@ -1,3 +1,9 @@
+<div class="securityCheck">
+    <h4>Are you sure to delete your entrys?</h4>
+    <div class="resetEntrys"><a href="#" >Yes</a></div>
+    <div class="stayWithEntrys"><a href="#" >No</a></div>
+</div>
+
 <!--Scripts einbinden-->
 <!-- doing a loop for scripts to get fewest amount of code -->
 <script type="text/javascript" src="<?=URL?>public/js/jquery-3.0.0.js"></script>

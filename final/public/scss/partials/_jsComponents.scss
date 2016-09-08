@@ -38,41 +38,6 @@
 
 }
 
-// SaftyQuery-Layout for delete,or change stuff
-.securityCheck{
-    position: absolute;
-    top: calc(50% - 26px);
-    left: calc(50% - 125px);
-    width: 250px;
-    text-align: center;
-    border-radius: 2.5px;
-    background-color: white;
-    font-family: $flowingText;
-    @include box-shadow($smoothBoxShadow);
-    h4{
-        padding: 20px 10px;
-        font-size: 1.4rem;
-    }
-    div{
-        display: inline-block;
-        width: 50%;
-        float: left;
-        padding: 10px 0;
-        a{
-            color: white;
-        }
-        a:hover{
-            text-decoration: none;
-        }
-        &.resetEntrys{
-            background-color: $lightRed;
-
-        }
-        &.stayWithEntrys{
-            background-color: $lightBlue;
-        }
-    }
-}
 
 // menu
 .menuContainer{
@@ -263,7 +228,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: none;
-    z-index: 9999;
+    z-index: 100;
     position: fixed;
     top: 0;
     left: 0;
@@ -320,10 +285,14 @@
                     margin-right: 0;
                     margin-left: 2.5%;
                     .chooseVideoUrlActive{
+                        float: none;
                         display: none;
                         text-align: center;
                         box-shadow: none;
                         padding: 0;
+                        p{
+                            float: none;
+                        }
                         input{
                             margin: 0 auto;
                             border: 1px solid rgba(0,0,0,0.1)
@@ -366,10 +335,13 @@
             }
         }
         .postChooseMainTags{
+            width: 100%;
             overflow: hidden;
             margin-bottom: 15px;
             line-height: 18px;
             text-align: center;
+            color: black;
+            font-size: 1.25rem;
             p, input, label{
                 font-family: $flowingText;
                 float: left;
@@ -434,6 +406,52 @@
 .loadingBard{
 
 }
+
+
+// SaftyQuery-Layout for delete,or change stuff
+.securityCheck{
+    z-index: 9999;
+    display: none;
+    position: fixed;
+    top: calc(50% - 26px);
+    left: calc(50% - 125px);
+    width: 250px;
+    text-align: center;
+    border-radius: 2.5px;
+    background-color: white;
+    font-family: $flowingText;
+    @include box-shadow($smoothBoxShadow);
+    &.visible{
+        display: block;
+    }
+    h4{
+        padding: 20px 10px;
+        font-size: 1.4rem;
+    }
+    div{
+        display: inline-block;
+        width: 50%;
+        float: left;
+        text-align: center;
+        a{
+            display: block;
+            color: white;
+            padding: 10px 0;
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        &.resetEntrys{
+            background-color: $lightRed;
+
+        }
+        &.stayWithEntrys{
+            background-color: $lightBlue;
+        }
+    }
+}
+
+
 
 @media screen and (max-width: 600px) {
     .addPostContainer form{

@@ -106,6 +106,7 @@ $(function(){
         //get the inputFile value to let the user know which input it selected
         $inputFileData = inputFileData[0].value.split("\\");
         $inputFileData = $inputFileData[2];
+        console.log($inputFileData);
         if($inputFileData !== "" || $inputFileData !== "undefined"){
             $imgUploadFileInput.text("Selected: "+ $inputFileData);
             imgContainer.css({padding:"41px 0"});
@@ -156,24 +157,25 @@ $(function(){
                 swapItem.css({display:"none"});
                 videoContainer.css({display:"inline-block"});
             }else{
-                showAlertBox("Are you sure to delete your entrys?", "press yes if you want to use an URL", addPostContainer);
+                //zeigt die sicherheitsabfrage an
+                showAlertBox(addPostContainer);
+                //guckt welcher wert eingegeben wurde
                 timelineSaftyQuery(
                     function(){
+                        // yes funktioniert
                         inputFileData[0].value = "";
                         $imgUploadFileInput.text("");
                         $inputFileData = "";
+                        $(".securityCheck").removeClass('visible');
                         rebootInterface();
-                        $(".securityCheck").hide();
                     },
                     function(){
-                        $(".securityCheck").hide();
+                        $(".securityCheck").removeClass('visible');
                     }
                 );
             }
-        }
-        // if videoIMage was clicked decide
-        if(that[0].className == "videoContainer active"){
-
+        }else{
+            console.log(that[0].className);
             videoFileInput = $("input[name='videoUrl']");
             // if the value is empty so go back the normal status or
             if(videoFileInput[0].value == ""){
@@ -183,36 +185,37 @@ $(function(){
                 videoUrlActive.css({display:"none"});
             // it's not empty and do the saftyquery
             }else{
-                showAlertBox("Are you sure to delete your entrys?", "press yes if you want to use an URL", addPostContainer);
+                showAlertBox(addPostContainer);
                 timelineSaftyQuery(
                     function(){
-                        //iwie super buggy
                         videoFileInput[0].value ="";
 
                         that.removeAttr('style', 'class').removeClass('active');
                         swapItem.css({display:"none"});
                         imgContainer.css({display:"inline-block"});
                         videoUrlActive.css({display:"none"});
-                        $(".securityCheck").hide();
+                        $(".securityCheck").removeClass('visible');
                     },
                     function(){
-                        $(".securityCheck").hide();
+                        $(".securityCheck").removeClass('visible');
                     }
                 );
             }
+
+        }
+        // if videoIMage was clicked decide
+        if(that[0].className == "videoContainer active"){
         }
     }
-    //showing/building the SaftyQuery-Layout
-    let showAlertBox = function(headline, paragraph, aim){
-        if($(".securityCheck").is(":visible") !== true ){
-            $("<div class='securityCheck'><h4>" + headline + "</h4><div class='resetEntrys'><a href=''>Yes</a></div><div class='stayWithEntrys'><a href=''>No</a></div></div>").appendTo(aim);
-        }
+    //showing/building the SaftyQuery-Layout $(".securityCheck")
+    let showAlertBox = function($action){
+            $(".securityCheck").toggleClass('visible');
     }
     // checking if the alertbox return true or false
     let timelineSaftyQuery = function(successFunction, failFunction){
         $(".securityCheck").children().on("click touch", function(){
             event.preventDefault();
-            if($(this)[0].innerText == "Yes"){
+            if($(this).text() === "Yes"){
                 successFunction();
             }else{
                 failFunction();
@@ -351,7 +354,7 @@ $(document).mouseup(function (e){
         pwResetContainer.hide();
     }
     // AddPostContainer
-    if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0 && !$(".resetEntrys").is(e.target) && !$(".stayWithEntrys").is(e.target) && !$(".resetEntrys a").is(e.target) && !$(".stayWithEntrys").is(e.target)){
+    if (!addPostContainerForm.is(e.target) && addPostContainerForm.has(e.target).length === 0 && !$(".resetEntrys").is(e.target) && !$(".stayWithEntrys").is(e.target) && !$(".resetEntrys a").is(e.target) && !$(".stayWithEntrys a").is(e.target)){
         addPostContainer.hide();
     }
 

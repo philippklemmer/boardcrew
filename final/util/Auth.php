@@ -7,10 +7,9 @@ class Auth {
     function __construct() {}
     
     public static function handleLogin(){
-        
-        if(Session::get('loggedIn') == false){
+        if(Session::get('status') == false){
             Session::destroy();
-            header('Locations: ../index');
+            header('Location:' . URL .'index');
             exit;
         }
         

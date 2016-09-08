@@ -1,10 +1,11 @@
 <!--MAIN CONTEN -> Post on Timeline-->
 <div class="timelineWrapper">    
+    <?php var_dump($this->view);?>
     <section class="posts">
         <div class="postHeader">
             <div class="profilImg"></div>
             <div class="postTextContainer">
-                <h4>Philipp Klemmer</h4>
+                <h4></h4>
                 <span class="circleSeperator"></span>
                 <span class="timeAgo">14min</span>
                 <p class="comment">
@@ -30,6 +31,7 @@
             </div>
         </div>
     </section>
+    
     <section class="posts">
         <div class="postHeader">
             <div class="profilImg"></div>

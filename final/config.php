@@ -19,6 +19,11 @@ define('URL', 'http://localhost:8888/');
 //wlan00
 //define('URL', 'http://192.168.1.3:8888/');
 
+define ('DIR', realpath(dirname(__FILE__)));
+
+define('USERPROFIL', '/Users/philipp/github/boardcrew/final/public/img/');
+
+
 // Database config
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');

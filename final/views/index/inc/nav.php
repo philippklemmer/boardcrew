@@ -5,7 +5,7 @@
             <div>
               <h1 class="navbar-brand">
                 <a id="indexLogoSmall" href="index">
-                  <img src="public/img/navLogo.svg" alt="Kleinere Version des Logos von Boardcrew." />
+                  <img src="../public/img/navLogo.svg" alt="Kleinere Version des Logos von Boardcrew." />
                 </a>
               </h1>
               <ul class="nav navbar-nav navbar-right">
@@ -19,7 +19,7 @@
                 <li><a class="join-btn" href="#">Join</a></li>
                 <li><a class="enter-btn" href="#">Enter</a></li>
               </ul>
-            <img src="public/img/großesLogo.svg" alt="Logo von BoardCrew." />
+            <img src="../public/img/großesLogo.svg" alt="Logo von BoardCrew." />
           </div>
       </div>
 </header>

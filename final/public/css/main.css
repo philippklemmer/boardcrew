@@ -36,7 +36,9 @@
       float: left;
       display: inline-block;
       padding: 5%;
-      background: url("/public/img/testThumnail.png") no-repeat center;
+      background: rgba(0, 0, 0, 0.1);
+      background-repeat: no-repeat;
+      background-position: center;
       background-size: contain;
       border-radius: 2.5px;
       margin-right: 2%; }
@@ -1111,37 +1113,6 @@ section {
       .navigateFixed ul li a {
         letter-spacing: 2px; }
 
-.securityCheck {
-  position: absolute;
-  top: calc(50% - 26px);
-  left: calc(50% - 125px);
-  width: 250px;
-  text-align: center;
-  border-radius: 2.5px;
-  background-color: white;
-  font-family: "Paralucent", sans-serif;
-  -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-  -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-  -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
-  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
-  .securityCheck h4 {
-    padding: 20px 10px;
-    font-size: 1.4rem; }
-  .securityCheck div {
-    display: inline-block;
-    width: 50%;
-    float: left;
-    padding: 10px 0; }
-    .securityCheck div a {
-      color: white; }
-    .securityCheck div a:hover {
-      text-decoration: none; }
-    .securityCheck div.resetEntrys {
-      background-color: #ef868b; }
-    .securityCheck div.stayWithEntrys {
-      background-color: #2196f3; }
-
 .menuContainer {
   font-size: 1.2rem;
   font-family: "Paralucent", sans-serif;
@@ -1308,7 +1279,7 @@ section {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
-  z-index: 9999;
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0; }
@@ -1385,10 +1356,13 @@ section {
           margin-right: 0;
           margin-left: 2.5%; }
           .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive {
+            float: none;
             display: none;
             text-align: center;
             box-shadow: none;
             padding: 0; }
+            .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive p {
+              float: none; }
             .addPostContainer form .postChooseContainer div.videoContainer .chooseVideoUrlActive input {
               margin: 0 auto;
               border: 1px solid rgba(0, 0, 0, 0.1); }
@@ -1425,10 +1399,13 @@ section {
         display: none;
         background: url("/public/img/buttons/arrow-back-blue.svg") no-repeat center; }
     .addPostContainer form .postChooseMainTags {
+      width: 100%;
       overflow: hidden;
       margin-bottom: 15px;
       line-height: 18px;
-      text-align: center; }
+      text-align: center;
+      color: black;
+      font-size: 1.25rem; }
       .addPostContainer form .postChooseMainTags p, .addPostContainer form .postChooseMainTags input, .addPostContainer form .postChooseMainTags label {
         font-family: "Paralucent", sans-serif;
         float: left; }
@@ -1505,6 +1482,43 @@ section {
     .addPostBtn {
       width: 40px;
       height: 40px; } }
+
+.securityCheck {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: calc(50% - 26px);
+  left: calc(50% - 125px);
+  width: 250px;
+  text-align: center;
+  border-radius: 2.5px;
+  background-color: white;
+  font-family: "Paralucent", sans-serif;
+  -moz-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -1px 1px 2px 1px rgba(0, 0, 0, 0.3); }
+  .securityCheck.visible {
+    display: block; }
+  .securityCheck h4 {
+    padding: 20px 10px;
+    font-size: 1.4rem; }
+  .securityCheck div {
+    display: inline-block;
+    width: 50%;
+    float: left;
+    text-align: center; }
+    .securityCheck div a {
+      display: block;
+      color: white;
+      padding: 10px 0; }
+    .securityCheck div a:hover {
+      text-decoration: none; }
+    .securityCheck div.resetEntrys {
+      background-color: #ef868b; }
+    .securityCheck div.stayWithEntrys {
+      background-color: #2196f3; }
 
 @media screen and (max-width: 600px) {
   .addPostContainer form {
