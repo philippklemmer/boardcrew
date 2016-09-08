@@ -18,7 +18,7 @@ class Timeline_Model extends Model {
                 mkdir("userFiles/" . $folderName . "/" ,0755);
             }
             //move file to directory or create a new one
-            $imgUploadPath = "/userFiles/" . $folderName . "/" . str_replace('/', '_', $mediaPath[0]);
+            $imgUploadPath = "userFiles/" . $folderName . "/" . str_replace('/', '_', $mediaPath[0]);
             $uploaded = move_uploaded_file($imgTmpName, $imgUploadPath);
             $mediaPath = $mediaPath[0];
         }

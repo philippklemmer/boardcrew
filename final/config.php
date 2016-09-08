@@ -22,7 +22,7 @@ define('URL', 'http://localhost:8888/');
 define ('DIR', realpath(dirname(__FILE__)));
 
 define('USERPROFIL', '/Users/philipp/github/boardcrew/final/public/img/');
-
+echo USERPROFIL;
 
 // Database config
 define('DB_TYPE', 'mysql');

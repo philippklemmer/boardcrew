@@ -4,7 +4,6 @@ class Timeline extends Controller {
     
     public $result;
     
-    
     function __construct(){
         parent::__construct();
         Session::init();
@@ -50,7 +49,7 @@ class Timeline extends Controller {
         $additionalTags = filter_input(INPUT_POST, 'addAdditionalTags', FILTER_SANITIZE_STRING);
         //Ein leeres Fehler-Array anlegen
         $errors = [];
-        debug($errors);
+        //debug($errors);
         // $title, $mediaPath, $imgTmpName = null, $mainTag, $additionalTags
         if(empty($errors)){
             $this->model->addPost($title, $mediaPath, $mainTag, $additionalTags, $imgTmpName);
