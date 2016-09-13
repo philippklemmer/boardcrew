@@ -18,17 +18,18 @@ class Xhr extends Controller {
      * @param type $limit (Optional)
      * @return type
      */
-    public function filterTimeline($param = false, $limit = '2'){
-        $user_id = false;
+    public function filterTimeline($param = false, $limit = '2', $user_id = false){
+        
         // checks if the request is manipulated
-        if(!isset($_POST['auth']) || $_POST['auth'] !== "abc" || !$param){
-            header("Location:" .URL.  "timeline");
-            return;
-        }
+//        if(!isset($_POST['auth']) || $_POST['auth'] !== "abc" || !$param){
+//            header("Location:" .URL.  "timeline");
+//            return;
+//        }
         //if Url = user -> user-controller needs an username 
         if( $param == "userTimelineDESC" || $param == "userTimelineASC"  ){
+            if(!$user_id){
                 $user_id = Session::get("id_user");
-                
+            }
         }
         //decide which filtermethod 
         $array = [
@@ -54,7 +55,6 @@ class Xhr extends Controller {
         }
         
         $this->view->setData($data);
-        
         //render the view
         $this->view->renderTimeline();
         return;

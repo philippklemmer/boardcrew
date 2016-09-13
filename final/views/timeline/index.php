@@ -1,4 +1,3 @@
-
 <!--MAIN CONTENT -> Post on Timeline-->
     <div class="timelineWrapper" data-sort="recentEntry" >    
 

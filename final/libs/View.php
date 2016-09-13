@@ -106,7 +106,7 @@ class View {
      */
     public function renderUserProfile(){
         
-        foreach($this->getData()["profileData"] as $value):  ?>
+        foreach($this->getData()["profileData"] as $value): ?>
 
            <!--UserProfileHeader-->
         <div class="UPHeader">

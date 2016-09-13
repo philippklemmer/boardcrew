@@ -23,11 +23,11 @@ class User extends Controller{
             $name = Session::get("user_username");
             $user_id = Session::get("id_user");
         }
-            
+          
         $profilData = $this->model->profile($name);
         $timelineData = $this->model->getPosts("WHERE p.username_user_id = {$user_id}");
         
-        $data = ["profileData" => $profilData, "posts" => $timelineData];
+        $data = ["profileData" => $profilData, "posts" => $timelineData, "user_id" => $user_id];
         
         $this->view->setData($data); 
         

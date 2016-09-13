@@ -46,9 +46,11 @@ $(window).scroll(function(){
         var filter = $(".timelineWrapper").attr('data-sort');
         //count length of posts
         var count = $(".timelineWrapper .posts").length + 1;
+        var userid = $(".timelineWrapper").attr('data-userid');
+        console.log(userid);
         $.ajax({
 
-            url: "xhr/filterTimeline/" + filter + '/' + count,
+            url: "xhr/filterTimeline/" + filter + '/' + count + '/' + userid,
             data: {'auth': 'abc'},
             method: 'POST'
 
