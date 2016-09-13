@@ -1,8 +1,18 @@
-<div class="securityCheck">
-    <h4>Are you sure to delete your entrys?</h4>
-    <div class="resetEntrys"><a href="#" >Yes</a></div>
-    <div class="stayWithEntrys"><a href="#" >No</a></div>
+<!-- Security Check if the user wants to delete something -->
+<div class="securityCheckContainer">
+    <div class="securityCheck">
+        <h4>Are you sure to delete your entrys?</h4>
+        <div class="resetEntrys"><a href="" >Yes</a></div>
+        <div class="stayWithEntrys"><a href="" >No</a></div>
+    </div>
 </div>
+<!-- Successmessages for the User  -->
+<div class="successmessageContainer">
+    <div class="successmessage">
+        <h4><span class="successMessageItem"></span> was succesfull</h4>
+    </div>
+</div>
+
 
 <!--Scripts einbinden-->
 <!-- doing a loop for scripts to get fewest amount of code -->

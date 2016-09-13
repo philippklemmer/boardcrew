@@ -20,6 +20,7 @@ class Bootstrap {
         if(empty($this->_url[0])){
             $this->_loadDefaultController();
         }
+        
         $this->_loadExistingController();
         $this->_callControllerMethod();
     }
@@ -63,6 +64,7 @@ class Bootstrap {
      */
     private function _getUrl(){
         // wenn url gesetzt ist, dann gut, wenn nicht setzte sie gleich index
+        Session::init();
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = empty($url) ? $_GET['url']='index' : $url ;
         $url = rtrim($url, '/');

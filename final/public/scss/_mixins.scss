@@ -37,8 +37,12 @@
     display: $display;
 }
 // use for backgroundImageIcons
-@mixin backgroundImage($path){
-    background: url("/public/img/#{$path}") no-repeat center;
+@mixin backgroundImage($path:""){
+    @if $path != "" {
+        background: url("../img/#{$path}");
+    }
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 // prefixes for other browsers

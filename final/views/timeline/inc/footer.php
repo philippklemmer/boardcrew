@@ -1,7 +1,7 @@
 <footer>
 <!--Add another Post-->
     <div class="addPostContainer">
-        <form enctype="multipart/form-data" action="<?php URL?>timeline/addPost" method="post" >
+        <form enctype="multipart/form-data" action="<?php URL?>timeline/add" method="post" >
 
             <input class="postTitle" type="text" name="postTitle" value="" placeholder="Enter your title in here..." />
             <span class="postExitBtn"></span>

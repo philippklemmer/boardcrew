@@ -26,6 +26,6 @@ class Controller {
             require $model_file;
             $this->model = new $model_name;
         }
-        
     }
+    
 }

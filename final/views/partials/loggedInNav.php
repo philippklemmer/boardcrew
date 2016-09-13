@@ -1,6 +1,6 @@
 
 <header>
-    <!--If User is LoggedIn TODO IF USER IS LOGGED IN, TEMPORARELY ONLY IF PAGE ON TIMELINE AND SO ON  -->
+<!--    If User is LoggedIn TODO IF USER IS LOGGED IN, TEMPORARELY ONLY IF PAGE ON TIMELINE AND SO ON  -->
     <nav id="loggedinNav" class="navbar">
       <div class="container-fluid">
           <ul>
@@ -25,7 +25,7 @@
     <div class="menuMain">
         <div>
             <p><a href="<?=URL?>timeline"><span class="timelineIcon"></span>Timeline</a></p>
-            <p><a href="<?=URL?>userprofile"><span class="userprofileIcon"></span>Profile</a></p>
+            <p><a href="<?=URL?>user"><span class="userprofileIcon"></span>Profile</a></p>
             <p><a href="<?=URL?>userbackend"><span class="editProfileIcon"></span>Edit</a></p>
         </div>
 
@@ -45,10 +45,10 @@
         <div class="generalSearchIcon"></div>
         <div class="userSearchIcon"></div>
         <div class="hashSearchIcon"></div>
-        <!--Only Show if Admin is logged in -->
+<!--        Only Show if Admin is logged in -->
         <div class="adminSearchIcon"></div>
     </div>
-    <!-- <div class="searchResults">
+<!--     <div class="searchResults">
         <p><span class="searchHash"></span>freestyle</p>
         <p><span class="searchUser"></span>flipper_skate</p>
         Foreach for SearchResults   

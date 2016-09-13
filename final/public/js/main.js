@@ -1,15 +1,19 @@
 $(function(){
+
+const URL = "http://localhost:8888/";
+
+
 //---------LANDINGPAGEn START-------------------------------------------------------------------------------------------
 
 // function to fix the Jquery SlideUp method
-    let scrollNavigation = function (){
+    var scrollNavigation = function (){
         // Navigation Change to fixed on Landingpage
-        let view = $(window),
+        var view = $(window),
             navigation = $(".fullscreenHeader nav"),
             header = $(".fullscreenHeader").height();
 
 
-        let animateNavigationUp = function(){
+        var animateNavigationUp = function(){
             navigation.stop().removeClass("navigateFixed");
             navigation.removeAttr('style');
         }
@@ -34,7 +38,7 @@ $(function(){
 
     // SHOW | HIDE FORMCONTAINER ON LANDINGPAGE
     // Form Container
-    let registerContainer   = $("#register"),
+    var registerContainer   = $("#register"),
         loginContainer      = $("#login"),
         pwResetContainer    = $("#pw-reset"),
     //Buttons
@@ -46,7 +50,7 @@ $(function(){
         backToLogin     = $("#backToLogin");
 
     // FUNCTION FOR THE ELEMENT TO HIDE AND SHOW
-    let showHideLanding = function ($target, $targetHide = null , $targetShow = null){
+    var showHideLanding = function ($target, $targetHide = null , $targetShow = null){
         $target.on("click touch", function(e){
             e.preventDefault();
             if($targetHide !== "null"){
@@ -78,7 +82,7 @@ $(function(){
         termsBackBtn = $("#term.termsContainer");
 
 
-    let showHideTerms = function($btn, $secondBtn,$element){
+    var showHideTerms = function($btn, $secondBtn,$element){
 
         $btn.add($secondBtn).on("click touch", function(){
             $element.toggleClass('termShow');
@@ -91,7 +95,7 @@ $(function(){
 //---------TIMELINE  START-------------------------------------------------------------------------------------------
 
 // ADDPOSTCONTAINER IMAGE/VIDEO URL SHOW/HIDE START -------------------------------------------------------------------------------------------
-    let addPostContainer    = $(".addPostContainer"),
+    var addPostContainer    = $(".addPostContainer"),
         postChooseContainer   = $(".postChooseContainer"),
         imgContainer   = $(".imgContainer"),
         videoContainer = $(".videoContainer"),
@@ -103,10 +107,10 @@ $(function(){
 
     // Init
     imgContainer.on("change", function(){
-        //get the inputFile value to let the user know which input it selected
+        //get the inputFile value to var the user know which input it selected
         $inputFileData = inputFileData[0].value.split("\\");
         $inputFileData = $inputFileData[2];
-        console.log($inputFileData);
+
         if($inputFileData !== "" || $inputFileData !== "undefined"){
             $imgUploadFileInput.text("Selected: "+ $inputFileData);
             imgContainer.css({padding:"41px 0"});
@@ -121,9 +125,9 @@ $(function(){
         rebootInterface();
     });
     // Funktion zum zeigen und verstecken der ausgwählten elemente
-    let inputFile = function(input){
+    var inputFile = function(input){
         // Funktion, welcher Container wurde ausgewählt und wird fullscreen angezeigt
-        let decideWhichInput = function(hideObject, showObject){
+        var decideWhichInput = function(hideObject, showObject){
             hideObject.hide();
             showObject.css({width:"calc(95%)"}).addClass("active");
             swapItem.css({display:"flex"});
@@ -149,7 +153,7 @@ $(function(){
         }
     }
     //Funktion damit sich die interfaces wieder zurücksetzen und auch die Daten die dort eingegeben wurden
-    let rebootInterface = function(){
+    var rebootInterface = function(){
         that = postChooseContainer.find(".active");
         if(that[0].className == "imgContainer active"){
             if($inputFileData == ""){
@@ -166,16 +170,15 @@ $(function(){
                         inputFileData[0].value = "";
                         $imgUploadFileInput.text("");
                         $inputFileData = "";
-                        $(".securityCheck").removeClass('visible');
+                        $(".securityCheckContainer").removeClass('visible');
                         rebootInterface();
                     },
                     function(){
-                        $(".securityCheck").removeClass('visible');
+                        $(".securityCheckContainer").removeClass('visible');
                     }
                 );
             }
         }else{
-            console.log(that[0].className);
             videoFileInput = $("input[name='videoUrl']");
             // if the value is empty so go back the normal status or
             if(videoFileInput[0].value == ""){
@@ -194,10 +197,10 @@ $(function(){
                         swapItem.css({display:"none"});
                         imgContainer.css({display:"inline-block"});
                         videoUrlActive.css({display:"none"});
-                        $(".securityCheck").removeClass('visible');
+                        $(".securityCheckContainer").removeClass('visible');
                     },
                     function(){
-                        $(".securityCheck").removeClass('visible');
+                        $(".securityCheckContainer").removeClass('visible');
                     }
                 );
             }
@@ -208,11 +211,11 @@ $(function(){
         }
     }
     //showing/building the SaftyQuery-Layout $(".securityCheck")
-    let showAlertBox = function($action){
-            $(".securityCheck").toggleClass('visible');
+    var showAlertBox = function($action){
+            $(".securityCheckContainer").toggleClass('visible');
     }
     // checking if the alertbox return true or false
-    let timelineSaftyQuery = function(successFunction, failFunction){
+    var timelineSaftyQuery = function(successFunction, failFunction){
         $(".securityCheck").children().on("click touch", function(){
             event.preventDefault();
             if($(this).text() === "Yes"){
@@ -241,7 +244,7 @@ $(function(){
 
 // INIT THE BUTTONS TO SLIDE DOWN AND UP, OR POPUP AND HIDE
     //btns
-    let logo = $("#logo"),
+    var logo = $("#logo"),
         filterBtn = $("#filter"),
         searchBtn = $("#search"),
         menuBtn = $("#menu"),
@@ -251,7 +254,7 @@ $(function(){
         searchContainer = $(".searchBarContainer"),
         menuContainer = $(".menuContainer");
     //scroll back to top
-    let scrollToTopOrIndex = function ($click){
+    var scrollToTopOrIndex = function ($click){
         $click.on("click touch", function(){
             event.preventDefault();
             if(view.scrollTop() > 0){
@@ -276,7 +279,7 @@ $(function(){
     scrollToTopOrIndex(logo);
 
     // Animations On/Off Toggling CSS§ Transition
-    let onOffAnimation = function($controller, $movedObject, $class){
+    var onOffAnimation = function($controller, $movedObject, $class){
 
         $controller.on("click touch", function(){
             $movedObject.toggleClass($class);
@@ -305,8 +308,8 @@ LoadingBar -> Animate the loadingbar from left to right, adjusted to the loading
 
 //---------Userprofile  Start-------------------------------------------------------------------------------------------
 
-let arrow = $(".selfDecidingArrow");
-let additionalInfomartionsContainer = $(".additionalInformations");
+var arrow = $(".selfDecidingArrow");
+var additionalInfomartionsContainer = $(".additionalInformations");
 arrow.on("click touch", function(){
     arrow.toggleClass('rotateArrow');
     additionalInfomartionsContainer.parent("div").css({paddingBottom:"20px"});
@@ -326,10 +329,10 @@ if($("html").height() > $("body").height()){
 }
 
 
-let pwCheckContainer = $(".pwCheck");
-let pwCheckInput = $("#pwCheck");
-let pwCheckSubmit = $(".pwCheck").find('input[type="submit"]');
-let pwCheckCloseBtn = $(".pwCheck span");
+var pwCheckContainer = $(".pwCheck");
+var pwCheckInput = $("#pwCheck");
+var pwCheckSubmit = $(".pwCheck").find('input[type="submit"]');
+var pwCheckCloseBtn = $(".pwCheck span");
 
 //TODO AJAX and close smoothly the box and continue writing the new email
 pwCheckInput.add(pwCheckSubmit).add(pwCheckCloseBtn).on("click touch", function(){
@@ -344,8 +347,8 @@ pwCheckInput.add(pwCheckSubmit).add(pwCheckCloseBtn).on("click touch", function(
 // Hiding Elements if the user clicks outside the box
 //hide if clicked out of div
 $(document).mouseup(function (e){
-    let container = $(".landing-form-container");
-    let addPostContainerForm = $(".addPostContainer form");
+    var container = $(".landing-form-container");
+    var addPostContainerForm = $(".addPostContainer form");
 
     //IndexFormular
     if (!container.is(e.target) && container.has(e.target).length === 0){

@@ -30,7 +30,7 @@ class Index extends Controller{
             $pwRepeat = filter_input(INPUT_POST, 'password-repeat', FILTER_SANITIZE_STRING);
             //Ein leeres Fehler-Array anlegen
             $errors = [];
-
+            
             //Check on valid username
             if (empty($username)) {
                 $errors['username'][] = 'Please type in an username';

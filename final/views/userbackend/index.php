@@ -2,7 +2,7 @@
 <div class="UB">
     <!--Userbackend Container-->
     <div class="UBContainer">
-        <a class="hideTerms" href="<?=URL?>userprofile" ></a>
+        <a class="hideTerms" href="<?=URL?>user" ></a>
         <form class="" action="" method="post">
             <!--Userbackend Main Container-->
             <!--Custom FileUpload -->

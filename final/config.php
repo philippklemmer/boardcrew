@@ -15,14 +15,12 @@ define('URL', 'http://localhost:8888/');
 //home fritzix3100
 //define('URL', 'http://192.168.188.31:8888/');
 //uni
-//define('URL', 'http://10.10.74.166:8888/');
+//define('URL', 'http://10.10.74.173:8888/');
 //wlan00
 //define('URL', 'http://192.168.1.3:8888/');
 
 define ('DIR', realpath(dirname(__FILE__)));
-
-define('USERPROFIL', '/Users/philipp/github/boardcrew/final/public/img/');
-echo USERPROFIL;
+define('USERPROFILE', '/Users/philipp/github/boardcrew/final/public/img/');
 
 // Database config
 define('DB_TYPE', 'mysql');

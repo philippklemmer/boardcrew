@@ -10,19 +10,28 @@ $profileBackgroundHeight: 250px;
         @include box-shadow($smoothBoxShadow);
         .UPHeaderImg{
             position: relative;
-            @include backgroundImage("testBilder/userProfileBackground.jpg");
+            @include backgroundImage("false");
+            background-color: rgba(0,0,0,0.1);
             background-size: cover;
             background-position: top;
             @include bgIcons(100%, #{$profileBackgroundHeight},block);
             margin-bottom: $profileImageWidth/2 + 20px;
-            span img{
+            span .noImage,img{
                 left: calc(50% - #{$profileImageWidth/2});
                 top: calc(#{$profileBackgroundHeight} - #{$profileImageWidth/2});
                 position: absolute;
                 width: $profileImageWidth;
                 height: $profileImageWidth;
-                border-radius: 100%;
+                //border-radius: 100%;
                 display: inline-block;
+                &.noImage{
+                    background-color: white;
+                    @include box-shadow($smoothBoxShadow);
+                    text-align: center;
+                    line-height: $profileImageWidth;
+                    font-size: 10rem;
+                    font-family: $mainFontFamily;
+                }
             }
         }
         .UPMain{
@@ -41,6 +50,25 @@ $profileBackgroundHeight: 250px;
             }
             span{
                 font-family: $mainFontFamily;
+            }
+            div{
+                display: block;
+                margin-top: 20px;
+                a{
+                    padding: 10px 0;
+                    width: 200px;
+                    display: inline-block;
+                    color: black;
+                    @include box-shadow($smoothBoxShadow);
+                }
+                &.editProfile a{
+                    background: #eded88;
+                }
+                &.followUser a{
+                    background: $lightBlue;
+                    color: white;
+                }
+
             }
             form{
                 margin: 30px 0;

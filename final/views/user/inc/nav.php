@@ -5,11 +5,11 @@
         <form class="" action="index.html" method="post">
             
             <label for="">
-                <input type="radio" name="sorting" value="">
+                <input type="radio" name="sorting" value="userTimelineDESC" checked="checked">
                 New
             </label>
             <label for="">
-                <input type="radio" name="sorting" value="">
+                <input type="radio" name="sorting" value="userTimelineASC">
                 Old
             </label>
         </form>

@@ -6,23 +6,12 @@ class Index_Model extends Model {
         parent::__construct();
     }
 
-    /**
-     * Checks if there the email allready exists
-     * @param type $type
-     * @param type $input
-     * @return type
-     */
-    public function dataExists($type, $input) {
-        $sth = $this->db->prepare("SELECT {$type} from bc_users WHERE {$type} = :{$type} ");
-        $sth->execute(array(
-            ":{$type}" => "{$input}"
-        ));
-        return $sth->fetchAll(PDO::FETCH_ASSOC);
-    }
 
     public function registerUser($username, $mail, $password) {
 
-        //Salt
+        //explode whitespace and form the $username into lower case
+        $username = str_replace(" ", "", strtolower($username));
+        
         //Eine einzigartige Zeichenkette vom Programm erstellen lassen
         $randomSalt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
 
@@ -35,22 +24,39 @@ class Index_Model extends Model {
         $randomHash = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
         // Jetzt wird die gesalzene Email ertellt für den Validierungsprozess
         $validationHash = hash('sha512', $mail . $randomHash);
-
-        //insert data
-        $sql  = "INSERT INTO bc_users ";
-        $sql .= "(`user_username`, `user_mail`, `user_hash`, `user_salt`, `user_validation`, `user_valHash`, `user_regDate` )";
-        $sql .= "VALUES (:username, :mail, :hash, :salt, :validation, :valHash, NOW())";
-        //preparing the pdo statement
-        $sth = $this->db->prepare($sql);
-        //if all is correct -> execute
-        $sth->execute(array(
-            "username" => "$username",
-            "mail" => "$mail",
-            "hash" => "$hashedPw",
-            "salt" => "$randomSalt",
-            "validation" => 0,
-            "valHash" => "$validationHash",
-        ));
+        try {
+            $this->db->beginTransaction();
+            //insert data
+            $sql  = "INSERT INTO bc_users ";
+            $sql .= "(`user_username`, `user_mail`, `user_hash`, `user_salt`, `user_validation`, `user_valHash`, `user_regDate` )";
+            $sql .= "VALUES (:username, :mail, :hash, :salt, :validation, :valHash, NOW())";
+            //preparing the pdo statement
+            $sth = $this->db->prepare($sql);
+            //if all is correct -> execute
+            $sth->execute(array(
+                "username" => "$username",
+                "mail" => "$mail",
+                "hash" => "$hashedPw",
+                "salt" => "$randomSalt",
+                "validation" => 0,
+                "valHash" => "$validationHash",
+            ));
+            
+            $lastId = $this->db->lastInsertId();
+            
+            $sql = "INSERT INTO bc_profiles (users_user_id) VALUES(:user_id) ";
+            $sth = $this->db->prepare($sql);
+            $sth->execute(array(
+                ":user_id" => "{$lastId}"
+            ));
+            
+            $this->db->commit();
+                
+        } catch (Exception $ex) {
+            $this->db->rollBack();
+            echo 'Failed: ' . debug($e);
+        }
+        
         $result = $sth->rowCount();
         if ($result > 0) {
             //Validierungs Mail schicken
@@ -83,6 +89,10 @@ class Index_Model extends Model {
                 $hashedPassword = hash('sha512', $password . $data['user_salt']);
                 //check if the passwords are equal
                 if($hashedPassword === $data['user_hash']){
+                    
+                    //insert into data
+                    
+                    
                     //Set User session data
                     Session::set('status', "loggedIn");
                     Session::set('id_user', $data['user_id']);
