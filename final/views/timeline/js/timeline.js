@@ -1,4 +1,5 @@
 //ajax calls for the timeline
+//set GLOBAL URL
 
 //selecting inputs
 var $filterBtn = $(".generalFilter form label input");
@@ -11,7 +12,7 @@ $filterBtn.on("click touch", function(){
 
         $.ajax({
 
-            url: "xhr/filterTimeline/" + $filterValue,
+            url: URL + "xhr/filterTimeline/" + $filterValue,
             data: {'auth': 'abc'},
             method: 'POST'
 
@@ -47,15 +48,13 @@ $(window).scroll(function(){
         //count length of posts
         var count = $(".timelineWrapper .posts").length + 1;
         var userid = $(".timelineWrapper").attr('data-userid');
-        console.log(userid);
         $.ajax({
 
-            url: "xhr/filterTimeline/" + filter + '/' + count + '/' + userid,
+            url: URL + "xhr/filterTimeline/" + filter + '/' + count + '/' + userid,
             data: {'auth': 'abc'},
             method: 'POST'
 
         }).done(function(data){
-            console.log(data);
             if(data == "false"){
                 console.log("There is no data");
             }else{
@@ -79,7 +78,7 @@ $("body").on("click touch", '.heart' , function(){
 
     $.ajax({
 
-        url: "xhr/likePost/" + id,
+        url: URL + "xhr/likePost/" + id,
         data: {'auth': 'abc'},
         method: 'POST'
 

@@ -9,3 +9,6 @@
         <script>try{Typekit.load({ async: true });}catch(e){}</script>
     </head>
     <body>
+<script>
+    var URL = "<?php echo URL  ?>";
+</script>

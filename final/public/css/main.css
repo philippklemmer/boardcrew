@@ -1171,6 +1171,12 @@ section {
   100% {
     opacity: 1;
     transform: scale(1); } }
+.searchContainer {
+  display: block;
+  padding-top: 70px;
+  height: 100%;
+  background-color: white; }
+
 .showHide {
   -webkit-transition: top 300ms ease-in-out 0s;
   -moz-transition: top 300ms ease-in-out 0s;
@@ -1213,6 +1219,7 @@ section {
   text-align: center;
   padding: 25px 0;
   border: 1px solid black;
+  border-right: 0;
   background-color: white;
   z-index: 80;
   -moz-box-shadow: -1px 1px 4px 2px rgba(0, 0, 0, 0.5);

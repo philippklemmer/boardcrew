@@ -6,7 +6,9 @@
           <ul>
               <li id="logo" class="navbar-"></li>
               <ul class="navbar-right">
-                  <li id="filter"></li>
+                  <?php if($_GET['url'] !== "search"):?>
+                    <li id="filter"></li>
+                  <?php endif;?>
                   <li id="search"></li>
                   <li id="menu" ></li>
               </ul>

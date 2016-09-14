@@ -42,10 +42,10 @@ class View {
     public function renderTimeline(){
         //decide if the url = timeline || user
         $result = $this->getData();
-        if(array_key_exists("profileData", $result) === (bool)FALSE){
-            $data = $this->getData();
+        if(!array_key_exists("profileData", $result)){
+            $data = $result;
         }else{
-            $data = $this->getData()["posts"];    
+            $data = $result["posts"];    
         }
         foreach($data as $key => $value):
             ?>
@@ -63,7 +63,6 @@ class View {
                             </div>
                             <div class="postMain">
 
-
                                 <?php if ($value["posts_mediaPathCheck"] == "1"): ?>
                                     <div class="vidOrImg">
                                         <img src="<?= "/public/img/userFiles/" . $value["user_username"] . "/" . $value["posts_mediaPath"] ?>" alt="" />
@@ -80,9 +79,6 @@ class View {
                                     }else{
                                         echo "LIKE";
                                     }
-                                        
-                                    
-                                
                                 
                                 ?>
                                         </p>
@@ -123,9 +119,9 @@ class View {
                 <p>
                     <?= $value["user_username"] ?>
                 </p>
-                <span><?= $value["following"][0][0]["followedUser"] ?><span> Following</span></span>
+                <span><?= (isset($value["following"][0][0]["followedUser"])) ? $value["following"][0][0]["followedUser"] : 0  ?><span> Following</span></span>
                 <span>|</span>
-                <span><?= $value["following"][1][0]["followingUsers"]?> <span> Followers</span></span>
+                <span><?= (isset($value["following"][1][0]["followingUsers"])) ? $value["following"][1][0]["followingUsers"] : 0?> <span> Followers</span></span>
                 <?php if($value["user_id"] == Session::get("id_user")): ?>
                     <div class="editProfile" ><a href="<?= URL ?>userbackend">Edit your Profile</a></div>
                 <?php else: ?>

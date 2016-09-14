@@ -1,5 +1,4 @@
-    <?php
-
+<?php
 /**
  *
  */
@@ -43,7 +42,7 @@ class User extends Controller{
     public function profile($name){
         
         if($this->model->dataExists("user_username", $name) == FALSE){
-            header("Location:" . URL . "timeline");
+            //header("Location:" . URL . "timeline");
             return;
             
         }else{

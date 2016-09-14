@@ -1,8 +1,5 @@
 $(function(){
 
-const URL = "http://localhost:8888/";
-
-
 //---------LANDINGPAGEn START-------------------------------------------------------------------------------------------
 
 // function to fix the Jquery SlideUp method
@@ -266,7 +263,7 @@ const URL = "http://localhost:8888/";
                     window.location.replace("index");
                 }else{
                     if(window.location != "timeline"){
-                        window.location.replace("timeline");
+                        window.location.replace(URL + "timeline");
                     }
                 }
 

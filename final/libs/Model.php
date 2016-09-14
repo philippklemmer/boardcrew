@@ -52,7 +52,6 @@ class Model {
         
     }
     
-    
     /**
      * TODO change that you 
      * @param string $order
@@ -60,9 +59,31 @@ class Model {
      * @return string
      */
     public function getPosts($order = "p.posts_date", $limit = '2', $orderStyle = "DESC"){
-        if(!in_array($order, array( 'p.posts_date','likeCount' ))){
+        
+        if(!in_array($order, array( 'p.posts_date','likeCount'))){
             $where = $order;
             $order = 'p.posts_date';
+        }
+        
+        // get the followersPosts
+        if(isset($where) && $where == "follower"){
+            try {
+                //get the current user_id
+                $user_id = Session::get("id_user"); 
+                //selecting all the users who this user follows
+                $follower = $this->db->select("SELECT follower_id FROM bc_user_has_followers WHERE user_id={$user_id}",array());
+                //statement
+                $where = "WHERE ";
+                foreach($follower as $a => $b){
+                    $where .= "p.username_user_id={$b["follower_id"]} OR ";
+                }
+                //delete the OR at the end
+                $where = substr($where, 0,-4);
+
+            } catch (Exception $ex) {
+                $this->db->rollBack();
+                echo 'Failed: ' . debug($e);
+            }
         }
         
         /**
@@ -95,7 +116,7 @@ class Model {
                 echo 'Failed: ' . debug($e);
             }
         }
-        
+        /// where user id = ? and foreach dann
         $sql  = "SELECT u.user_username,p.posts_id, p.username_user_id, p.posts_title, p.posts_mediaPath, p.posts_mediaPathCheck ,p.posts_mainTag, p.posts_additionaltags, p.posts_date, bc_profiles.profile_profileImg ";
         $sql .= "FROM bc_users AS u ";
         $sql .= "INNER JOIN bc_posts AS p ON u.user_id=p.username_user_id ";
@@ -139,9 +160,9 @@ class Model {
             array_push($result[$i], $likeCount[$i]);
             
         }
-        
         return $result;
     }
+    
     /**
      * 
      * @param type $postid

@@ -25,11 +25,8 @@ class Xhr extends Controller {
 //            header("Location:" .URL.  "timeline");
 //            return;
 //        }
-        //if Url = user -> user-controller needs an username 
-        if( $param == "userTimelineDESC" || $param == "userTimelineASC"  ){
-            if(!$user_id){
-                $user_id = Session::get("id_user");
-            }
+        if(!$user_id){
+            $user_id = Session::get("id_user");
         }
         //decide which filtermethod 
         $array = [
@@ -44,7 +41,6 @@ class Xhr extends Controller {
             $this->index();
             return;
         }
-        
         //get posts for the timeline
         $this->loadModel("Timeline");
         //userprofile Timelinefilter method showing input ASC
@@ -68,7 +64,7 @@ class Xhr extends Controller {
      */
     public function likePost($post_id){
         
-        if(!isset($_POST['auth']) || $_POST['auth'] !== "abc" || !$param){
+        if(!isset($_POST['auth']) || $_POST['auth'] !== "abc"){
             header("Location:" .URL.  "timeline");
             return;
         }
